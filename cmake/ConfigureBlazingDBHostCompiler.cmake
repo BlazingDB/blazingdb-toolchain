@@ -6,8 +6,8 @@
 # BEGIN macros
 
 # example:
-# configure_host_compiler(14, ON) for C++14 and force the standard is required
-macro(CONFIGURE_HOST_COMPILER HOST_CXX_STANDARD HOST_CXX_STANDARD_REQUIRED)
+# configure_blazingdb_host_compiler(14, ON) for C++14 and force the standard is required
+macro(CONFIGURE_BLAZINGDB_HOST_COMPILER HOST_CXX_STANDARD HOST_CXX_STANDARD_REQUIRED)
     set(CMAKE_CXX_STANDARD ${HOST_CXX_STANDARD})
     set(CMAKE_CXX_STANDARD_REQUIRED ${HOST_CXX_STANDARD_REQUIRED})
     option(CXX_OLD_ABI "Use the old GLIBCXX11 ABI" ON)
@@ -26,3 +26,11 @@ macro(CONFIGURE_HOST_COMPILER HOST_CXX_STANDARD HOST_CXX_STANDARD_REQUIRED)
         endif()
     endif()
 endmacro()
+
+# END macros
+
+# BEGIN MAIN #
+
+configure_blazingdb_host_compiler(14 ON)
+
+# END MAIN #
