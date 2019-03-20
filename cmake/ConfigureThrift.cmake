@@ -33,9 +33,13 @@ macro(CONFIGURE_THRIFT_EXTERNAL_PROJECT)
                         " -DWITH_STATIC_LIB=ON"
                         " -DWITH_LIBEVENT=OFF"
                         " -DCMAKE_POSITION_INDEPENDENT_CODE=ON"
-                        " -DCMAKE_C_FLAGS=-D_GLIBCXX_USE_CXX11_ABI=0"      # enable old ABI for C/C++
-                        " -DCMAKE_CXX_FLAGS=-D_GLIBCXX_USE_CXX11_ABI=0"    # enable old ABI for C/C++
                         " -DBOOST_ROOT=${BOOST_ROOT}")
+
+    if(CXX_OLD_ABI)
+        # enable old ABI for C/C++
+        list(APPEND THRIFT_CMAKE_ARGS " -DCMAKE_C_FLAGS=-D_GLIBCXX_USE_CXX11_ABI=0")
+        list(APPEND THRIFT_CMAKE_ARGS " -DCMAKE_CXX_FLAGS=-D_GLIBCXX_USE_CXX11_ABI=0")
+    endif()
 
     # Download and unpack Thrift at configure time
     configure_file(${CMAKE_CURRENT_LIST_DIR}/Thrift.CMakeLists.txt.cmake ${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/thrift-download/CMakeLists.txt)

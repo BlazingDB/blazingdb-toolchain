@@ -7,23 +7,11 @@ cmake_minimum_required(VERSION 3.12 FATAL_ERROR)
 
 project(blazingdb-dependencies C CXX CUDA)
 
-set(CMAKE_CXX_STANDARD 14)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-
-set(CMAKE_CUDA_STANDARD 14)
-set(CMAKE_CUDA_STANDARD_REQURIED ON)
-
-message(STATUS "Using C++ standard: c++${CMAKE_CXX_STANDARD}")
-
-# TODO percy felipe alexander remove these lines when cudf stop using old C++ ABI
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -D_GLIBCXX_USE_CXX11_ABI=0")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D_GLIBCXX_USE_CXX11_ABI=0")
-set(CMAKE_CUDA_FLAGS "${CMAKE_CUDA_FLAGS} -Xcompiler -D_GLIBCXX_USE_CXX11_ABI=0")
-message(AUTHOR_WARNING "Using old C++ ABI: -D_GLIBCXX_USE_CXX11_ABI=0")
-
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake/" ${CMAKE_MODULE_PATH})
-
 message(STATUS "CMAKE_MODULE_PATH:" "${CMAKE_MODULE_PATH}")
+
+# NOTE First step
+include(ConfigureBlazingDBHostCompiler)
 
 # Include CMake modules
 include(FeatureSummary)

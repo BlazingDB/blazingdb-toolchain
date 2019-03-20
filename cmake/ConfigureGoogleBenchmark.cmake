@@ -17,14 +17,18 @@
 
 # BEGIN macros
 
-# NOTE percy c.gonzales if you want to pass other RAL CMAKE_CXX_FLAGS into this dependency add it by harcoding
-set(GOOGLEBENCHMARK_CMAKE_ARGS
-    " -DCMAKE_BUILD_TYPE=RELEASE" 
-    " -DBENCHMARK_ENABLE_GTEST_TESTS=OFF"
-    " -DCMAKE_C_FLAGS=-D_GLIBCXX_USE_CXX11_ABI=0"      # enable old ABI for C/C++
-    " -DCMAKE_CXX_FLAGS=-D_GLIBCXX_USE_CXX11_ABI=0")   # enable old ABI for C/C++
-
 macro(CONFIGURE_GOOGLEBENCHMARK_EXTERNAL_PROJECT)
+    # NOTE percy c.gonzales if you want to pass other RAL CMAKE_CXX_FLAGS into this dependency add it by harcoding
+    set(GOOGLEBENCHMARK_CMAKE_ARGS
+        " -DCMAKE_BUILD_TYPE=Release"
+        " -DBENCHMARK_ENABLE_GTEST_TESTS=OFF")
+
+    if(CXX_OLD_ABI)
+        # enable old ABI for C/C++
+        list(APPEND GOOGLEBENCHMARK_CMAKE_ARGS " -DCMAKE_C_FLAGS=-D_GLIBCXX_USE_CXX11_ABI=0")
+        list(APPEND GOOGLEBENCHMARK_CMAKE_ARGS " -DCMAKE_CXX_FLAGS=-D_GLIBCXX_USE_CXX11_ABI=0")
+    endif()
+
     # Download and unpack googlebenchmark at configure time
     configure_file(${CMAKE_CURRENT_LIST_DIR}/GoogleBenchmark.CMakeLists.txt.cmake
                    ${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/googlebenchmark-download/CMakeLists.txt)
@@ -65,8 +69,8 @@ endif()
 
 message(STATUS "GBENCHMARK_ROOT: " ${GBENCHMARK_ROOT})
 
-find_package(GBenchmark QUIET)
-set_package_properties(GBenchmark PROPERTIES TYPE OPTIONAL
+find_package(GBenchmark REQUIRED)
+set_package_properties(GBenchmark PROPERTIES TYPE REQUIRED
     PURPOSE "Google C++ Benchmarking Framework (Google Benchmark)."
     URL "https://github.com/google/benchmark.git")
 

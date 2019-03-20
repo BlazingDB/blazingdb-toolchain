@@ -18,10 +18,12 @@
 # BEGIN macros
 
 macro(CONFIGURE_JITIFY_EXTERNAL_PROJECT)
-    # NOTE percy c.gonzales if you want to pass other RAL CMAKE_CXX_FLAGS into this dependency add it by harcoding
-    set(ENV{CFLAGS} "-D_GLIBCXX_USE_CXX11_ABI=0 -O3 -fPIC")
-    set(ENV{CXXFLAGS} "-D_GLIBCXX_USE_CXX11_ABI=0 -O3 -fPIC")
-    set(ENV{PREFIX} "${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/jitify-install")
+    if(CXX_OLD_ABI)
+        # NOTE percy c.gonzales if you want to pass other RAL CMAKE_CXX_FLAGS into this dependency add it by harcoding
+        set(ENV{CFLAGS} "-D_GLIBCXX_USE_CXX11_ABI=0 -O3 -fPIC")
+        set(ENV{CXXFLAGS} "-D_GLIBCXX_USE_CXX11_ABI=0 -O3 -fPIC")
+        set(ENV{PREFIX} "${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/jitify-install")
+    endif()
 
     # Download and unpack Jitify at configure time
     configure_file(${CMAKE_CURRENT_LIST_DIR}/Jitify.CMakeLists.txt.cmake ${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/jitify-download/CMakeLists.txt)

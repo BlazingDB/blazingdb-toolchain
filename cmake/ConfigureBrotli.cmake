@@ -20,9 +20,13 @@
 macro(CONFIGURE_BROTLI_EXTERNAL_PROJECT)
     # NOTE percy c.gonzales if you want to pass other RAL CMAKE_CXX_FLAGS into this dependency add it by harcoding
     set(BROTLI_CMAKE_ARGS " -DBUILD_SHARED_LIBS=OFF"
-                          " -DCMAKE_POSITION_INDEPENDENT_CODE=ON"
-                          " -DCMAKE_C_FLAGS=-D_GLIBCXX_USE_CXX11_ABI=0"
-                          " -DCMAKE_CXX_FLAGS=-D_GLIBCXX_USE_CXX11_ABI=0")
+                          " -DCMAKE_POSITION_INDEPENDENT_CODE=ON")
+
+    if(CXX_OLD_ABI)
+        # enable old ABI for C/C++
+        list(APPEND BROTLI_CMAKE_ARGS " -DCMAKE_C_FLAGS=-D_GLIBCXX_USE_CXX11_ABI=0")
+        list(APPEND BROTLI_CMAKE_ARGS " -DCMAKE_CXX_FLAGS=-D_GLIBCXX_USE_CXX11_ABI=0")
+    endif()
 
     # Download and unpack Brotli at configure time
     configure_file(${CMAKE_CURRENT_LIST_DIR}/Brotli.CMakeLists.txt.cmake ${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/brotli-download/CMakeLists.txt)

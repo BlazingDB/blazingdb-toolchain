@@ -8,10 +8,13 @@
 macro(CONFIGURE_FLATBUFFERS_EXTERNAL_PROJECT)
     # NOTE percy c.gonzales if you want to pass other RAL CMAKE_CXX_FLAGS into this dependency add it by harcoding
     set(FLATBUFFERS_CMAKE_ARGS
-                        " -DCMAKE_C_FLAGS=-D_GLIBCXX_USE_CXX11_ABI=0"
-                        " -DCMAKE_CXX_FLAGS=-D_GLIBCXX_USE_CXX11_ABI=0"
-                        " -DCMAKE_POSITION_INDEPENDENT_CODE=ON"
-                        )
+        " -DCMAKE_POSITION_INDEPENDENT_CODE=ON")
+
+    if(CXX_OLD_ABI)
+        # enable old ABI for C/C++
+        list(APPEND FLATBUFFERS_CMAKE_ARGS " -DCMAKE_C_FLAGS=-D_GLIBCXX_USE_CXX11_ABI=0")
+        list(APPEND FLATBUFFERS_CMAKE_ARGS " -DCMAKE_CXX_FLAGS=-D_GLIBCXX_USE_CXX11_ABI=0")
+    endif()
 
     # Download and unpack flatbuffers at configure time
     configure_file(${CMAKE_CURRENT_LIST_DIR}/FlatBuffers.CMakeLists.txt.cmake ${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/flatbuffers-download/CMakeLists.txt)

@@ -8,10 +8,13 @@
 macro(CONFIGURE_RAPIDJSON_EXTERNAL_PROJECT)
     # NOTE percy c.gonzales if you want to pass other RAL CMAKE_CXX_FLAGS into this dependency add it by harcoding
     set(RAPIDJSON_CMAKE_ARGS
-        " -DCMAKE_C_FLAGS=-D_GLIBCXX_USE_CXX11_ABI=0"
-        " -DCMAKE_CXX_FLAGS=-D_GLIBCXX_USE_CXX11_ABI=0"
-        " -DRAPIDJSON_BUILD_TESTS=OFF"
-    )
+        " -DRAPIDJSON_BUILD_TESTS=OFF")
+
+    if(CXX_OLD_ABI)
+        # enable old ABI for C/C++
+        list(APPEND RAPIDJSON_CMAKE_ARGS " -DCMAKE_C_FLAGS=-D_GLIBCXX_USE_CXX11_ABI=0")
+        list(APPEND RAPIDJSON_CMAKE_ARGS " -DCMAKE_CXX_FLAGS=-D_GLIBCXX_USE_CXX11_ABI=0")
+    endif()
 
     # Download and unpack rapidjson at configure time
     configure_file(${CMAKE_CURRENT_LIST_DIR}/RapidJSON.CMakeLists.txt.cmake ${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/rapidjson-download/CMakeLists.txt)

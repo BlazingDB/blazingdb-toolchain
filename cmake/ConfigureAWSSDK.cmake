@@ -32,9 +32,13 @@ macro(CONFIGURE_AWS_SDK_CPP_EXTERNAL_PROJECT)
                                 " -DENABLE_TESTING=OFF"
                                 " -DENABLE_UNITY_BUILD=ON"
                                 " -DCUSTOM_MEMORY_MANAGEMENT=0"
-                                " -DCMAKE_C_FLAGS=-D_GLIBCXX_USE_CXX11_ABI=0"
-                                " -DCMAKE_CXX_FLAGS=-D_GLIBCXX_USE_CXX11_ABI=0"
                                 " -DCPP_STANDARD=${CMAKE_CXX_STANDARD}")
+
+    if(CXX_OLD_ABI)
+        # enable old ABI for C/C++
+        list(APPEND AWS_SDK_CPP_CMAKE_ARGS " -DCMAKE_C_FLAGS=-D_GLIBCXX_USE_CXX11_ABI=0")
+        list(APPEND AWS_SDK_CPP_CMAKE_ARGS " -DCMAKE_CXX_FLAGS=-D_GLIBCXX_USE_CXX11_ABI=0")
+    endif()
 
     set(AWS_MODULES
         core

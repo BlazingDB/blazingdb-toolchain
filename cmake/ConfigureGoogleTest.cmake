@@ -8,9 +8,13 @@
 macro(CONFIGURE_GOOGLETEST_EXTERNAL_PROJECT)
     # NOTE percy c.gonzales if you want to pass other RAL CMAKE_CXX_FLAGS into this dependency add it by harcoding
     set(GOOGLETEST_CMAKE_ARGS
-        " -Dgtest_build_samples=ON"
-        " -DCMAKE_C_FLAGS=-D_GLIBCXX_USE_CXX11_ABI=0"      # enable old ABI for C/C++
-        " -DCMAKE_CXX_FLAGS=-D_GLIBCXX_USE_CXX11_ABI=0")   # enable old ABI for C/C++
+        " -Dgtest_build_samples=ON")
+
+    if(CXX_OLD_ABI)
+        # enable old ABI for C/C++
+        list(APPEND GOOGLETEST_CMAKE_ARGS " -DCMAKE_C_FLAGS=-D_GLIBCXX_USE_CXX11_ABI=0")
+        list(APPEND GOOGLETEST_CMAKE_ARGS " -DCMAKE_CXX_FLAGS=-D_GLIBCXX_USE_CXX11_ABI=0")
+    endif()
 
     # Download and unpack googletest at configure time
     configure_file(${CMAKE_CURRENT_LIST_DIR}/GoogleTest.CMakeLists.txt.cmake ${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/googletest-download/CMakeLists.txt)
@@ -59,8 +63,8 @@ set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 
 message(STATUS "GTEST_ROOT: " ${GTEST_ROOT})
 
-find_package(GTest QUIET)
-set_package_properties(GTest PROPERTIES TYPE OPTIONAL
+find_package(GTest REQUIRED)
+set_package_properties(GTest PROPERTIES TYPE REQUIRED
     PURPOSE "Google C++ Testing Framework (Google Test)."
     URL "https://github.com/google/googletest")
 

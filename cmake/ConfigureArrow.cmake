@@ -26,10 +26,6 @@ macro(CONFIGURE_ARROW_EXTERNAL_PROJECT)
     set(ENV{SNAPPY_HOME} ${SNAPPY_ROOT})
     set(ENV{THRIFT_HOME} ${THRIFT_ROOT})
 
-    #NOTE
-    # libcudf.so` is now built with the old ABI `-D_GLIBCXX_USE_CXX11_ABI=0`
-    # If you build Arrow from source, you can fix this by using `-DARROW_TENSORFLOW=ON`.
-    # This forces Arrow to use the old ABI.
     set(ARROW_CMAKE_ARGS " -DARROW_WITH_LZ4=ON"
                          " -DARROW_WITH_ZSTD=ON"
                          " -DARROW_WITH_BROTLI=ON"
@@ -39,18 +35,31 @@ macro(CONFIGURE_ARROW_EXTERNAL_PROJECT)
                          " -DARROW_BUILD_SHARED=ON"
                          " -DARROW_BOOST_USE_SHARED=OFF"
                          " -DARROW_BUILD_TESTS=OFF"
+                         " -DARROW_TEST_LINKAGE=OFF"
                          " -DARROW_TEST_MEMCHECK=OFF"
                          " -DARROW_BUILD_BENCHMARKS=OFF"
                          " -DARROW_IPC=ON" # need ipc for blazingdb-ral (because cudf)
                          " -DARROW_COMPUTE=ON"
                          " -DARROW_GPU=OFF"
+                         " -DARROW_CUDA=OFF"
                          " -DARROW_JEMALLOC=OFF"
                          " -DARROW_BOOST_VENDORED=OFF"
                          " -DARROW_PYTHON=OFF"
+                         " -DARROW_USE_GLOG=OFF"
                          " -DARROW_HDFS=ON"
-                         " -DARROW_TENSORFLOW=ON" # enable old ABI for C/C++
                          " -DARROW_PARQUET=ON"
+                         " -DCMAKE_VERBOSE_MAKEFILE=ON"
     )
+
+    if(CXX_OLD_ABI)
+        # NOTE
+        # libcudf.so` is now built with the old ABI `-D_GLIBCXX_USE_CXX11_ABI=0`
+        # If you build Arrow from source, you can fix this by using `-DARROW_TENSORFLOW=ON`.
+        # This forces Arrow to use the old ABI.
+        list(APPEND ARROW_CMAKE_ARGS " -DARROW_TENSORFLOW=ON")  # enable old ABI for C/C++
+    else()
+        list(APPEND ARROW_CMAKE_ARGS " -DARROW_TENSORFLOW=OFF")
+    endif()
 
     # Download and unpack arrow at configure time
     configure_file(${CMAKE_CURRENT_LIST_DIR}/Arrow.CMakeLists.txt.cmake ${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/arrow-download/CMakeLists.txt)

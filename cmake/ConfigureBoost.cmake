@@ -21,6 +21,11 @@ macro(CONFIGURE_BOOST_EXTERNAL_PROJECT)
     set(ENV{CFLAGS} "${CMAKE_C_FLAGS}")
     set(ENV{CXXFLAGS} "${CMAKE_CXX_FLAGS}")
 
+    set(BOOST_DEFINE "")
+    if(CXX_OLD_ABI)
+        set(BOOST_DEFINE "define=_GLIBCXX_USE_CXX11_ABI=0")
+    endif()
+
     # Download and unpack Boost at configure time
     configure_file(${CMAKE_CURRENT_LIST_DIR}/Boost.CMakeLists.txt.cmake ${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/boost-download/CMakeLists.txt)
 

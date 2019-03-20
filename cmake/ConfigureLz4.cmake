@@ -18,9 +18,16 @@
 # BEGIN macros
 
 macro(CONFIGURE_LZ4_EXTERNAL_PROJECT)
-    # NOTE percy c.gonzales if you want to pass other RAL CMAKE_CXX_FLAGS into this dependency add it by harcoding
-    set(ENV{CFLAGS} "-D_GLIBCXX_USE_CXX11_ABI=0 -O3 -fPIC")
-    set(ENV{CXXFLAGS} "-D_GLIBCXX_USE_CXX11_ABI=0 -O3 -fPIC")
+    if(CXX_OLD_ABI)
+        # NOTE percy c.gonzales if you want to pass other RAL CMAKE_CXX_FLAGS into this dependency add it by harcoding
+        set(ENV{CFLAGS} "-D_GLIBCXX_USE_CXX11_ABI=0 -O3 -fPIC")
+        set(ENV{CXXFLAGS} "-D_GLIBCXX_USE_CXX11_ABI=0 -O3 -fPIC")
+    else()
+        # NOTE percy c.gonzales if you want to pass other RAL CMAKE_CXX_FLAGS into this dependency add it by harcoding
+        set(ENV{CFLAGS} "-O3 -fPIC")
+        set(ENV{CXXFLAGS} "-O3 -fPIC")
+    endif()
+
     set(ENV{PREFIX} "${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/lz4-install")
 
     # Download and unpack Lz4 at configure time

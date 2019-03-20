@@ -29,7 +29,7 @@ ExternalProject_Add(boost
     BUILD_IN_SOURCE   1
     INSTALL_DIR       "${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/boost-install"
     CONFIGURE_COMMAND ./bootstrap.sh --with-libraries=date_time,system,filesystem,regex,atomic,chrono,container,context,thread --with-icu --prefix=${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/boost-install
-    BUILD_COMMAND     ./b2 install variant=release define=_GLIBCXX_USE_CXX11_ABI=0 stage cxxflags=-fPIC cflags=-fPIC link=static runtime-link=static threading=multi --exec-prefix=${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/boost-install --prefix=${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/boost-install -a
+    BUILD_COMMAND     ./b2 install variant=release ${BOOST_DEFINE} stage cxxflags=-fPIC cflags=-fPIC link=static runtime-link=static threading=multi --exec-prefix=${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/boost-install --prefix=${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/boost-install -a
     INSTALL_COMMAND   ""
     UPDATE_COMMAND    ""
 )
