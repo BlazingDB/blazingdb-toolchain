@@ -65,12 +65,10 @@ install(FILES ${JITIFY_ROOT}/jitify.hpp DESTINATION include) # NOTE cudf related
 # Install the cmake modules to be used by the users/projects
 install(DIRECTORY ${CMAKE_SOURCE_DIR}/cmake/ DESTINATION lib/cmake)
 
-#unnecessary becouse arrow installation was alredy performed
+#unnecessary becouse arrow installation step was already performed
 #install(DIRECTORY ${PARQUET_ROOT} DESTINATION .)
 
 # Print the project summary
-#TODO cmake bug, it says blazingdb-protocol was not deteected but everything seems
-#fine (cmake test fail with link issues with pthreads_create)
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
 
 #END MAIN #
