@@ -1,15 +1,21 @@
 # Build
 
+
+
+```bash
 cd blazingdb-dependencies
 mkdir -p build
 cd build
 CUDACXX=/usr/local/cuda-9.2/bin/nvcc cmake -DPYTHON_LIBRARY=/home/percy/Applications/anaconda/conda/envs/blazing/lib/ -DPYTHON_INCLUDE_DIR=/home/percy/Applications/anaconda/conda/envs/blazing/include/python3.5m/ -DCMAKE_INSTALL_PREFIX=/home/tus_dependencies/ ..
 make -j8 install
+```
 
-
+NOTA:
 PYTHON_LIBRARY es donde esta libpython3.x.so
 PYTHON_INCLUDE_DIR es donde esta Python.h
 
+
+# TODO
 
 
 
