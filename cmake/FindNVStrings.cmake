@@ -33,7 +33,7 @@ set(NVSTRINGS_SEARCH_INCLUDE_DIR
 )
 
 find_path(NVSTRINGS_INCLUDE_DIR NVStrings.h
-    PATHS ${NVSTRINGS_SEARCH_INCLUDE_DIR}
+    PATHS ${NVSTRINGS_SEARCH_INCLUDE_DIR}/nvstrings
     NO_DEFAULT_PATH
     DOC "Path to libnvstrings headers"
 )

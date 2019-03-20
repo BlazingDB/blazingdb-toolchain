@@ -69,7 +69,7 @@ else()
     #configure_file(${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/libgdf-src/cpp/src/rmm/rmm.h ${LIBGDF_ROOT}/include/rmm.h COPYONLY)
 endif()
 
-set(NVSTRINGS_LIBDIR ${NVSTRINGS_INSTALL_DIR}/lib/)
+set(NVSTRINGS_LIBDIR ${LIBGDF_ROOT}/lib/)
 link_directories(${NVSTRINGS_LIBDIR})
 
 find_package(LibGDF REQUIRED)

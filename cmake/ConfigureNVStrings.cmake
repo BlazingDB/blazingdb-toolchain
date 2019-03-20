@@ -6,6 +6,20 @@
 # BEGIN macros
 
 macro(CONFIGURE_GPU_NVSTRINGS_EXTERNAL_PROJECT)
+    set(ENV{CUDACXX} $ENV{CUDACXX})
+
+    set(NVSTRINGS_CMAKE_ARGS
+        " -DPYTHON_LIBRARY=${PYTHON_LIBRARY}"
+        " -DPYTHON_INCLUDE_DIR=${PYTHON_INCLUDE_DIR}"
+    )
+
+    if(CXX_OLD_ABI)
+        # enable old ABI for C/C++
+        list(APPEND NVSTRINGS_CMAKE_ARGS " -DCMAKE_CXX11_ABI=OFF")
+    else()
+        list(APPEND NVSTRINGS_CMAKE_ARGS " -DCMAKE_CXX11_ABI=ON")
+    endif()
+
     # Download and unpack nvstrings at configure time
     configure_file(${CMAKE_CURRENT_LIST_DIR}/NVStrings.CMakeLists.txt.cmake ${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/nvstrings-download/CMakeLists.txt)
 
@@ -44,10 +58,10 @@ if (NVSTRINGS_INSTALL_DIR)
 else()
     message(STATUS "NVSTRINGS_INSTALL_DIR not defined, it will be built from sources")
     configure_gpu_nvstrings_external_project()
-    set(NVSTRINGS_ROOT "${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/nvstrings-src/")
+    set(NVSTRINGS_ROOT "${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/nvstrings-install/")
 endif()
 
-set(NVSTRINGS_LIBDIR ${NVSTRINGS_INSTALL_DIR}/lib/)
+set(NVSTRINGS_LIBDIR ${NVSTRINGS_ROOT}/lib/)
 link_directories(${NVSTRINGS_LIBDIR})
 
 find_package(NVStrings REQUIRED)

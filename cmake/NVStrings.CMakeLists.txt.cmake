@@ -12,10 +12,14 @@ project(nvstrings-download NONE)
 include(ExternalProject)
 
 ExternalProject_Add(nvstrings
-    URL               https://anaconda.org/nvidia/nvstrings/0.2.0/download/linux-64/nvstrings-0.2.0-cuda9.2_py36_0.tar.bz2
+    GIT_REPOSITORY    https://github.com/rapidsai/custrings.git
+    GIT_TAG           branch-0.3
+    SOURCE_SUBDIR     cpp
     SOURCE_DIR        "${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/nvstrings-src"
-    PATCH_COMMAND     bash ${CMAKE_SOURCE_DIR}/scripts/patch_nvstrings.sh ${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/nvstrings-src
-    CONFIGURE_COMMAND ""
-    BUILD_COMMAND     ""
-    INSTALL_COMMAND   ""
+    BINARY_DIR        "${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/nvstrings-build"
+    INSTALL_DIR       "${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/nvstrings-install"
+    UPDATE_COMMAND    ""
+    CMAKE_ARGS        -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
+                      -DCMAKE_INSTALL_PREFIX:PATH=${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/nvstrings-install
+                      ${NVSTRINGS_CMAKE_ARGS}
 )
