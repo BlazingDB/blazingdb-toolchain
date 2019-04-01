@@ -38,10 +38,19 @@ include(ConfigureSnappy)
 include(ConfigureThrift)
 include(ConfigureArrow)
 include(ConfigureParquet)
+include(ConfigurePython3)
 include(ConfigureNVStrings) # NOTE cudf related
 include(ConfigureJitify) # NOTE cudf related
 
 #find_package(Threads)
+
+# NOTE Optional build: cudf
+
+# NOTE Optional build: BlazingSQL stack
+#message(FATAL_ERROR "AAAAAAAAAAAAAAAAAAAA@")
+#include(ConfigureBlazingDBIO)
+
+
 
 # BEGIN MAIN #
 
