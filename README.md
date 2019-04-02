@@ -31,7 +31,7 @@ CMake suite maintained and supported by Kitware (kitware.com/cmake).
 ```
 
 **NOTE:**
-**Never build CMake** use always the official binary releases!!!
+**Never build CMake**. Use **always** the **official binary** releases!!!
 
 ## System Requirements
 
