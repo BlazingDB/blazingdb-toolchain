@@ -68,7 +68,14 @@ message(STATUS "Python3_ROOT_DIR: ${Python3_ROOT_DIR}")
 
 # TODO percy version as arg
 set(Python_ADDITIONAL_VERSIONS "3.6")
-set(PYTHON_LIBRARY ${Python3_ROOT_DIR}/lib/libpython3.6m.a)
+
+# WARNING never use the static library becouse you will get this error:
+# CMakeFiles/pyniNVStrings.dir/build.make:87: recipe for target 'pyniNVStrings.so' failed
+# lto1: fatal error: bytecode stream generated with LTO version 6.0 instead of the expected 4.1
+# compilation terminated.
+# lto-wrapper: fatal error: /usr/bin/c++ returned 1 exit status
+set(PYTHON_LIBRARY ${Python3_ROOT_DIR}/lib/libpython3.6m.so)
+
 set(PYTHON_INCLUDE_DIR ${Python3_ROOT_DIR}/include/python3.6m)
 
 find_package(PythonLibs REQUIRED)
