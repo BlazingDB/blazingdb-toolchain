@@ -42,6 +42,16 @@ macro(CONFIGURE_GPU_NVSTRINGS_EXTERNAL_PROJECT)
     if(result)
         message(FATAL_ERROR "Build step for nvstrings failed: ${result}")
     endif()
+
+    execute_process(
+        COMMAND bash ${CMAKE_SOURCE_DIR}/scripts/patch_nvstrings.sh ${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/nvstrings-install/
+        RESULT_VARIABLE result
+        WORKING_DIRECTORY ${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/nvstrings-download/
+    )
+
+    if(result)
+        message(FATAL_ERROR "Patch step for nvstrings failed: ${result}")
+    endif()
 endmacro()
 
 # END macros

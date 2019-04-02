@@ -45,6 +45,7 @@ include(ConfigureJitify) # NOTE cudf related
 #find_package(Threads)
 
 # NOTE Optional build: cudf
+#include(ConfigureLibGDF)
 
 # NOTE Optional build: BlazingSQL stack
 #message(FATAL_ERROR "AAAAAAAAAAAAAAAAAAAA@")
