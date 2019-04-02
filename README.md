@@ -1,9 +1,39 @@
 # BlazingSQL dependencies
 
 # Requirements
+
+## Compiler
+
 - g++-5.4
-- CMake 3.11+
+
+## Builders
+
 - Make
+
+If you want to use Ninja (which is optional) on Ubuntu 16.04 then just run:
+
+```bash
+apt-get -y install ninja-build
+```
+
+## CMake
+
+We need at least CMake version 3.12+. Follow these commands to install CMake:
+
+```bash
+wget https://github.com/Kitware/CMake/releases/download/v3.14.1/cmake-3.14.1-Linux-x86_64.tar.gz
+tar xvf cmake-3.14.1-Linux-x86_64.tar.gz 
+# Add cmake-3.14.1-Linux-x86_64/bin to your PATH
+cmake --version
+cmake version 3.14.1
+
+CMake suite maintained and supported by Kitware (kitware.com/cmake).
+```
+
+NOTE:
+*Never build CMake* use always the official binary releases!!!
+
+## System Requirements
 
 And also make sure to install these system requirements:
 ```bash
@@ -24,7 +54,6 @@ apt-get install -y libssl-dev libtool bison flex pkg-config
 ```
 
 # Build
-
 
 ```bash
 cd blazingdb-dependencies
