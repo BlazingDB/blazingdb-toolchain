@@ -30,8 +30,8 @@ cmake version 3.14.1
 CMake suite maintained and supported by Kitware (kitware.com/cmake).
 ```
 
-NOTE:
-*Never build CMake* use always the official binary releases!!!
+**NOTE:**
+**Never build CMake** use always the official binary releases!!!
 
 ## System Requirements
 
@@ -63,7 +63,7 @@ CUDACXX=/usr/local/cuda-9.2/bin/nvcc cmake -DCMAKE_INSTALL_PREFIX=/foo/blazingsq
 make -j8 install
 ```
 
-NOTE:
+**NOTE:**
 If you want to build the dependencies using the old C++ ABI, run the cmake command like this:
 
 ```bash
