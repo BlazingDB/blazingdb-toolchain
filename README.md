@@ -69,3 +69,14 @@ If you want to build the dependencies using the old C++ ABI, run the cmake comma
 ```bash
 CUDACXX=/usr/local/cuda-9.2/bin/nvcc cmake -DCXX_OLD_ABI=ON -DCMAKE_INSTALL_PREFIX=/foo/blazingsql/dependencies/ ..
 ```
+
+## Optional Packages
+All the packages are installed by default.
+
+In case the custring (NVString) package is not required, add the cmake parameter 'ENABLE_CUSTRINGS' as follow:
+```bash
+cmake -DENABLE_CUSTRINGS=OFF -DCMAKE_INSTALL_PREFIX=/folder/dependencies/ ..
+```
+
+# List of Packages
+* custring (NVString) - `git@github.com:rapidsai/custrings.git`
