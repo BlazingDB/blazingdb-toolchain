@@ -10,6 +10,9 @@ project(blazingdb-dependencies C CXX CUDA)
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake/" ${CMAKE_MODULE_PATH})
 message(STATUS "CMAKE_MODULE_PATH:" "${CMAKE_MODULE_PATH}")
 
+# TODO percy
+#include(DefineVersions)
+
 # NOTE First step
 include(ConfigureBlazingDBHostCompiler)
 
