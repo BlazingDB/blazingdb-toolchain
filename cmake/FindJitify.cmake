@@ -1,38 +1,60 @@
-# Licensed to the Apache Software Foundation (ASF) under one
-# or more contributor license agreements.  See the NOTICE file
-# distributed with this work for additional information
-# regarding copyright ownership.  The ASF licenses this file
-# to you under the Apache License, Version 2.0 (the
-# "License"); you may not use this file except in compliance
-# with the License.  You may obtain a copy of the License at
-#
-#   http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing,
-# software distributed under the License is distributed on an
-# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-# KIND, either express or implied.  See the License for the
-# specific language governing permissions and limitations
-# under the License.
+#=============================================================================
+# Copyright 2019 BlazingDB, Inc.
+#     Copyright 2019 Percy Camilo Triveño Aucahuasi <percy@blazingdb.com>
+#=============================================================================
 
-# - Find JITIFY (jitify.h, libjitify.a, libjitify.so, and libjitify.so.0)
+# - Find BlazingDB protocol C++ library libblazingdb-io (libblazingdb-io.a)
+# JITIFY_ROOT hints the location
+#
 # This module defines
-#  JITIFY_INCLUDE_DIR, directory containing headers
-#  JITIFY_SHARED_LIB, path to libjitify shared library
-#  JITIFY_STATIC_LIB, path to libjitify static library
-#  JITIFY_FOUND, whether jitify has been found
+# JITIFY_FOUND
+# JITIFY_INCLUDEDIR Preferred include directory e.g. <prefix>/include
+# JITIFY_INCLUDE_DIR, directory containing blazingdb-io headers
+# JITIFY_LIBS, blazingdb-io libraries
+# JITIFY_LIBDIR, directory containing blazingdb-io libraries
+# JITIFY_STATIC_LIB, path to blazingdb-io.a
+# blazingdb-io - static library
 
-if( NOT "${JITIFY_HOME}" STREQUAL "")
-    file( TO_CMAKE_PATH "${JITIFY_HOME}" _native_path )
-    list( APPEND _jitify_roots ${_native_path} )
-elseif ( JITIFY_HOME )
-    list( APPEND _jitify_roots ${JITIFY_HOME} )
+# If JITIFY_ROOT is not defined try to search in the default system path
+if ("${JITIFY_ROOT}" STREQUAL "")
+    set(JITIFY_ROOT "/usr")
 endif()
 
-find_path(JITIFY_INCLUDE_DIR NAMES jitify.hpp
-  PATHS ${_jitify_roots}
-  NO_DEFAULT_PATH
-  PATH_SUFFIXES "include" )
+set(JITIFY_SEARCH_LIB_PATH
+  ${JITIFY_ROOT}/lib
+  ${JITIFY_ROOT}/lib/x86_64-linux-gnu
+  ${JITIFY_ROOT}/lib64
+  ${JITIFY_ROOT}/build
+)
 
-include(FindPackageHandleStandardArgs)
-find_package_handle_standard_args(JITIFY REQUIRED_VARS JITIFY_INCLUDE_DIR)
+set(JITIFY_SEARCH_INCLUDE_DIR
+  ${JITIFY_ROOT}/include/
+)
+
+find_path(JITIFY_INCLUDE_DIR jitify.hpp
+    PATHS ${JITIFY_SEARCH_INCLUDE_DIR}
+    NO_DEFAULT_PATH
+    DOC "Path to jitify headers"
+)
+
+if (NOT JITIFY_INCLUDE_DIR)
+    message(FATAL_ERROR "jitify includes NOT found. "
+      "Looked for headers in ${JITIFY_SEARCH_INCLUDE_DIR}")
+    set(JITIFY_FOUND FALSE)
+else()
+    set(JITIFY_INCLUDE_DIR ${JITIFY_ROOT}/include/)
+    set(JITIFY_INCLUDEDIR ${JITIFY_ROOT}/include/)
+    set(JITIFY_LIBDIR ${JITIFY_ROOT}/build) # TODO percy make this part cross platform
+    set(JITIFY_FOUND TRUE)
+    #add_library(blazingdb-io STATIC IMPORTED)
+    #set_target_properties(blazingdb-io PROPERTIES IMPORTED_LOCATION "${JITIFY_STATIC_LIB}")
+endif ()
+
+mark_as_advanced(
+  JITIFY_FOUND
+  JITIFY_INCLUDEDIR
+  JITIFY_INCLUDE_DIR
+  #JITIFY_LIBS
+  JITIFY_STATIC_LIB
+  #blazingdb-io
+)
