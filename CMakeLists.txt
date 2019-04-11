@@ -10,6 +10,9 @@ project(blazingdb-dependencies C CXX CUDA)
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake/" ${CMAKE_MODULE_PATH})
 message(STATUS "CMAKE_MODULE_PATH:" "${CMAKE_MODULE_PATH}")
 
+# TODO percy
+#include(DefineVersions)
+
 # NOTE First step
 include(ConfigureBlazingDBHostCompiler)
 
@@ -39,8 +42,18 @@ include(ConfigureThrift)
 include(ConfigureArrow)
 include(ConfigureParquet)
 include(ConfigurePython3)
-include(ConfigureNVStrings) # NOTE cudf related
+
+## custrings - git@github.com:rapidsai/custrings.git
+option(ENABLE_CUSTRINGS "Add the custring (rapidsai) library" ON)
+if(ENABLE_CUSTRINGS)
+	message(STATUS "Enable the custring (rapidsai) library")
+	include(ConfigureNVStrings)
+else()
+	message(STATUS "Disable the custring (rapidsai) library")
+endif()
+
 include(ConfigureJitify) # NOTE cudf related
+
 
 #find_package(Threads)
 
@@ -54,7 +67,6 @@ include(ConfigureJitify) # NOTE cudf related
 
 
 # BEGIN MAIN #
-
 # NOTE use USE_SOURCE_PERMISSIONS to preserve executable file permisions (e.g. flatc, etc)
 install(DIRECTORY ${GTEST_ROOT} DESTINATION . USE_SOURCE_PERMISSIONS)
 install(DIRECTORY ${GBENCHMARK_ROOT} DESTINATION . USE_SOURCE_PERMISSIONS)
@@ -70,7 +82,12 @@ install(DIRECTORY ${SNAPPY_ROOT} DESTINATION . USE_SOURCE_PERMISSIONS)
 install(DIRECTORY ${THRIFT_ROOT} DESTINATION . USE_SOURCE_PERMISSIONS)
 install(DIRECTORY ${ARROW_ROOT} DESTINATION . USE_SOURCE_PERMISSIONS)
 install(DIRECTORY ${PYTHON3_ROOT} DESTINATION . USE_SOURCE_PERMISSIONS)
-install(DIRECTORY ${NVSTRINGS_ROOT} DESTINATION . USE_SOURCE_PERMISSIONS) # NOTE cudf related
+
+## custrings - git@github.com:rapidsai/custrings.git
+if(ENABLE_CUSTRINGS)
+    install(DIRECTORY ${NVSTRINGS_ROOT} DESTINATION . USE_SOURCE_PERMISSIONS)
+endif()
+
 install(FILES ${JITIFY_ROOT}/jitify.hpp DESTINATION include) # NOTE cudf related
 
 # Install the cmake modules to be used by the users/projects

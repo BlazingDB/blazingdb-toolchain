@@ -53,17 +53,8 @@ else()
     set(RAPIDJSON_ROOT "${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/rapidjson-install/")
 endif()
 
-find_package(RapidJSON 1.1 REQUIRED)
+find_package(RapidJSON REQUIRED)
 set_package_properties(RapidJSON PROPERTIES TYPE REQUIRED PURPOSE "Fast JSON parser/generator for C++ with both SAX/DOM style API." URL "http://rapidjson.org/")
-
-if (RAPIDJSON_INCLUDE_DIRS)
-    # LOCAL means that we are shipping RapidJSON inside our src/lib folder
-    set(RAPIDJSON_VERSION LOCAL_1.1)
-
-    #NOTE don't include RAPIDJSON_INCLUDE_DIRS, force Simplicty to use #include "thirdparty/rapidjson/"
-else()
-    message(FATAL_ERROR "RapidJSON 1.1 library not found, please check your settings.")
-endif()
 
 message(STATUS "rapidjson found in ${RAPIDJSON_ROOT}")
 
