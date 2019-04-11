@@ -55,7 +55,7 @@ endmacro()
 
 if (JITIFY_INSTALL_DIR)
     message(STATUS "JITIFY_INSTALL_DIR defined, it will use vendor version from ${JITIFY_INSTALL_DIR}")
-    set(JITIFY_ROOT "${JITIFY_INSTALL_DIR}")
+    set(JITIFY_ROOT "${JITIFY_INSTALL_DIR}/include")
 else()
     message(STATUS "JITIFY_INSTALL_DIR not defined, it will be built from sources")
     CONFIGURE_JITIFY_EXTERNAL_PROJECT()
