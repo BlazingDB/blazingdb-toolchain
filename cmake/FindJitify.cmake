@@ -28,7 +28,7 @@ set(JITIFY_SEARCH_LIB_PATH
 )
 
 set(JITIFY_SEARCH_INCLUDE_DIR
-  ${JITIFY_ROOT}/include/
+  ${JITIFY_ROOT}
 )
 
 find_path(JITIFY_INCLUDE_DIR jitify.hpp
@@ -42,8 +42,8 @@ if (NOT JITIFY_INCLUDE_DIR)
       "Looked for headers in ${JITIFY_SEARCH_INCLUDE_DIR}")
     set(JITIFY_FOUND FALSE)
 else()
-    set(JITIFY_INCLUDE_DIR ${JITIFY_ROOT}/include/)
-    set(JITIFY_INCLUDEDIR ${JITIFY_ROOT}/include/)
+    set(JITIFY_INCLUDE_DIR ${JITIFY_ROOT}/)
+    set(JITIFY_INCLUDEDIR ${JITIFY_ROOT}/)
     set(JITIFY_LIBDIR ${JITIFY_ROOT}/build) # TODO percy make this part cross platform
     set(JITIFY_FOUND TRUE)
     #add_library(blazingdb-io STATIC IMPORTED)
