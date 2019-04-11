@@ -52,7 +52,7 @@ else()
 	message(STATUS "Disable the custring (rapidsai) library")
 endif()
 
-#include(ConfigureJitify) # NOTE cudf related
+include(ConfigureJitify) # NOTE cudf related
 
 
 #find_package(Threads)
@@ -85,10 +85,10 @@ install(DIRECTORY ${PYTHON3_ROOT} DESTINATION . USE_SOURCE_PERMISSIONS)
 
 ## custrings - git@github.com:rapidsai/custrings.git
 if(ENABLE_CUSTRINGS)
-	install(DIRECTORY ${NVSTRINGS_ROOT} DESTINATION . USE_SOURCE_PERMISSIONS)
+    install(DIRECTORY ${NVSTRINGS_ROOT} DESTINATION . USE_SOURCE_PERMISSIONS)
 endif()
 
-#install(FILES ${JITIFY_ROOT}/jitify.hpp DESTINATION include) # NOTE cudf related
+install(FILES ${JITIFY_ROOT}/jitify.hpp DESTINATION include) # NOTE cudf related
 
 # Install the cmake modules to be used by the users/projects
 install(DIRECTORY ${CMAKE_SOURCE_DIR}/cmake/ DESTINATION lib/cmake)
