@@ -43,17 +43,16 @@ include(ConfigureArrow)
 include(ConfigureParquet)
 include(ConfigurePython3)
 
-## custrings - git@github.com:rapidsai/custrings.git
-option(ENABLE_CUSTRINGS "Add the custring (rapidsai) library" ON)
-if(ENABLE_CUSTRINGS)
-	message(STATUS "Enable the custring (rapidsai) library")
-	include(ConfigureNVStrings)
-else()
-	message(STATUS "Disable the custring (rapidsai) library")
-endif()
-
 include(ConfigureJitify) # NOTE cudf related
 
+## custrings - git@github.com:rapidsai/custrings.git
+option(ENABLE_CUSTRINGS "Add the custring (rapidsai) library" OFF)
+if(ENABLE_CUSTRINGS)
+    message(STATUS "Enable the custring (rapidsai) library")
+    include(ConfigureNVStrings)
+else()
+    message(STATUS "Disable the custring (rapidsai) library")
+endif()
 
 #find_package(Threads)
 
@@ -63,8 +62,6 @@ include(ConfigureJitify) # NOTE cudf related
 # NOTE Optional build: BlazingSQL stack
 #message(FATAL_ERROR "AAAAAAAAAAAAAAAAAAAA@")
 #include(ConfigureBlazingDBIO)
-
-
 
 # BEGIN MAIN #
 # NOTE use USE_SOURCE_PERMISSIONS to preserve executable file permisions (e.g. flatc, etc)
