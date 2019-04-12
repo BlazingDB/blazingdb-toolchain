@@ -29,7 +29,7 @@ ExternalProject_Add(googletest
     BINARY_DIR        "${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/googletest-build"
     INSTALL_DIR       "${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/googletest-install"
     UPDATE_COMMAND    ""
-    CMAKE_ARGS        -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
+    CMAKE_ARGS        -DCMAKE_BUILD_TYPE=${GOOGLETEST_BUILD_TYPE}
                       -DCMAKE_INSTALL_PREFIX:PATH=${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/googletest-install
                       ${GOOGLETEST_CMAKE_ARGS}
 )

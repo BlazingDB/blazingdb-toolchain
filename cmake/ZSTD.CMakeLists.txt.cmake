@@ -30,6 +30,6 @@ ExternalProject_Add(zstd
     INSTALL_DIR       "${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/zstd-install"
     UPDATE_COMMAND    ""
     CMAKE_ARGS        ${ZSTD_CMAKE_ARGS}
-                      -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
+                      -DCMAKE_BUILD_TYPE=${ZSTD_BUILD_TYPE}
                       -DCMAKE_INSTALL_PREFIX=${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/zstd-install
 )

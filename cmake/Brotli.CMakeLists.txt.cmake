@@ -29,6 +29,6 @@ ExternalProject_Add(brotli
     INSTALL_DIR       "${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/brotli-install"
     UPDATE_COMMAND    ""
     CMAKE_ARGS        -DCMAKE_INSTALL_PREFIX=${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/brotli-install
-                      -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
+                      -DCMAKE_BUILD_TYPE=${BROTLI_BUILD_TYPE}
                       ${BROTLI_CMAKE_ARGS}
 )

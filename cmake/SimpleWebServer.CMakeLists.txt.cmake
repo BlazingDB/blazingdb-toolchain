@@ -18,7 +18,7 @@ ExternalProject_Add(simplewebserver
     BINARY_DIR      "${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/simplewebserver-build"
     INSTALL_DIR     "${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/simplewebserver-install"
     UPDATE_COMMAND  ""
-    CMAKE_ARGS      -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
+    CMAKE_ARGS      -DCMAKE_BUILD_TYPE=${SIMPLEWEBSERVER_BUILD_TYPE}
                     -DCMAKE_INSTALL_PREFIX:PATH=${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/simplewebserver-install
                     ${SIMPLEWEBSERVER_CMAKE_ARGS}
 )
