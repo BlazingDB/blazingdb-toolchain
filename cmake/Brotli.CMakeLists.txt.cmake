@@ -22,8 +22,8 @@ project(brotli-download NONE)
 include(ExternalProject)
 
 ExternalProject_Add(brotli
-    GIT_REPOSITORY    https://github.com/google/brotli.git
-    GIT_TAG           v0.6.0
+    GIT_REPOSITORY    ${BROTLI_GIT_REPOSITORY}
+    GIT_TAG           ${BROTLI_GIT_TAG}
     SOURCE_DIR        "${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/brotli-src"
     BINARY_DIR        "${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/brotli-build"
     INSTALL_DIR       "${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/brotli-install"

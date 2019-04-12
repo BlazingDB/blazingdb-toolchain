@@ -22,8 +22,8 @@ project(lz4-download NONE)
 include(ExternalProject)
 
 ExternalProject_Add(lz4
-    GIT_REPOSITORY    https://github.com/lz4/lz4.git
-    GIT_TAG           v1.7.5
+    GIT_REPOSITORY    ${LZ4_GIT_REPOSITORY}
+    GIT_TAG           ${LZ4_GIT_TAG}
     SOURCE_DIR        "${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/lz4-src"
     BUILD_IN_SOURCE   1
     INSTALL_DIR       "${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/lz4-install"

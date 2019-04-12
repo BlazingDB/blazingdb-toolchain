@@ -23,7 +23,7 @@ include(ExternalProject)
 
 # NOTE build Boost with old C++ ABI _GLIBCXX_USE_CXX11_ABI=0 and with -fPIC
 ExternalProject_Add(boost
-    URL               http://archive.ubuntu.com/ubuntu/pool/main/b/boost1.58/boost1.58_1.58.0+dfsg.orig.tar.gz
+    URL               ${BOOST_URL}
     DOWNLOAD_DIR      "${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/boost-download"
     PREFIX            "${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/boost-src"
     BUILD_IN_SOURCE   1

@@ -16,8 +16,8 @@ set(FLATBUFFERS_VERSION 02a7807dd8d26f5668ffbbec0360dc107bbfabd5)
 # NOTE Always build flatbuffers in release mode and with -fPIC
 
 ExternalProject_Add(flatbuffers
-    GIT_REPOSITORY    https://github.com/google/flatbuffers.git
-    GIT_TAG           ${FLATBUFFERS_VERSION}
+    GIT_REPOSITORY    ${FLATBUFFERS_GIT_REPOSITORY}
+    GIT_TAG           ${FLATBUFFERS_GIT_TAG}
     SOURCE_DIR        "${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/flatbuffers-src"
     BINARY_DIR        "${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/flatbuffers-build"
     INSTALL_DIR       "${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/flatbuffers-install"

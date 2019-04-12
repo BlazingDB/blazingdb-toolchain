@@ -11,10 +11,9 @@ project(simplewebserver-download NONE)
 
 include(ExternalProject)
 
-# NOTE the commit 3f8fcc0c311e8d7d2a13aa34253778bc8021ac14 is the stable release v2.1.1
 ExternalProject_Add(simplewebserver
-    GIT_REPOSITORY  https://gitlab.com/eidheim/Simple-Web-Server.git
-    GIT_TAG         3f8fcc0c311e8d7d2a13aa34253778bc8021ac14
+    GIT_REPOSITORY  ${SIMPLEWEBSERVER_GIT_REPOSITORY}
+    GIT_TAG         ${SIMPLEWEBSERVER_GIT_TAG}
     SOURCE_DIR      "${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/simplewebserver-src"
     BINARY_DIR      "${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/simplewebserver-build"
     INSTALL_DIR     "${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/simplewebserver-install"

@@ -11,10 +11,9 @@ project(rapidjson-download NONE)
 
 include(ExternalProject)
 
-# NOTE the commit f54b0e47a08782a6131cc3d60f94d038fa6e0a51 is the stable release v1.1.0
 ExternalProject_Add(rapidjson
-    GIT_REPOSITORY  https://github.com/Tencent/rapidjson.git
-    GIT_TAG         f54b0e47a08782a6131cc3d60f94d038fa6e0a51
+    GIT_REPOSITORY  ${RAPIDJSON_GIT_REPOSITORY}
+    GIT_TAG         ${RAPIDJSON_GIT_TAG}
     SOURCE_DIR      "${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/rapidjson-src"
     BINARY_DIR      "${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/rapidjson-build"
     INSTALL_DIR     "${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/rapidjson-install"

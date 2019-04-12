@@ -22,8 +22,8 @@ project(jitify-download NONE)
 include(ExternalProject)
 
 ExternalProject_Add(jitify
-    GIT_REPOSITORY    https://github.com/NVIDIA/jitify.git
-    GIT_TAG           ebcaeee01f4156e846cef553f38ca8dd02deae2b
+    GIT_REPOSITORY    ${JITIFY_GIT_REPOSITORY}
+    GIT_TAG           ${JITIFY_GIT_TAG}
     SOURCE_DIR        "${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/jitify-src"
     CONFIGURE_COMMAND ""
     BUILD_COMMAND     ""
