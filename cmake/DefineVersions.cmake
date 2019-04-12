@@ -33,7 +33,6 @@ macro(DEFINE_DEFAULT_BUILD_TYPE
     endif()
 endmacro()
 
-
 macro(DEFINE_DEFAULT_GIT_PACKAGE
     component_name
     default_git_repository
