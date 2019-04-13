@@ -133,14 +133,14 @@ define_default_git_package(
     "GOOGLETEST"
     "https://github.com/google/googletest.git"
     "master"
-    "Debug"
+    "Release"
 )
 
 define_default_git_package(
     "GOOGLEBENCHMARK"
     "https://github.com/google/benchmark.git"
     "v1.4.1"
-    "Debug"
+    "Release"
 )
 
 define_default_generic_package(
