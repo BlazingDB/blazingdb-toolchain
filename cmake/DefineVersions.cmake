@@ -233,11 +233,13 @@ define_default_git_package(
     "Release"
 )
 
-define_default_git_package(
-    "NVSTRINGS"
-    "https://github.com/rapidsai/custrings.git"
-    "branch-0.4"
-    "Release"
-)
+if(ENABLE_CUSTRINGS)
+    define_default_git_package(
+        "NVSTRINGS"
+        "https://github.com/rapidsai/custrings.git"
+        "branch-0.4"
+        "Release"
+    )
+endif()
 
 # END MAIN #
