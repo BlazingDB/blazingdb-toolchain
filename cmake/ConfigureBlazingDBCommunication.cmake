@@ -14,7 +14,7 @@ macro(CONFIGURE_BLAZINGDB_COMMUNICATION_EXTERNAL_PROJECT)
     endif()
 
     message(STATUS "Using BLAZINGDB_COMMUNICATION_BRANCH: ${BLAZINGDB_COMMUNICATION_BRANCH}")
-TODOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO esta var manda a templates y penle rapidjson y webservereso
+
     # NOTE percy c.gonzales if you want to pass other RAL CMAKE_CXX_FLAGS into this dependency add it by harcoding
     set(BLAZINGDB_COMMUNICATION_CMAKE_ARGS
         " -DGOOGLETEST_INSTALL_DIR=${GOOGLETEST_INSTALL_DIR}"
