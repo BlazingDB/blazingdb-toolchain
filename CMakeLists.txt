@@ -10,6 +10,9 @@ project(blazingdb-dependencies C CXX CUDA)
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake/" ${CMAKE_MODULE_PATH})
 message(STATUS "CMAKE_MODULE_PATH:" "${CMAKE_MODULE_PATH}")
 
+## custrings - git@github.com:rapidsai/custrings.git
+option(ENABLE_CUSTRINGS "Add the custring (rapidsai) library" OFF)
+
 # Parse the COMPONENT_VERSION and the component download URLs
 include(DefineVersions)
 
@@ -45,8 +48,6 @@ include(ConfigurePython3)
 
 include(ConfigureJitify) # NOTE cudf related
 
-## custrings - git@github.com:rapidsai/custrings.git
-option(ENABLE_CUSTRINGS "Add the custring (rapidsai) library" OFF)
 if(ENABLE_CUSTRINGS)
     message(STATUS "Enable the custring (rapidsai) library")
     include(ConfigureNVStrings)
