@@ -71,9 +71,6 @@ else()
     set(NVSTRINGS_ROOT "${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/nvstrings-install/")
 endif()
 
-set(NVSTRINGS_LIBDIR ${NVSTRINGS_ROOT}/lib/)
-link_directories(${NVSTRINGS_LIBDIR})
-
 find_package(NVStrings REQUIRED)
 set_package_properties(NVStrings PROPERTIES TYPE REQUIRED
     PURPOSE "nvstrings is a C library for implementing common functionality for a GPU Data Frame."
@@ -84,6 +81,9 @@ if(NOT NVSTRINGS_FOUND)
 endif()
 
 message(STATUS "nvstrings found in ${NVSTRINGS_ROOT}")
+
+set(NVSTRINGS_LIBDIR ${NVSTRINGS_ROOT}/lib/)
+link_directories(${NVSTRINGS_LIBDIR})
 
 include_directories(${NVSTRINGS_INCLUDEDIR} ${NVSTRINGS_INCLUDE_DIR})
 # TODO percy seems cmake bug: we cannot define target dirs per cuda target
