@@ -13,7 +13,7 @@ include(ExternalProject)
 
 ExternalProject_Add(nvstrings
     GIT_REPOSITORY    https://github.com/rapidsai/custrings.git
-    GIT_TAG           branch-0.4
+    GIT_TAG           657f8a91de54afc6e2ab9154af5666d7cf60c5aa
     SOURCE_SUBDIR     cpp
     SOURCE_DIR        "${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/nvstrings-src"
     BINARY_DIR        "${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/nvstrings-build"
