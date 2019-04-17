@@ -223,7 +223,7 @@ define_default_git_package(
 )
 
 define_default_python_package(
-    "3.6"
+    "3.7"
 )
 
 define_default_git_package(
