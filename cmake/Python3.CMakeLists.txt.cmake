@@ -21,9 +21,8 @@ project(python-download NONE)
 
 include(ExternalProject)
 
-# TODO percy arh and version vars/args
 ExternalProject_Add(python3
-    URL               https://anaconda.org/conda-forge/python/3.6.7/download/linux-64/python-3.6.7-h381d211_1004.tar.bz2
+    URL               ${PYTHON3_URL}
     SOURCE_DIR        "${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/python3-install"
     CONFIGURE_COMMAND ""
     BUILD_COMMAND     ""

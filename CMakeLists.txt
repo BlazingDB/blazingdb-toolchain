@@ -10,8 +10,11 @@ project(blazingdb-dependencies C CXX CUDA)
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake/" ${CMAKE_MODULE_PATH})
 message(STATUS "CMAKE_MODULE_PATH:" "${CMAKE_MODULE_PATH}")
 
-# TODO percy
-#include(DefineVersions)
+## custrings - git@github.com:rapidsai/custrings.git
+option(ENABLE_CUSTRINGS "Add the custring (rapidsai) library" OFF)
+
+# Parse the COMPONENT_VERSION and the component download URLs
+include(DefineVersions)
 
 # NOTE First step
 include(ConfigureBlazingDBHostCompiler)
@@ -43,17 +46,14 @@ include(ConfigureArrow)
 include(ConfigureParquet)
 include(ConfigurePython3)
 
-## custrings - git@github.com:rapidsai/custrings.git
-option(ENABLE_CUSTRINGS "Add the custring (rapidsai) library" ON)
-if(ENABLE_CUSTRINGS)
-	message(STATUS "Enable the custring (rapidsai) library")
-	include(ConfigureNVStrings)
-else()
-	message(STATUS "Disable the custring (rapidsai) library")
-endif()
-
 include(ConfigureJitify) # NOTE cudf related
 
+if(ENABLE_CUSTRINGS)
+    message(STATUS "Enable the custring (rapidsai) library")
+    include(ConfigureNVStrings)
+else()
+    message(STATUS "Disable the custring (rapidsai) library")
+endif()
 
 #find_package(Threads)
 
@@ -63,8 +63,6 @@ include(ConfigureJitify) # NOTE cudf related
 # NOTE Optional build: BlazingSQL stack
 #message(FATAL_ERROR "AAAAAAAAAAAAAAAAAAAA@")
 #include(ConfigureBlazingDBIO)
-
-
 
 # BEGIN MAIN #
 # NOTE use USE_SOURCE_PERMISSIONS to preserve executable file permisions (e.g. flatc, etc)

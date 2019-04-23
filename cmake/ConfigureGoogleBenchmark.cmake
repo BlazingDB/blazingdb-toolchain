@@ -20,7 +20,6 @@
 macro(CONFIGURE_GOOGLEBENCHMARK_EXTERNAL_PROJECT)
     # NOTE percy c.gonzales if you want to pass other RAL CMAKE_CXX_FLAGS into this dependency add it by harcoding
     set(GOOGLEBENCHMARK_CMAKE_ARGS
-        " -DCMAKE_BUILD_TYPE=Release"
         " -DBENCHMARK_ENABLE_GTEST_TESTS=OFF")
 
     if(CXX_OLD_ABI)

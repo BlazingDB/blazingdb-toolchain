@@ -22,13 +22,13 @@ project(thrift-download NONE)
 include(ExternalProject)
 
 ExternalProject_Add(thrift
-    GIT_REPOSITORY    https://github.com/apache/thrift.git
-    GIT_TAG           0.11.0
+    GIT_REPOSITORY    ${THRIFT_GIT_REPOSITORY}
+    GIT_TAG           ${THRIFT_GIT_TAG}
     SOURCE_DIR        "${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/thrift-src"
     BINARY_DIR        "${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/thrift-build"
     INSTALL_DIR       "${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/thrift-install"
     UPDATE_COMMAND    ""
     CMAKE_ARGS        ${THRIFT_CMAKE_ARGS}
-                      -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
+                      -DCMAKE_BUILD_TYPE=${THRIFT_BUILD_TYPE}
                       -DCMAKE_INSTALL_PREFIX=${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/thrift-install
 )

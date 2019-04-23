@@ -22,14 +22,14 @@ project(zstd-download NONE)
 include(ExternalProject)
 
 ExternalProject_Add(zstd
-    GIT_REPOSITORY    https://github.com/facebook/zstd.git
-    GIT_TAG           v1.2.0
+    GIT_REPOSITORY    ${ZSTD_GIT_REPOSITORY}
+    GIT_TAG           ${ZSTD_GIT_TAG}
     SOURCE_DIR        "${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/zstd-src"
     SOURCE_SUBDIR     "build/cmake/"
     BINARY_DIR        "${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/zstd-build"
     INSTALL_DIR       "${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/zstd-install"
     UPDATE_COMMAND    ""
     CMAKE_ARGS        ${ZSTD_CMAKE_ARGS}
-                      -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
+                      -DCMAKE_BUILD_TYPE=${ZSTD_BUILD_TYPE}
                       -DCMAKE_INSTALL_PREFIX=${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/zstd-install
 )

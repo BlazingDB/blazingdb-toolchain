@@ -22,8 +22,8 @@ project(snappy-download NONE)
 include(ExternalProject)
 
 ExternalProject_Add(snappy
-    GIT_REPOSITORY    https://github.com/google/snappy.git
-    GIT_TAG           1.1.3
+    GIT_REPOSITORY    ${SNAPPY_GIT_REPOSITORY}
+    GIT_TAG           ${SNAPPY_GIT_TAG}
     SOURCE_DIR        "${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/snappy-src"
     BUILD_IN_SOURCE   1
     INSTALL_DIR       "${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/snappy-install"

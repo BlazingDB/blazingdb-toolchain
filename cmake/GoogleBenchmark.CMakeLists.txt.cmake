@@ -20,12 +20,13 @@ project(googlebenchmark-download NONE)
 
 include(ExternalProject)
 
-ExternalProject_Add(googleBenchmark
-    GIT_REPOSITORY    https://github.com/google/benchmark.git
-    GIT_TAG           v1.4.1
+ExternalProject_Add(googlebenchmark
+    GIT_REPOSITORY    ${GOOGLEBENCHMARK_GIT_REPOSITORY}
+    GIT_TAG           ${GOOGLEBENCHMARK_GIT_TAG}
     SOURCE_DIR        "${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/googlebenchmark-src"
     BINARY_DIR        "${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/googlebenchmark-build"
     INSTALL_DIR       "${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/googlebenchmark-install"
-    CMAKE_ARGS        -DCMAKE_INSTALL_PREFIX=${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/googlebenchmark-install
+    CMAKE_ARGS        -DCMAKE_BUILD_TYPE=${GOOGLEBENCHMARK_BUILD_TYPE}
+                      -DCMAKE_INSTALL_PREFIX=${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/googlebenchmark-install
                       ${GOOGLEBENCHMARK_CMAKE_ARGS}
 )

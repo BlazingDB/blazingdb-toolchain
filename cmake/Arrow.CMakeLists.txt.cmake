@@ -22,14 +22,14 @@ project(arrow-download NONE)
 include(ExternalProject)
 
 ExternalProject_Add(arrow
-    GIT_REPOSITORY    https://github.com/apache/arrow.git
-    GIT_TAG           apache-arrow-0.12.0
+    GIT_REPOSITORY    ${ARROW_GIT_REPOSITORY}
+    GIT_TAG           ${ARROW_GIT_TAG}
     SOURCE_DIR        "${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/arrow-src"
     SOURCE_SUBDIR     "cpp"
     BINARY_DIR        "${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/arrow-build"
     INSTALL_DIR       "${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/arrow-install"
     UPDATE_COMMAND    ""
-    CMAKE_ARGS        -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
+    CMAKE_ARGS        -DCMAKE_BUILD_TYPE=${ARROW_BUILD_TYPE}
                       ${ARROW_CMAKE_ARGS}
                       -DCMAKE_INSTALL_PREFIX=${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/arrow-install
 )
