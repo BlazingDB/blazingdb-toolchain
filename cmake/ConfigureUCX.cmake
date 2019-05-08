@@ -62,7 +62,7 @@ if (UCX_INSTALL_DIR)
 else()
     message(STATUS "UCX_INSTALL_DIR not defined, it will be built from sources")
     CONFIGURE_UCX_EXTERNAL_PROJECT()
-    set(UCX_ROOT "${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/UCX-install/")
+    set(UCX_ROOT "${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/ucx-install/")
 endif()
 
 set(UCX_HOME ${UCX_ROOT})
