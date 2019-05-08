@@ -25,10 +25,8 @@ ExternalProject_Add(ucx
     GIT_REPOSITORY    ${UCX_GIT_REPOSITORY}
     GIT_TAG           ${UCX_GIT_TAG}
     SOURCE_DIR        "${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/ucx-src"
-    SOURCE_SUBDIR     1
-    BINARY_DIR        "${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/ucx-build"
+    BUILD_IN_SOURCE   1
     INSTALL_DIR       "${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/ucx-install"
-
     CONFIGURE_COMMAND ./autogen.sh COMMAND ./configure --prefix=${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/ucx-install
     BUILD_COMMAND     ${CMAKE_MAKE_PROGRAM} -j4 install
     UPDATE_COMMAND    ""

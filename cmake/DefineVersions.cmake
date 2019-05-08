@@ -201,7 +201,7 @@ define_default_git_package(
     "Release"
 )
 
-define_default_ucx_package(
+define_default_git_package(
     "UCX"
     "https://github.com/openucx/ucx.git"
     "v1.5.1"

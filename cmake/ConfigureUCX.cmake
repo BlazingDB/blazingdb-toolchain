@@ -29,12 +29,12 @@ macro(CONFIGURE_UCX_EXTERNAL_PROJECT)
     endif()
 
     # Download and unpack UCX at configure time
-    configure_file(${CMAKE_CURRENT_LIST_DIR}/UCX.CMakeLists.txt.cmake ${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/UCX-download/CMakeLists.txt)
+    configure_file(${CMAKE_CURRENT_LIST_DIR}/UCX.CMakeLists.txt.cmake ${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/ucx-download/CMakeLists.txt)
 
     execute_process(
         COMMAND ${CMAKE_COMMAND} -G "${CMAKE_GENERATOR}" .
         RESULT_VARIABLE result
-        WORKING_DIRECTORY ${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/UCX-download/
+        WORKING_DIRECTORY ${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/ucx-download/
     )
 
     if(result)
@@ -44,7 +44,7 @@ macro(CONFIGURE_UCX_EXTERNAL_PROJECT)
     execute_process(
         COMMAND ${CMAKE_COMMAND} --build . -- -j8
         RESULT_VARIABLE result
-        WORKING_DIRECTORY ${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/UCX-download/
+        WORKING_DIRECTORY ${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/ucx-download/
     )
 
     if(result)
