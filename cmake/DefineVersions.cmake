@@ -201,6 +201,13 @@ define_default_git_package(
     "Release"
 )
 
+define_default_ucx_package(
+    "UCX"
+    "https://github.com/openucx/ucx.git"
+    "v1.5.1"
+    "Release"
+)
+
 define_default_git_package(
     "SNAPPY"
     "https://github.com/google/snappy.git"
@@ -232,6 +239,7 @@ define_default_git_package(
     "ebcaeee01f4156e846cef553f38ca8dd02deae2b"
     "Release"
 )
+
 
 if(ENABLE_CUSTRINGS)
     define_default_git_package(

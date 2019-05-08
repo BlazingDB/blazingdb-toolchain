@@ -45,6 +45,7 @@ include(ConfigureThrift)
 include(ConfigureArrow)
 include(ConfigureParquet)
 include(ConfigurePython3)
+include(ConfigureUCX)
 
 include(ConfigureJitify) # NOTE cudf related
 
