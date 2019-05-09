@@ -49,8 +49,30 @@ set(UCX_SEARCH_INCLUDE_DIR
 find_path(UCX_INCLUDE_DIR ucp.h
     PATHS ${UCX_SEARCH_INCLUDE_DIR}
     NO_DEFAULT_PATH
-    DOC "Path to rapidjson headers"
+    DOC "Path to ucx headers"
 )
+
+# todo change to .a library
+find_library(UCX_UCT_STATIC_LIB NAMES libuct.so
+    PATHS ${UCX_SEARCH_LIB_PATH}
+    NO_DEFAULT_PATH
+    DOC "Path to libuct dynamic library"
+)
+
+# todo change to .a library
+find_library(UCX_UCS_STATIC_LIB NAMES libucs.so
+    PATHS ${UCX_SEARCH_LIB_PATH}
+    NO_DEFAULT_PATH
+    DOC "Path to libucs dynamic library"
+)
+
+# todo change to .a library
+find_library(UCX_UCM_STATIC_LIB NAMES libucm.so
+    PATHS ${UCX_SEARCH_LIB_PATH}
+    NO_DEFAULT_PATH
+    DOC "Path to libucm dynamic library"
+)
+
 
 if (NOT UCX_INCLUDE_DIR)
     message(FATAL_ERROR "ucx includes and libraries NOT found. "
@@ -67,5 +89,7 @@ mark_as_advanced(
   UCX_FOUND
   UCX_INCLUDEDIR
   UCX_INCLUDE_DIR
-  UCX_STATIC_LIB
+  UCX_UCT_STATIC_LIB
+  UCX_UCS_STATIC_LIB
+  UCX_UCM_STATIC_LIB
 )
