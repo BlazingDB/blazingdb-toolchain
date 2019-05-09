@@ -27,8 +27,7 @@ ExternalProject_Add(ucx
     SOURCE_DIR        "${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/ucx-src"
     BUILD_IN_SOURCE   1
     INSTALL_DIR       "${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/ucx-install"
-    # CONFIGURE_COMMAND ./autogen.sh COMMAND ./configure --prefix=${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/ucx-install --with-cuda=/usr/local/cuda --with-gdrcopy=${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/ucx-install --without-java
-    CONFIGURE_COMMAND ./autogen.sh COMMAND ./configure --prefix=${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/ucx-install --with-cuda=/usr/local/cuda --without-java
+    CONFIGURE_COMMAND ./autogen.sh COMMAND ./configure --prefix=${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/ucx-install --with-cuda=/usr/local/cuda --with-gdrcopy=${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/gdr-install --without-java
     BUILD_COMMAND     ${CMAKE_MAKE_PROGRAM} -j4 install
     UPDATE_COMMAND    ""
 )
