@@ -209,6 +209,13 @@ define_default_git_package(
 )
 
 define_default_git_package(
+    "GDR"
+    "https://github.com/NVIDIA/gdrcopy.git"
+    "v1.3"
+    "Release"
+)
+
+define_default_git_package(
     "SNAPPY"
     "https://github.com/google/snappy.git"
     "1.1.3"

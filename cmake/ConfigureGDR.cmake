@@ -17,10 +17,7 @@
 
 # BEGIN macros
 
-macro(CONFIGURE_UCX_EXTERNAL_PROJECT)
-
-    set(ENV{GDR_HOME} ${GDR_ROOT})
-
+macro(CONFIGURE_GDR_EXTERNAL_PROJECT)
     if(CXX_OLD_ABI)
         # NOTE percy c.gonzales if you want to pass other RAL CMAKE_CXX_FLAGS into this dependency add it by harcoding
         set(ENV{CFLAGS} "-D_GLIBCXX_USE_CXX11_ABI=0 -fPIC -O2")
@@ -31,27 +28,27 @@ macro(CONFIGURE_UCX_EXTERNAL_PROJECT)
         set(ENV{CXXFLAGS} "-fPIC -O2")
     endif()
 
-    # Download and unpack UCX at configure time
-    configure_file(${CMAKE_CURRENT_LIST_DIR}/UCX.CMakeLists.txt.cmake ${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/ucx-download/CMakeLists.txt)
+    # Download and unpack GDR at configure time
+    configure_file(${CMAKE_CURRENT_LIST_DIR}/GDR.CMakeLists.txt.cmake ${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/gdr-download/CMakeLists.txt)
 
     execute_process(
         COMMAND ${CMAKE_COMMAND} -G "${CMAKE_GENERATOR}" .
         RESULT_VARIABLE result
-        WORKING_DIRECTORY ${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/ucx-download/
+        WORKING_DIRECTORY ${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/gdr-download/
     )
 
     if(result)
-        message(FATAL_ERROR "CMake step for UCX failed: ${result}")
+        message(FATAL_ERROR "CMake step for GDR failed: ${result}")
     endif()
 
     execute_process(
         COMMAND ${CMAKE_COMMAND} --build . -- -j8
         RESULT_VARIABLE result
-        WORKING_DIRECTORY ${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/ucx-download/
+        WORKING_DIRECTORY ${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/gdr-download/
     )
 
     if(result)
-        message(FATAL_ERROR "Build step for UCX failed: ${result}")
+        message(FATAL_ERROR "Build step for GDR failed: ${result}")
     endif()
 endmacro()
 
@@ -59,24 +56,24 @@ endmacro()
 
 # BEGIN MAIN #
 
-if (UCX_INSTALL_DIR)
-    message(STATUS "UCX_INSTALL_DIR defined, it will use vendor version from ${UCX_INSTALL_DIR}")
-    set(UCX_ROOT "${UCX_INSTALL_DIR}")
+if (GDR_INSTALL_DIR)
+    message(STATUS "GDR_INSTALL_DIR defined, it will use vendor version from ${GDR_INSTALL_DIR}")
+    set(GDR_ROOT "${GDR_INSTALL_DIR}")
 else()
-    message(STATUS "UCX_INSTALL_DIR not defined, it will be built from sources")
-    CONFIGURE_UCX_EXTERNAL_PROJECT()
-    set(UCX_ROOT "${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/ucx-install/")
+    message(STATUS "GDR_INSTALL_DIR not defined, it will be built from sources")
+    CONFIGURE_GDR_EXTERNAL_PROJECT()
+    set(GDR_ROOT "${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/gdr-install/")
 endif()
 
-set(UCX_HOME ${UCX_ROOT})
-find_package(UCX REQUIRED)
-set_package_properties(UCX PROPERTIES TYPE REQUIRED
-    PURPOSE " UCX."
-    URL "http://www.openucx.org/")
+set(GDR_HOME ${GDR_ROOT})
+find_package(GDR REQUIRED)
+set_package_properties(GDR PROPERTIES TYPE REQUIRED
+    PURPOSE " GDR."
+    URL "http://www.openGDR.org/")
 
-set(UCX_INCLUDEDIR ${UCX_ROOT}/include/)
+set(GDR_INCLUDEDIR ${GDR_ROOT}/include/)
 
-include_directories(${UCX_INCLUDEDIR} ${UCX_INCLUDE_DIR})
-link_directories(${UCX_ROOT}/lib/)
+include_directories(${GDR_INCLUDEDIR} ${GDR_INCLUDE_DIR})
+link_directories(${GDR_ROOT}/lib/)
 
 # END MAIN #
