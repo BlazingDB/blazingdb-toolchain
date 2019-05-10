@@ -19,7 +19,6 @@
 
 macro(CONFIGURE_UCX_EXTERNAL_PROJECT)
 
-    set(ENV{GDR_HOME} ${GDR_ROOT})
 
     if(CXX_OLD_ABI)
         # NOTE percy c.gonzales if you want to pass other RAL CMAKE_CXX_FLAGS into this dependency add it by harcoding
