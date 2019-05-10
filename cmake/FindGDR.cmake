@@ -52,6 +52,12 @@ find_path(GDR_INCLUDE_DIR gdrapi.h
     DOC "Path to rapidjson headers"
 )
 
+find_library(GDR_STATIC_LIB NAMES libgdrapi.so
+    PATHS ${GDR_SEARCH_LIB_PATH}
+    NO_DEFAULT_PATH
+    DOC "Path to libuct dynamic library"
+)
+
 if (NOT GDR_INCLUDE_DIR)
     message(FATAL_ERROR "gdr includes and libraries NOT found. "
       "Looked for headers in ${GDR_SEARCH_INCLUDE_DIR}")
