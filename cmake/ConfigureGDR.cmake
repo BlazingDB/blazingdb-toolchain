@@ -65,7 +65,6 @@ else()
     set(GDR_ROOT "${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/gdr-install/")
 endif()
 
-set(GDR_HOME ${GDR_ROOT})
 find_package(GDR REQUIRED)
 set_package_properties(GDR PROPERTIES TYPE REQUIRED
     PURPOSE " GDR."

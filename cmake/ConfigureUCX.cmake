@@ -68,7 +68,6 @@ else()
     set(UCX_ROOT "${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/ucx-install/")
 endif()
 
-set(UCX_HOME ${UCX_ROOT})
 find_package(UCX REQUIRED)
 set_package_properties(UCX PROPERTIES TYPE REQUIRED
     PURPOSE " UCX."
