@@ -45,7 +45,6 @@ include(ConfigureThrift)
 include(ConfigureArrow)
 include(ConfigureParquet)
 include(ConfigurePython3)
-include(ConfigureGDR)
 include(ConfigureUCX)
 
 include(ConfigureJitify) # NOTE cudf related
@@ -83,7 +82,6 @@ install(DIRECTORY ${THRIFT_ROOT} DESTINATION . USE_SOURCE_PERMISSIONS)
 install(DIRECTORY ${ARROW_ROOT} DESTINATION . USE_SOURCE_PERMISSIONS)
 install(DIRECTORY ${PYTHON3_ROOT} DESTINATION . USE_SOURCE_PERMISSIONS)
 install(DIRECTORY ${UCX_ROOT} DESTINATION . USE_SOURCE_PERMISSIONS)
-install(DIRECTORY ${GDR_ROOT} DESTINATION . USE_SOURCE_PERMISSIONS)
 
 ## custrings - git@github.com:rapidsai/custrings.git
 if(ENABLE_CUSTRINGS)
