@@ -233,11 +233,20 @@ define_default_git_package(
     "Release"
 )
 
+if(ENABLE_RMM)
+    define_default_git_package(
+        "RMM"
+        "https://github.com/rapidsai/rmm.git"
+        "branch-0.8"
+        "Release"
+    )
+endif()
+
 if(ENABLE_CUSTRINGS)
     define_default_git_package(
         "NVSTRINGS"
         "https://github.com/rapidsai/custrings.git"
-        "branch-0.4"
+        "branch-0.8"
         "Release"
     )
 endif()
