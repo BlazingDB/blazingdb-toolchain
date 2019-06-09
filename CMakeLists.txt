@@ -10,6 +10,9 @@ project(blazingdb-dependencies C CXX CUDA)
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake/" ${CMAKE_MODULE_PATH})
 message(STATUS "CMAKE_MODULE_PATH:" "${CMAKE_MODULE_PATH}")
 
+## rmm - git@github.com:rapidsai/rmm.git
+option(ENABLE_RMM "Add the rmm (rapidsai) library" OFF)
+
 ## custrings - git@github.com:rapidsai/custrings.git
 option(ENABLE_CUSTRINGS "Add the custring (rapidsai) library" OFF)
 
@@ -50,6 +53,13 @@ include(ConfigureUCX)
 
 include(ConfigureJitify) # NOTE cudf related
 
+if(ENABLE_RMM)
+    message(STATUS "Enable the rmm (rapidsai) library")
+    include(ConfigureRMM)
+else()
+    message(STATUS "Disable the rmm (rapidsai) library")
+endif()
+
 if(ENABLE_CUSTRINGS)
     message(STATUS "Enable the custring (rapidsai) library")
     include(ConfigureNVStrings)
@@ -84,6 +94,11 @@ install(DIRECTORY ${ARROW_ROOT} DESTINATION . USE_SOURCE_PERMISSIONS)
 install(DIRECTORY ${PYTHON3_ROOT} DESTINATION . USE_SOURCE_PERMISSIONS)
 install(DIRECTORY ${UCX_ROOT} DESTINATION . USE_SOURCE_PERMISSIONS)
 install(DIRECTORY ${GDR_ROOT} DESTINATION . USE_SOURCE_PERMISSIONS)
+
+## rmm - git@github.com:rapidsai/rmm.git
+if(ENABLE_RMM)
+    install(DIRECTORY ${RMM_ROOT} DESTINATION . USE_SOURCE_PERMISSIONS)
+endif()
 
 ## custrings - git@github.com:rapidsai/custrings.git
 if(ENABLE_CUSTRINGS)
