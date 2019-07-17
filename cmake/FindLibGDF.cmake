@@ -45,7 +45,7 @@ find_path(LIBGDF_INCLUDE_DIR cudf.h
 #)
 
 #TODO percy change to libgdf.a once cudf supports static build
-find_library(LIBGDF_STATIC_LIB NAMES libcudf.so
+find_library(LIBGDF_STATIC_LIB NAMES libcudf.a
     PATHS ${LIBGDF_SEARCH_LIB_PATH}
     NO_DEFAULT_PATH
     DOC "Path to libgdf static library"
@@ -61,7 +61,7 @@ else()
     set(LIBGDF_LIBDIR ${LIBGDF_ROOT}/lib) # TODO percy make this part cross platform
     set(LIBGDF_FOUND TRUE)
     #TODO percy change to STATIC once cudf supports static build
-    add_library(gdf SHARED IMPORTED)
+    add_library(gdf STATIC IMPORTED)
     set_target_properties(gdf PROPERTIES IMPORTED_LOCATION "${LIBGDF_STATIC_LIB}")
 endif ()
 
