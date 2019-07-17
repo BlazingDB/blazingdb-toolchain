@@ -29,7 +29,7 @@ set(LIBGDF_SEARCH_LIB_PATH
 )
 
 set(LIBGDF_SEARCH_INCLUDE_DIR
-  ${LIBGDF_ROOT}/include/
+  ${LIBGDF_ROOT}/include/cudf/
 )
 
 find_path(LIBGDF_INCLUDE_DIR cudf.h
