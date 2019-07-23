@@ -45,9 +45,9 @@ include(ConfigureZSTD)
 include(ConfigureBrotli)
 include(ConfigureSnappy)
 include(ConfigureThrift)
-include(ConfigureArrow)
+#include(ConfigureArrow)
 include(ConfigureParquet)
-include(ConfigurePython3)
+#include(ConfigurePython3)
 
 include(ConfigureJitify) # NOTE cudf related
 
