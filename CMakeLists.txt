@@ -36,17 +36,17 @@ include(ConfigureCUDA)
 #include(ConfigureGoogleTest) # NOTE for unit tests
 include(ConfigureGoogleBenchmark) # NOTE for performance tests
 #include(ConfigureBoost)
-include(ConfigureRapidJSON) # TODO remove when we use binary protocol with ucx
+#include(ConfigureRapidJSON) # TODO remove when we use binary protocol with ucx
 include(ConfigureSimpleWebServer) # TODO remove when we use binary protocol with ucx
-include(ConfigureAWSSDK)
-include(ConfigureFlatBuffers)
-include(ConfigureLz4)
-include(ConfigureZSTD)
-include(ConfigureBrotli)
-include(ConfigureSnappy)
-include(ConfigureThrift)
+#include(ConfigureAWSSDK)
+#include(ConfigureFlatBuffers)
+#include(ConfigureLz4)
+#include(ConfigureZSTD)
+#include(ConfigureBrotli)
+#include(ConfigureSnappy)
+#include(ConfigureThrift)
 #include(ConfigureArrow)
-include(ConfigureParquet)
+#include(ConfigureParquet)
 #include(ConfigurePython3)
 
 include(ConfigureJitify) # NOTE cudf related
