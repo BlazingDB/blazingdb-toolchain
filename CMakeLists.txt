@@ -33,9 +33,9 @@ include(ConfigureCUDA)
 
 # NOTE Do not change the inclusion order
 # Configure dependencies
-include(ConfigureGoogleTest) # NOTE for unit tests
+#include(ConfigureGoogleTest) # NOTE for unit tests
 include(ConfigureGoogleBenchmark) # NOTE for performance tests
-include(ConfigureBoost)
+#include(ConfigureBoost)
 include(ConfigureRapidJSON) # TODO remove when we use binary protocol with ucx
 include(ConfigureSimpleWebServer) # TODO remove when we use binary protocol with ucx
 include(ConfigureAWSSDK)
