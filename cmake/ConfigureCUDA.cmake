@@ -69,12 +69,12 @@ macro(CONFIGURE_CUDA_COMPILER compute_capability)
     if(CMAKE_BUILD_TYPE MATCHES Debug)
         message(STATUS "Building with debugging flags")
         set(CMAKE_CUDA_FLAGS "${CMAKE_CUDA_FLAGS} -G -Xcompiler -rdynamic")
-    set(CUDA_NVCC_FLAGS "${CUDA_NVCC_FLAGS} -G -g" )
+        set(CUDA_NVCC_FLAGS "${CUDA_NVCC_FLAGS} -G -g" )
         set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -rdynamic")
     endif(CMAKE_BUILD_TYPE MATCHES Debug)
 
-    set(CUDA_NVCC_FLAGS "${CUDA_NVCC_FLAGS} --default-stream per-thread")
-    set(CMAKE_CUDA_FLAGS "${CMAKE_CUDA_FLAGS} ${CUDA_NVCC_FLAGS}")
+    # improve gpu bandwidth
+    set(CMAKE_CUDA_FLAGS "${CMAKE_CUDA_FLAGS} --default-stream per-thread")
 
     message(STATUS "Default C++ (CUDA) compiler flags for all targets: ${CMAKE_CUDA_FLAGS}")
     message(STATUS "Default C++ compiler flags for all targets: ${CMAKE_CXX_FLAGS}")
