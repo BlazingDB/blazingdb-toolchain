@@ -74,6 +74,7 @@ macro(CONFIGURE_CUDA_COMPILER compute_capability)
     endif(CMAKE_BUILD_TYPE MATCHES Debug)
 
     set(CUDA_NVCC_FLAGS "${CUDA_NVCC_FLAGS} --default-stream per-thread")
+    set(CMAKE_CUDA_FLAGS "${CMAKE_CUDA_FLAGS} ${CUDA_NVCC_FLAGS}")
 
     message(STATUS "Default C++ (CUDA) compiler flags for all targets: ${CMAKE_CUDA_FLAGS}")
     message(STATUS "Default C++ compiler flags for all targets: ${CMAKE_CXX_FLAGS}")
