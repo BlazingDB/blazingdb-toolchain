@@ -63,12 +63,33 @@ macro(CONFIGURE_AWS_SDK_CPP_EXTERNAL_PROJECT)
         message(FATAL_ERROR "CMake step for aws-sdk-cpp failed: ${result}")
     endif()
 
+    # NOTE This build will fail ... we need to apply the patch and then retry the build
+    execute_process(
+        COMMAND ${CMAKE_COMMAND} --build . -- -j8
+        RESULT_VARIABLE result
+        WORKING_DIRECTORY ${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/aws-sdk-cpp-download/
+    )
+
     # Patch OpenSSL build dependency
     file(
         COPY ${CMAKE_SOURCE_DIR}/scripts/aws-sdk-cpp-patch/build_external.cmake
         DESTINATION ${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/aws-sdk-cpp-src/cmake/
     )
-    message(STATUS "Patch for AWS SDK CPP applied!")
+    message(STATUS "==== Patch for AWS SDK CPP applied! ====")
+
+    # NOTE Retry the cmake and build after the patch
+
+    execute_process(
+        COMMAND ${CMAKE_COMMAND} -G "${CMAKE_GENERATOR}" .
+        RESULT_VARIABLE result
+        WORKING_DIRECTORY ${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/aws-sdk-cpp-download/
+    )
+
+    execute_process(
+        COMMAND ${CMAKE_COMMAND} --build . -- -j8 clean
+        RESULT_VARIABLE result
+        WORKING_DIRECTORY ${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/aws-sdk-cpp-download/
+    )
 
     execute_process(
         COMMAND ${CMAKE_COMMAND} --build . -- -j8
