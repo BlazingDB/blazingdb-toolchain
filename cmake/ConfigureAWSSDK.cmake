@@ -64,7 +64,11 @@ macro(CONFIGURE_AWS_SDK_CPP_EXTERNAL_PROJECT)
     endif()
 
     # Patch OpenSSL build dependency
-    configure_file(${CMAKE_SOURCE_DIR}/scripts/AWS_BUILD_PATCH_build_external.cmake ${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/aws-sdk-cpp-src/cmake/build_external.cmake)
+    file(
+        COPY ${CMAKE_SOURCE_DIR}/scripts/aws-sdk-cpp-patch/build_external.cmake
+        DESTINATION ${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/aws-sdk-cpp-src/cmake/
+    )
+    message(STATUS "Patch for AWS SDK CPP applied!")
 
     execute_process(
         COMMAND ${CMAKE_COMMAND} --build . -- -j8
