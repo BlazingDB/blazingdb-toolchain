@@ -149,7 +149,7 @@ cmake --build cmake-out/crc32c --target install -- -j ${NCPU:-4}
 #tar -xf v0.1.5.tar.gz
 #cd cpp-cmakefiles-0.1.5
 #
-#export PATH=$PATH:$gcs_deps_dir/bin/
+export PATH=$PATH:$gcs_deps_dir/bin/
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$gcs_deps_dir/lib/:$CONDA_PREFIX/lib/
 #
 #cmake \
