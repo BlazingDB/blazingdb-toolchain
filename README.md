@@ -20,8 +20,8 @@ We need at least CMake version 3.12+. Follow these commands to install CMake:
 And also make sure to install these system requirements:
 
 ```bash
-# Add classic autotools suite
-apt-get -y install libtool automake autoconf pkg-config
+# Add classic tools and autotools suite
+apt-get -y install wget libtool automake autoconf pkg-config
 
 # Install AWS C++ SDK dependencies
 apt-get install -y --no-install-recommends uuid-dev
