@@ -120,6 +120,7 @@ endif()
 
 # NOTE for the find packages
 list(APPEND CMAKE_PREFIX_PATH ${AWS_SDK_CPP_ROOT})
+list(APPEND CMAKE_PREFIX_PATH $ENV{CONDA_PREFIX})
 
 set(aws-sdk-cpp_DIR ${AWS_SDK_CPP_ROOT})
 
