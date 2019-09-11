@@ -28,11 +28,13 @@ endmacro()
 
 macro(CONFIGURE_AWS_SDK_CPP_EXTERNAL_PROJECT)
     # NOTE percy c.gonzales if you want to pass other RAL CMAKE_CXX_FLAGS into this dependency add it by harcoding
-    set(AWS_SDK_CPP_CMAKE_ARGS  " -DBUILD_SHARED_LIBS=OFF"
-                                " -DENABLE_TESTING=OFF"
-                                " -DENABLE_UNITY_BUILD=ON"
-                                " -DCUSTOM_MEMORY_MANAGEMENT=0"
-                                " -DCPP_STANDARD=${CMAKE_CXX_STANDARD}")
+    set(AWS_SDK_CPP_CMAKE_ARGS " -DBUILD_OPENSSL=ON"
+                               " -DBUILD_CURL=ON"
+                               " -DBUILD_SHARED_LIBS=OFF"
+                               " -DENABLE_TESTING=OFF"
+                               " -DENABLE_UNITY_BUILD=ON"
+                               " -DCUSTOM_MEMORY_MANAGEMENT=0"
+                               " -DCPP_STANDARD=${CMAKE_CXX_STANDARD}")
 
     if(CXX_OLD_ABI)
         # enable old ABI for C/C++
@@ -60,6 +62,34 @@ macro(CONFIGURE_AWS_SDK_CPP_EXTERNAL_PROJECT)
     if(result)
         message(FATAL_ERROR "CMake step for aws-sdk-cpp failed: ${result}")
     endif()
+
+    # NOTE This build will fail ... we need to apply the patch and then retry the build
+    execute_process(
+        COMMAND ${CMAKE_COMMAND} --build . -- -j8
+        RESULT_VARIABLE result
+        WORKING_DIRECTORY ${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/aws-sdk-cpp-download/
+    )
+
+    # Patch OpenSSL build dependency
+    file(
+        COPY ${CMAKE_SOURCE_DIR}/scripts/aws-sdk-cpp-patch/build_external.cmake
+        DESTINATION ${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/aws-sdk-cpp-src/cmake/
+    )
+    message(STATUS "==== Patch for AWS SDK CPP applied! ====")
+
+    # NOTE Retry the cmake and build after the patch
+
+    execute_process(
+        COMMAND ${CMAKE_COMMAND} -G "${CMAKE_GENERATOR}" .
+        RESULT_VARIABLE result
+        WORKING_DIRECTORY ${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/aws-sdk-cpp-download/
+    )
+
+    execute_process(
+        COMMAND ${CMAKE_COMMAND} --build . -- -j8 clean
+        RESULT_VARIABLE result
+        WORKING_DIRECTORY ${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/aws-sdk-cpp-download/
+    )
 
     execute_process(
         COMMAND ${CMAKE_COMMAND} --build . -- -j8
