@@ -22,7 +22,7 @@ requirements:
         - setuptools
         - boost-cpp >=1.70.0
         - openssl
-        - zlib >=1.2.11
+        - zlib
         - curl
         - cmake
     run:
@@ -33,7 +33,7 @@ requirements:
         - setuptools
         - boost-cpp >=1.70.0
         - openssl
-        - zlib >=1.2.11
+        - zlib
         - curl
         - cmake
 
