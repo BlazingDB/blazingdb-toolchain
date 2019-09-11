@@ -25,11 +25,12 @@ include(CTest)
 # NOTE Do not change the inclusion order
 # Configure dependencies
 include(ConfigureAWSSDK)
+include(ConfigureGoogleCloudCPP)
 
 # BEGIN MAIN #
 # NOTE use USE_SOURCE_PERMISSIONS to preserve executable file permisions (e.g. flatc, etc)
 install(DIRECTORY ${AWS_SDK_CPP_ROOT} DESTINATION . USE_SOURCE_PERMISSIONS)
-#install(DIRECTORY ${ARROW_ROOT} DESTINATION . USE_SOURCE_PERMISSIONS)
+install(DIRECTORY ${GOOGLE_CLOUD_CPP_ROOT} DESTINATION . USE_SOURCE_PERMISSIONS)
 
 # Install the cmake modules to be used by the users/projects
 install(DIRECTORY ${CMAKE_SOURCE_DIR}/cmake/ DESTINATION lib/cmake)

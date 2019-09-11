@@ -1,6 +1,6 @@
 #=============================================================================
 # Copyright 2018 BlazingDB, Inc.
-#     Copyright 2018 Percy Camilo Triveño Aucahuasi <percy@blazingdb.com>
+#     Copyright 2018-2019 Percy Camilo Triveño Aucahuasi <percy@blazingdb.com>
 #=============================================================================
 
 # BEGIN macros

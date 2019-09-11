@@ -1,7 +1,6 @@
 #!/bin/bash
 
-#project_root_dir=$PWD
-project_root_dir=/home/percy/Blazing/projects/code/blazingdb-toolchain/
+project_root_dir=$1
 
 working_directory=$PWD
 
