@@ -109,14 +109,17 @@ endmacro()
 
 # BEGIN MAIN #
 
-if (AWS_SDK_CPP_BUILD_DIR)
-    message(STATUS "AWS_SDK_CPP_BUILD_DIR defined, it will use vendor version from ${AWS_SDK_CPP_BUILD_DIR}")
+if (AWS_SDK_CPP_INSTALL_DIR)
+    message(STATUS "AWS_SDK_CPP_INSTALL_DIR defined, it will use vendor version from ${AWS_SDK_CPP_INSTALL_DIR}")
     set(AWS_SDK_CPP_ROOT "${AWS_SDK_CPP_BUILD_DIR}")
 else()
     message(STATUS "AWS_SDK_CPP_BUILD_DIR not defined, it will be built from sources")
     configure_aws_sdk_cpp_external_project()
-    set(AWS_SDK_CPP_ROOT "${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/aws-sdk-cpp-build/")
+    set(AWS_SDK_CPP_ROOT "${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/aws-sdk-cpp-install/")
 endif()
+
+# NOTE for the find packages
+list(APPEND CMAKE_PREFIX_PATH ${AWS_SDK_CPP_ROOT})
 
 set(aws-sdk-cpp_DIR ${AWS_SDK_CPP_ROOT})
 
@@ -126,12 +129,32 @@ set(aws-sdk-cpp_DIR ${AWS_SDK_CPP_ROOT})
 # or export/set:
 #   CMAKE_PREFIX_PATH=/path/to/sdk_build
 message(STATUS "aws-sdk-cpp_DIR: " ${aws-sdk-cpp_DIR})
-find_package(aws-sdk-cpp REQUIRED COMPONENTS aws-cpp-sdk-core aws-cpp-sdk-s3 aws-cpp-sdk-s3-encryption aws-cpp-sdk-kms)
-set_package_properties(aws-sdk-cpp PROPERTIES TYPE REQUIRED
-    PURPOSE "AWS SDK for C++ allows to integrate any C++ application with AWS services."
+
+# NOTE DO NOT CHANGE DE ORDER!
+find_package(aws-cpp-sdk-core REQUIRED)
+find_package(aws-cpp-sdk-s3 REQUIRED)
+find_package(aws-cpp-sdk-kms REQUIRED)
+find_package(aws-cpp-sdk-s3-encryption REQUIRED)
+
+set_package_properties(aws-cpp-sdk-core PROPERTIES TYPE REQUIRED
+    PURPOSE "AWS SDK for C++ allows to integrate any C++ application with AWS services. Module: aws-cpp-sdk-core"
     URL "https://aws.amazon.com/sdk-for-cpp/")
 
-message(STATUS "AWS SDK for C++ found in ${aws-sdk-cpp_DIR}")
+set_package_properties(aws-cpp-sdk-s3 PROPERTIES TYPE REQUIRED
+    PURPOSE "AWS SDK for C++ allows to integrate any C++ application with AWS services. Module: aws-cpp-sdk-s3"
+    URL "https://aws.amazon.com/sdk-for-cpp/")
+
+
+set_package_properties(aws-cpp-sdk-kms PROPERTIES TYPE REQUIRED
+    PURPOSE "AWS SDK for C++ allows to integrate any C++ application with AWS services. Module: aws-cpp-sdk-kms"
+    URL "https://aws.amazon.com/sdk-for-cpp/")
+
+
+set_package_properties(aws-cpp-sdk-s3-encryption PROPERTIES TYPE REQUIRED
+    PURPOSE "AWS SDK for C++ allows to integrate any C++ application with AWS services. Module: aws-cpp-sdk-s3-encryption"
+    URL "https://aws.amazon.com/sdk-for-cpp/")
+
+message(STATUS "AWS SDK for C++ found in ${AWS_SDK_CPP_ROOT}")
 
 configure_aws_sdk()
 
