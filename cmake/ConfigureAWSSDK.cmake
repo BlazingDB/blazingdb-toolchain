@@ -28,8 +28,8 @@ endmacro()
 
 macro(CONFIGURE_AWS_SDK_CPP_EXTERNAL_PROJECT)
     # NOTE percy c.gonzales if you want to pass other RAL CMAKE_CXX_FLAGS into this dependency add it by harcoding
-    set(AWS_SDK_CPP_CMAKE_ARGS " -DBUILD_OPENSSL=ON"
-                               " -DBUILD_CURL=ON"
+    set(AWS_SDK_CPP_CMAKE_ARGS " -DBUILD_OPENSSL=OFF"
+                               " -DBUILD_CURL=OFF"
                                " -DBUILD_SHARED_LIBS=OFF"
                                " -DENABLE_TESTING=OFF"
                                " -DENABLE_UNITY_BUILD=ON"
@@ -63,30 +63,16 @@ macro(CONFIGURE_AWS_SDK_CPP_EXTERNAL_PROJECT)
         message(FATAL_ERROR "CMake step for aws-sdk-cpp failed: ${result}")
     endif()
 
-    # NOTE This build will fail ... we need to apply the patch and then retry the build
-    execute_process(
-        COMMAND ${CMAKE_COMMAND} --build . -- -j8
-        RESULT_VARIABLE result
-        WORKING_DIRECTORY ${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/aws-sdk-cpp-download/
+    # Patch main aws cmake
+    file(
+        COPY ${CMAKE_SOURCE_DIR}/patches/aws-sdk-cpp-patch/CMakeLists.txt
+        DESTINATION ${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/aws-sdk-cpp-src/
     )
 
-    # Patch OpenSSL build dependency
-    file(
-        COPY ${CMAKE_SOURCE_DIR}/scripts/aws-sdk-cpp-patch/build_external.cmake
-        DESTINATION ${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/aws-sdk-cpp-src/cmake/
-    )
     message(STATUS "==== Patch for AWS SDK CPP applied! ====")
 
-    # NOTE Retry the cmake and build after the patch
-
     execute_process(
-        COMMAND ${CMAKE_COMMAND} -G "${CMAKE_GENERATOR}" .
-        RESULT_VARIABLE result
-        WORKING_DIRECTORY ${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/aws-sdk-cpp-download/
-    )
-
-    execute_process(
-        COMMAND ${CMAKE_COMMAND} --build . -- -j8 clean
+        COMMAND ${CMAKE_COMMAND} --build . -- -j8
         RESULT_VARIABLE result
         WORKING_DIRECTORY ${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/aws-sdk-cpp-download/
     )

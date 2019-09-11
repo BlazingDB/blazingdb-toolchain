@@ -1,17 +1,13 @@
 #!/bin/bash
 
+build_type=Release
+if [ ! -z $1 ]; then
+  build_type=$1
+fi
 
 INSTALL_PREFIX=${INSTALL_PREFIX:=${PREFIX:=${CONDA_PREFIX}}}
-cd ${INSTALL_PREFIX}
 
-echo -e '
-#!/bin/bash
-cd $CONDA_PREFIX
-git clone https://github.com/BlazingDB/pyBlazing.git
-cd pyBlazing
-git checkout feature/conda
-cd ..
-pyBlazing/scripts/build-all.sh
-' > build-repos.sh
-
-chmod +x build-repos.sh
+mkdir -p build
+cd build
+cmake .. -DCMAKE_BUILD_TYPE=$build_type -DCMAKE_INSTALL_PREFIX=${INSTALL_PREFIX}
+make -j8 install
