@@ -1,6 +1,9 @@
 #!/bin/bash
 
 project_root_dir=$1
+current_conda_prefix=$CONDA_PREFIX
+
+echo "====> USING THE CONDA PREFIX: $CONDA_PREFIX"
 
 working_directory=$PWD
 
@@ -11,6 +14,12 @@ mkdir -p $gcs_deps_dir
 
 #NOTE https://github.com/googleapis/google-cloud-cpp/blob/master/INSTALL.md#ubuntu-1604---xenial-xerus
 
+export CFLAGS="-DCURL_STATICLIB"
+export CXXFLAGS="-DCURL_STATICLIB"
+export PKG_CONFIG_PATH=$current_conda_prefix/lib/pkgconfig/
+export PATH=$PATH:$gcs_install_dir/bin/:$current_conda_prefix/bin/
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$gcs_install_dir/lib/:$current_conda_prefix/lib/
+
 #BEGIN crc32c
 
 cd $gcs_deps_dir
@@ -19,7 +28,7 @@ tar -xf 1.0.6.tar.gz
 cd crc32c-1.0.6
 cmake \
       -DCMAKE_BUILD_TYPE=Release \
-      -DBUILD_SHARED_LIBS=no \
+      -DBUILD_SHARED_LIBS=NO \
       -DCRC32C_BUILD_TESTS=OFF \
       -DCRC32C_BUILD_BENCHMARKS=OFF \
       -DCRC32C_USE_GLOG=OFF \
@@ -36,10 +45,8 @@ wget -q https://github.com/googleapis/cpp-cmakefiles/archive/v0.1.5.tar.gz
 tar -xf v0.1.5.tar.gz
 cd cpp-cmakefiles-0.1.5
 
-export PATH=$PATH:$gcs_install_dir/bin/
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$gcs_install_dir/lib/:$CONDA_PREFIX/lib/
-
 cmake \
+    -DCMAKE_BUILD_TYPE=Release \
     -DBUILD_SHARED_LIBS=NO \
     -DCMAKE_INSTALL_PREFIX=$gcs_install_dir \
     -H. -Bcmake-out
@@ -54,12 +61,11 @@ wget https://github.com/googleapis/google-cloud-cpp/archive/v0.13.0.tar.gz
 tar xvf v0.13.0.tar.gz
 cd google-cloud-cpp-0.13.0
 # NOTE force include crc32c headers
-export CPATH=$CPATH:$gcs_install_dir/include/:$CONDA_PREFIX/include/
-export PKG_CONFIG_PATH=$gcs_install_dir/lib/pkgconfig/
+export CPATH=$CPATH:$gcs_install_dir/include/:$current_conda_prefix/include/
+
 cmake -DGOOGLE_CLOUD_CPP_ENABLE_BIGTABLE=OFF \
       -DBUILD_TESTING=OFF \
       -DCMAKE_MODULE_PATH=$gcs_install_dir/lib/cmake/ \
-      -Dprotobuf_DIR=$CONDA_PREFIX \
       -DCMAKE_INSTALL_PREFIX=$gcs_install_dir \
       -H. -Bcmake-out
 cmake --build cmake-out -- -j ${NCPU:-4}

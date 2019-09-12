@@ -30,8 +30,8 @@ else()
     set(GOOGLE_CLOUD_CPP_ROOT "${CMAKE_SOURCE_DIR}/build/gcs/install/")
 endif()
 
-list(APPEND CMAKE_PREFIX_PATH "${CMAKE_SOURCE_DIR}/build/gcs/install/")
-list(APPEND CMAKE_PREFIX_PATH $ENV{CONDA_PREFIX})
+list(APPEND CMAKE_PREFIX_PATH "${GOOGLE_CLOUD_CPP_ROOT}")
+
 find_package(storage_client REQUIRED)
 
 set_package_properties(storage_client PROPERTIES TYPE REQUIRED

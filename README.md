@@ -23,8 +23,8 @@ And also make sure to install these system requirements:
 # Add classic tools and autotools suite
 apt-get -y install wget libtool automake autoconf pkg-config
 
-# Install AWS C++ SDK dependencies
-apt-get install -y --no-install-recommends uuid-dev
+# Install system dependencies
+apt-get install -y --no-install-recommends uuid-dev libcurl4-openssl-dev
  
 ```
 

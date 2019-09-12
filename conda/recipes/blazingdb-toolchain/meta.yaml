@@ -25,6 +25,7 @@ requirements:
         - zlib
         - curl
         - cmake
+        - libprotobuf ==3.8.0
     run:
         - python
         - pip
@@ -36,6 +37,7 @@ requirements:
         - zlib
         - curl
         - cmake
+        - libprotobuf
 
 about:
     home: http://www.blazingsql.com/

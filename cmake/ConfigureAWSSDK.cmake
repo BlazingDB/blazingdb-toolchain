@@ -111,16 +111,15 @@ endmacro()
 
 if (AWS_SDK_CPP_INSTALL_DIR)
     message(STATUS "AWS_SDK_CPP_INSTALL_DIR defined, it will use vendor version from ${AWS_SDK_CPP_INSTALL_DIR}")
-    set(AWS_SDK_CPP_ROOT "${AWS_SDK_CPP_BUILD_DIR}")
+    set(AWS_SDK_CPP_ROOT "${AWS_SDK_CPP_INSTALL_DIR}")
 else()
-    message(STATUS "AWS_SDK_CPP_BUILD_DIR not defined, it will be built from sources")
+    message(STATUS "AWS_SDK_CPP_INSTALL_DIR not defined, it will be built from sources")
     configure_aws_sdk_cpp_external_project()
     set(AWS_SDK_CPP_ROOT "${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/aws-sdk-cpp-install/")
 endif()
 
 # NOTE for the find packages
 list(APPEND CMAKE_PREFIX_PATH ${AWS_SDK_CPP_ROOT})
-list(APPEND CMAKE_PREFIX_PATH $ENV{CONDA_PREFIX})
 
 set(aws-sdk-cpp_DIR ${AWS_SDK_CPP_ROOT})
 
