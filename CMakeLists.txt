@@ -10,12 +10,6 @@ project(blazingdb-dependencies C CXX)
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake/" ${CMAKE_MODULE_PATH})
 message(STATUS "CMAKE_MODULE_PATH:" "${CMAKE_MODULE_PATH}")
 
-# Parse the COMPONENT_VERSION and the component download URLs
-include(DefineVersions)
-
-# NOTE First step
-include(ConfigureBlazingDBHostCompiler)
-
 # Include CMake modules
 include(FeatureSummary)
 include(CheckIncludeFiles)
@@ -24,7 +18,8 @@ include(CTest)
 
 # NOTE Do not change the inclusion order
 # Configure dependencies
-include(ConfigureAWSSDK)
+# TODO percy add support for aws too latr
+# include(ConfigureAWSSDK)
 include(ConfigureGoogleCloudCPP)
 
 # BEGIN MAIN #

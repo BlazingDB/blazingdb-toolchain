@@ -24,7 +24,7 @@ And also make sure to install these system requirements:
 apt-get -y install wget libtool automake autoconf pkg-config
 
 # Install system dependencies
-apt-get install -y --no-install-recommends uuid-dev libcurl4-openssl-dev
+#apt-get install -y --no-install-recommends uuid-dev zlib1g-dev
  
 ```
 
