@@ -25,9 +25,12 @@ apt-get -y install wget libtool automake autoconf pkg-config
 
 # Install system dependencies
 #apt-get install -y --no-install-recommends uuid-dev zlib1g-dev
- 
 ```
 
 # Build
 
-See conda-build process.
+```bash
+CURRENT_CONDA_PREFIX=$CONDA_PREFIX conda build --label "main" -c conda-forge --python=3.7 --output-folder /some/directory/
+```
+
+For more details, see the conda-build process.
