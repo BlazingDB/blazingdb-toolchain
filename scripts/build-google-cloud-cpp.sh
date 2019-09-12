@@ -1,9 +1,9 @@
 #!/bin/bash
 
 project_root_dir=$1
-current_conda_prefix=$CONDA_PREFIX
+current_conda_prefix=$CURRENT_CONDA_PREFIX
 
-echo "====> USING THE CONDA PREFIX: $CONDA_PREFIX"
+echo "====> USING THE CURRENT CONDA PREFIX: $current_conda_prefix"
 
 working_directory=$PWD
 

@@ -24,7 +24,7 @@ include(CTest)
 
 # NOTE Do not change the inclusion order
 # Configure dependencies
-#include(ConfigureAWSSDK)
+include(ConfigureAWSSDK)
 include(ConfigureGoogleCloudCPP)
 
 # BEGIN MAIN #

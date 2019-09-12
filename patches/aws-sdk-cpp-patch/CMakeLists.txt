@@ -112,7 +112,7 @@ set(ZLIB_ROOT $ENV{CONDA_PREFIX})
 set(OPENSSL_USE_STATIC_LIBS TRUE)
 set(OPENSSL_ROOT_DIR $ENV{CONDA_PREFIX})
 set(ENV{PKG_CONFIG_PATH} $ENV{CONDA_PREFIX}/lib/pkgconfig/) # used by find libcurl
-add_denifitions( -DCURL_STATICLIB )
+add_definitions( -DCURL_STATICLIB )
 
 include(external_dependencies)
 
