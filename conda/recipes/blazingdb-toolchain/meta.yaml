@@ -31,6 +31,7 @@ requirements:
         - cmake
         - libprotobuf ==3.8.0
         - grpc-cpp
+        - c-ares
     run:
         - python
         - pip
@@ -44,6 +45,7 @@ requirements:
         - cmake
         - libprotobuf
         - grpc-cpp
+        - c-ares
 
 about:
     home: http://www.blazingsql.com/
