@@ -30,6 +30,7 @@ requirements:
         - curl
         - cmake
         - libprotobuf ==3.8.0
+        - grpc-cpp
     run:
         - python
         - pip
@@ -42,6 +43,7 @@ requirements:
         - curl
         - cmake
         - libprotobuf
+        - grpc-cpp
 
 about:
     home: http://www.blazingsql.com/
