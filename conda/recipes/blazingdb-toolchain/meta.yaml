@@ -1,0 +1,54 @@
+{% set build = environ.get('BUILD', '0').lstrip('v') %}
+
+package:
+    name: blazingdb-toolchain
+    version: 0.4.0
+
+build:
+    number: {{ build }}
+
+source:
+    path: ../../../
+
+build:
+  script_env:
+    - CURRENT_CONDA_PREFIX
+
+requirements:
+    build:
+        - {{ compiler('c') }}
+        - {{ compiler('cxx') }}
+    host:
+        - python
+        - pip
+        - gtest
+        - gmock
+        - setuptools
+        - boost-cpp >=1.70.0
+        - openssl
+        - zlib
+        - curl
+        - cmake
+        - libprotobuf ==3.8.0
+        - grpc-cpp
+        - c-ares
+    run:
+        - python
+        - pip
+        - gtest
+        - gmock
+        - setuptools
+        - boost-cpp >=1.70.0
+        - openssl
+        - zlib
+        - curl
+        - cmake
+        - libprotobuf
+        - grpc-cpp
+        - c-ares
+
+about:
+    home: http://www.blazingsql.com/
+    license: Apache-2.0
+    license_family: Apache
+    license_file: LICENSE
