@@ -10,9 +10,9 @@ build:
 source:
     path: ../../../
 
-build:
-  script_env:
-    - CURRENT_CONDA_PREFIX
+#build:
+#  script_env:
+#    - CURRENT_CONDA_PREFIX
 
 requirements:
     build:
