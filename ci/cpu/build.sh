@@ -1,7 +1,7 @@
 #!/bin/bash
 # Copyright (c) 2019, BLAZINGSQL.
 ######################################
-# cuDF CPU conda build script for CI #
+# blazingsql-toolchain CPU conda build script for CI #
 ######################################
 set -e
 
