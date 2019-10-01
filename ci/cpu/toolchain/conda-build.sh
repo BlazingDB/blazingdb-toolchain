@@ -1,3 +1,3 @@
 #!/bin/bash
 
-conda build -c conda-forge -c defaults --python=$PYTHON conda/recipes/blazingsql-toolchain/
+conda build -c conda-forge -c defaults conda/recipes/blazingsql-toolchain/

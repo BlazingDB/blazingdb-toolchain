@@ -1,18 +1,18 @@
 {% set build = environ.get('BUILD', '0').lstrip('v') %}
+{% set version = environ.get('GIT_DESCRIBE_TAG', '0.0.0.dev').lstrip('v') %}
+{% set minor_version =  version.split('.')[0] + '.' + version.split('.')[1] %}
+{% set git_revision_count=environ.get('GIT_DESCRIBE_NUMBER', 0) %}
 
 package:
     name: blazingsql-toolchain
-    version: 0.4.0
-
-build:
-    number: {{ build }}
+    version: {{ version }}
 
 source:
-    path: ../../../
+    path: ../../..
 
 build:
-  script_env:
-    - CURRENT_CONDA_PREFIX
+    number: {{ git_revision_count }}
+    string: {{ git_revision_count }}
 
 requirements:
     build:
