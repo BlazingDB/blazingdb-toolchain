@@ -2,7 +2,7 @@
 
 set -e
 
-export TAR_FILE=`conda build conda/recipes/blazingdb-toolchain --python=$PYTHON --output`
+export TAR_FILE=`conda build conda/recipes/blazingsql-toolchain --python=$PYTHON --output`
 
 LABEL_OPTION="--label main"
 echo "LABEL_OPTION=${LABEL_OPTION}"
