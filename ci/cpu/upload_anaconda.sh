@@ -15,4 +15,11 @@ fi
 test -e ${TAR_FILE}
 echo "Upload communication"
 echo ${TAR_FILE}
+
+# NIGHLY 
+#if [ $2 == 'nightly' ]; then
+#     NIGHTLY="-nightly"
+#fi
+echo "blazingsql$NIGHTLY"
+#anaconda -t ${MY_UPLOAD_KEY} upload -u blazingsql$NIGHTLY ${LABEL_OPTION} --force ${TAR_FILE}
 anaconda -t ${MY_UPLOAD_KEY} upload -u blazingsql ${LABEL_OPTION} --force ${TAR_FILE}

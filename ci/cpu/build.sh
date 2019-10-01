@@ -47,4 +47,4 @@ logger "Build conda pkg for communication..."
 source ci/cpu/toolchain/conda-build.sh
 
 logger "Upload conda pkg for communication..."
-source ci/cpu/upload_anaconda.sh
+#source ci/cpu/upload_anaconda.sh
