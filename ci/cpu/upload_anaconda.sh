@@ -22,4 +22,4 @@ if [ $IS_NIGHTLY == "true" ]; then
       NIGHTLY="-nightly"
 fi
 echo "anaconda -t ${MY_UPLOAD_KEY} upload -u editha$NIGHTLY ${LABEL_OPTION} --force ${TAR_FILE}"
-#anaconda -t ${MY_UPLOAD_KEY} upload -u editha$NIGHTLY ${LABEL_OPTION} --force ${TAR_FILE}
+anaconda -t ${MY_UPLOAD_KEY} upload -u editha$NIGHTLY ${LABEL_OPTION} --force ${TAR_FILE}
