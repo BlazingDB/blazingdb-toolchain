@@ -16,10 +16,10 @@ test -e ${TAR_FILE}
 echo "Upload toolchain"
 echo ${TAR_FILE}
 
-# NIGHLY 
-#if [ $2 == 'nightly' ]; then
-#     NIGHTLY="-nightly"
-#fi
-echo "blazingsql$NIGHTLY"
-#anaconda -t ${MY_UPLOAD_KEY} upload -u blazingsql$NIGHTLY ${LABEL_OPTION} --force ${TAR_FILE}
-anaconda -t ${MY_UPLOAD_KEY} upload -u blazingsql ${LABEL_OPTION} --force ${TAR_FILE}
+# Nightly seccion
+echo "IS_NIGHTLY" $IS_NIGHTLY
+if [ $IS_NIGHTLY == true ]; then
+      NIGHTLY="-nightly"
+fi
+#echo "anaconda -t ${MY_UPLOAD_KEY} upload -u editha$NIGHTLY ${LABEL_OPTION} --force ${TAR_FILE}"
+anaconda -t ${MY_UPLOAD_KEY} upload -u editha$NIGHTLY ${LABEL_OPTION} --force ${TAR_FILE}

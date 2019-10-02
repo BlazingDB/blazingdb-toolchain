@@ -4,4 +4,4 @@
 
 export WORKSPACE=$PWD
 
-docker run -e MY_UPLOAD_KEY=$1 --rm -v ${WORKSPACE}:${WORKSPACE} -w ${WORKSPACE} gpuci/miniconda-cuda:9.2-devel-ubuntu16.04 ./ci/cpu/build.sh
+docker run -e MY_UPLOAD_KEY=$1 -e IS_NIGHTLY=$2 --rm -v ${WORKSPACE}:${WORKSPACE} -w ${WORKSPACE} gpuci/miniconda-cuda:10.0-devel-ubuntu16.04 ./ci/cpu/build.sh

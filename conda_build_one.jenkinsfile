@@ -9,7 +9,8 @@ pipeline {
 
   parameters {
     string(name: 'BRANCH', defaultValue: 'develop', description: 'Branch from compile')
-    string(name: 'CONDA_TOKEN', defaultValue: 'conda-token', description: '')
+    booleanParam(name: 'IS_NIGHTLY', defaultValue: false, description: 'If is true use blazingsql-nightly channel')
+    string(name: 'CONDA_TOKEN', defaultValue: 'edith-conda-token-test', description: '')
     string(name: 'SLACK_CHANNEL', defaultValue: 'jenkins-blazingsql', description: '')
   }
   
@@ -28,7 +29,7 @@ pipeline {
     stage("Compile & Publish") {
       steps {
         withCredentials([string(credentialsId: "${params.CONDA_TOKEN}", variable: 'TOKEN')]) {
-          sh "./conda-build-docker.sh $TOKEN"
+          sh "./conda-build-docker.sh $TOKEN $IS_NIGHTLY"
         }
       }
     }
