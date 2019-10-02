@@ -10,7 +10,7 @@ pipeline {
   parameters {
     string(name: 'BRANCH', defaultValue: 'develop', description: 'Branch from compile')
     booleanParam(name: 'IS_NIGHTLY', defaultValue: false, description: 'If is true use blazingsql-nightly channel')
-    string(name: 'CONDA_TOKEN', defaultValue: 'edith-conda-nightly', description: '')
+    string(name: 'CONDA_TOKEN', defaultValue: 'conda-token', description: '')
     string(name: 'SLACK_CHANNEL', defaultValue: 'jenkins-blazingsql', description: '')
   }
   
