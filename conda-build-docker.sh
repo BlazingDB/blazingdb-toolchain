@@ -1,6 +1,6 @@
 #!/bin/bash
-# usage:   ./conda-build-docker.sh token
-# example: ./conda-build-docker.sh 123
+# usage:   ./conda-build-docker.sh token nightly
+# example: ./conda-build-docker.sh 123 true
 
 export WORKSPACE=$PWD
 
