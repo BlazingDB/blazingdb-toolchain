@@ -16,4 +16,4 @@ test -e ${TAR_FILE}
 echo "Upload toolchain"
 echo ${TAR_FILE}
 
-anaconda -t ${MY_UPLOAD_KEY} upload -u editha$NIGHTLY ${LABEL_OPTION} --force ${TAR_FILE}
+anaconda -t ${MY_UPLOAD_KEY} upload -u blazingsql$NIGHTLY ${LABEL_OPTION} --force ${TAR_FILE}
