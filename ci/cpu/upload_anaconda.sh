@@ -4,7 +4,8 @@ set -e
 
 export TAR_FILE=`conda build conda/recipes/blazingsql-toolchain --output`
 
-LABEL_OPTION="--label main"
+#LABEL_OPTION="--label main"
+LABEL_OPTION="--label test"
 echo "LABEL_OPTION=${LABEL_OPTION}"
 
 if [ -z "$MY_UPLOAD_KEY" ]; then
