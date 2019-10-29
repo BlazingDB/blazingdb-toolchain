@@ -24,7 +24,7 @@ requirements:
         - gtest
         - gmock
         - setuptools
-        - boost-cpp >=1.70.0
+        - boost-cpp ==1.70.0
         - openssl
         - zlib
         - curl
@@ -38,7 +38,7 @@ requirements:
         - gtest
         - gmock
         - setuptools
-        - boost-cpp >=1.70.0
+        - boost-cpp ==1.70.0
         - openssl
         - zlib
         - curl
