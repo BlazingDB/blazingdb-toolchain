@@ -16,11 +16,19 @@ include(CheckIncludeFiles)
 include(CheckLibraryExists)
 include(CTest)
 
-# NOTE Do not change the inclusion order
-# Configure dependencies
-# TODO percy add support for aws too latr
-# include(ConfigureAWSSDK)
-include(ConfigureGoogleCloudCPP)
+message(STATUS "BUILD_TARGET is ${BUILD_TARGET}")
+
+if (BUILD_TARGET)
+    if (BUILD_TARGET STREQUAL "gcp-cpp")
+        include(ConfigureGoogleCloudCPP)
+    elseif (BUILD_TARGET STREQUAL "aws-cpp")
+        include(ConfigureAWSSDK)
+    else()
+        message(FATAL_ERROR "Error: Invalid value for BUILD_TARGET (${BUILD_TARGET}) You need to pass -DBUILD_TARGET=gcp-cpp or -DBUILD_TARGET=aws-cpp")
+    endif()
+else()
+    message(FATAL_ERROR "Error: You need to pass -DBUILD_TARGET=gcp-cpp or -DBUILD_TARGET=aws-cpp")
+endif()
 
 # BEGIN MAIN #
 # NOTE use USE_SOURCE_PERMISSIONS to preserve executable file permisions (e.g. flatc, etc)
