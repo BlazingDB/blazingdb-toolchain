@@ -52,15 +52,15 @@ if (BUILD_TARGET)
 
         include(ConfigureGoogleCloudCPP)
         install(DIRECTORY ${GOOGLE_CLOUD_CPP_ROOT} DESTINATION . USE_SOURCE_PERMISSIONS)
-        install(FILE ${CMAKE_SOURCE_DIR}/cmake/ConfigureGoogleCloudCPP.cmake DESTINATION lib/cmake)
+        install(FILES ${CMAKE_SOURCE_DIR}/cmake/ConfigureGoogleCloudCPP.cmake DESTINATION lib/cmake)
 
     elseif (BUILD_TARGET STREQUAL "aws-cpp")
 
         include(ConfigureAWSSDK)
         # NOTE use USE_SOURCE_PERMISSIONS to preserve executable file permisions (e.g. flatc, etc)
         install(DIRECTORY ${AWS_SDK_CPP_ROOT} DESTINATION . USE_SOURCE_PERMISSIONS)
-        install(FILE ${CMAKE_SOURCE_DIR}/cmake/ConfigureAWSSDK.cmake DESTINATION lib/cmake)
-        install(FILE ${CMAKE_SOURCE_DIR}/cmake/AWSSDKCPP.CMakeLists.txt.cmake DESTINATION lib/cmake)
+        install(FILES ${CMAKE_SOURCE_DIR}/cmake/ConfigureAWSSDK.cmake DESTINATION lib/cmake)
+        install(FILES ${CMAKE_SOURCE_DIR}/cmake/AWSSDKCPP.CMakeLists.txt.cmake DESTINATION lib/cmake)
 
     else()
         message(FATAL_ERROR "Error: Invalid value for BUILD_TARGET (${BUILD_TARGET}) You need to pass -DBUILD_TARGET=gcp-cpp or -DBUILD_TARGET=aws-cpp")
