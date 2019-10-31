@@ -1,6 +1,6 @@
 #=============================================================================
 # Copyright 2018 BlazingDB, Inc.
-#     Copyright 2018-2019 Percy Camilo Triveño Aucahuasi <percy@blazingdb.com>
+#     Copyright 2018 Percy Camilo Triveño Aucahuasi <percy@blazingdb.com>
 #=============================================================================
 
 # BEGIN macros
@@ -28,13 +28,11 @@ endmacro()
 
 macro(CONFIGURE_AWS_SDK_CPP_EXTERNAL_PROJECT)
     # NOTE percy c.gonzales if you want to pass other RAL CMAKE_CXX_FLAGS into this dependency add it by harcoding
-    set(AWS_SDK_CPP_CMAKE_ARGS " -DBUILD_OPENSSL=ON"
-                               " -DBUILD_CURL=ON"
-                               " -DBUILD_SHARED_LIBS=OFF"
-                               " -DENABLE_TESTING=OFF"
-                               " -DENABLE_UNITY_BUILD=ON"
-                               " -DCUSTOM_MEMORY_MANAGEMENT=0"
-                               " -DCPP_STANDARD=${CMAKE_CXX_STANDARD}")
+    set(AWS_SDK_CPP_CMAKE_ARGS  " -DBUILD_SHARED_LIBS=OFF"
+                                " -DENABLE_TESTING=OFF"
+                                " -DENABLE_UNITY_BUILD=ON"
+                                " -DCUSTOM_MEMORY_MANAGEMENT=0"
+                                " -DCPP_STANDARD=${CMAKE_CXX_STANDARD}")
 
     if(CXX_OLD_ABI)
         # enable old ABI for C/C++
@@ -62,26 +60,6 @@ macro(CONFIGURE_AWS_SDK_CPP_EXTERNAL_PROJECT)
     if(result)
         message(FATAL_ERROR "CMake step for aws-sdk-cpp failed: ${result}")
     endif()
-
-    # Patch main aws cmake
-    file(
-        COPY ${CMAKE_SOURCE_DIR}/patches/aws-sdk-cpp-patch/CMakeLists.txt
-        DESTINATION ${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/aws-sdk-cpp-src/
-    )
-
-    # Patch issue with libatomics
-    file(
-        COPY ${CMAKE_SOURCE_DIR}/patches/aws-sdk-cpp-patch/cmake/platform/linux.cmake
-        DESTINATION ${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/aws-sdk-cpp-src/cmake/platform/
-    )
-
-    message(STATUS "==== Patch for AWS SDK CPP applied! ====")
-
-    execute_process(
-        COMMAND ${CMAKE_COMMAND} --build . -- -j8
-        RESULT_VARIABLE result
-        WORKING_DIRECTORY ${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/aws-sdk-cpp-download/
-    )
 
     execute_process(
         COMMAND ${CMAKE_COMMAND} --build . -- -j8
@@ -115,17 +93,14 @@ endmacro()
 
 # BEGIN MAIN #
 
-if (AWS_SDK_CPP_INSTALL_DIR)
-    message(STATUS "AWS_SDK_CPP_INSTALL_DIR defined, it will use vendor version from ${AWS_SDK_CPP_INSTALL_DIR}")
-    set(AWS_SDK_CPP_ROOT "${AWS_SDK_CPP_INSTALL_DIR}")
+if (AWS_SDK_CPP_BUILD_DIR)
+    message(STATUS "AWS_SDK_CPP_BUILD_DIR defined, it will use vendor version from ${AWS_SDK_CPP_BUILD_DIR}")
+    set(AWS_SDK_CPP_ROOT "${AWS_SDK_CPP_BUILD_DIR}")
 else()
-    message(STATUS "AWS_SDK_CPP_INSTALL_DIR not defined, it will be built from sources")
+    message(STATUS "AWS_SDK_CPP_BUILD_DIR not defined, it will be built from sources")
     configure_aws_sdk_cpp_external_project()
-    set(AWS_SDK_CPP_ROOT "${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/aws-sdk-cpp-install/")
+    set(AWS_SDK_CPP_ROOT "${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/aws-sdk-cpp-build/")
 endif()
-
-# NOTE for the find packages
-list(APPEND CMAKE_PREFIX_PATH ${AWS_SDK_CPP_ROOT})
 
 set(aws-sdk-cpp_DIR ${AWS_SDK_CPP_ROOT})
 
@@ -135,32 +110,12 @@ set(aws-sdk-cpp_DIR ${AWS_SDK_CPP_ROOT})
 # or export/set:
 #   CMAKE_PREFIX_PATH=/path/to/sdk_build
 message(STATUS "aws-sdk-cpp_DIR: " ${aws-sdk-cpp_DIR})
-
-# NOTE DO NOT CHANGE DE ORDER!
-find_package(aws-cpp-sdk-core REQUIRED)
-find_package(aws-cpp-sdk-s3 REQUIRED)
-find_package(aws-cpp-sdk-kms REQUIRED)
-find_package(aws-cpp-sdk-s3-encryption REQUIRED)
-
-set_package_properties(aws-cpp-sdk-core PROPERTIES TYPE REQUIRED
-    PURPOSE "AWS SDK for C++ allows to integrate any C++ application with AWS services. Module: aws-cpp-sdk-core"
+find_package(aws-sdk-cpp REQUIRED COMPONENTS aws-cpp-sdk-core aws-cpp-sdk-s3 aws-cpp-sdk-s3-encryption aws-cpp-sdk-kms)
+set_package_properties(aws-sdk-cpp PROPERTIES TYPE REQUIRED
+    PURPOSE "AWS SDK for C++ allows to integrate any C++ application with AWS services."
     URL "https://aws.amazon.com/sdk-for-cpp/")
 
-set_package_properties(aws-cpp-sdk-s3 PROPERTIES TYPE REQUIRED
-    PURPOSE "AWS SDK for C++ allows to integrate any C++ application with AWS services. Module: aws-cpp-sdk-s3"
-    URL "https://aws.amazon.com/sdk-for-cpp/")
-
-
-set_package_properties(aws-cpp-sdk-kms PROPERTIES TYPE REQUIRED
-    PURPOSE "AWS SDK for C++ allows to integrate any C++ application with AWS services. Module: aws-cpp-sdk-kms"
-    URL "https://aws.amazon.com/sdk-for-cpp/")
-
-
-set_package_properties(aws-cpp-sdk-s3-encryption PROPERTIES TYPE REQUIRED
-    PURPOSE "AWS SDK for C++ allows to integrate any C++ application with AWS services. Module: aws-cpp-sdk-s3-encryption"
-    URL "https://aws.amazon.com/sdk-for-cpp/")
-
-message(STATUS "AWS SDK for C++ found in ${AWS_SDK_CPP_ROOT}")
+message(STATUS "AWS SDK for C++ found in ${aws-sdk-cpp_DIR}")
 
 configure_aws_sdk()
 
