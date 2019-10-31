@@ -10,6 +10,9 @@ project(blazingdb-dependencies C CXX)
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake/" ${CMAKE_MODULE_PATH})
 message(STATUS "CMAKE_MODULE_PATH:" "${CMAKE_MODULE_PATH}")
 
+# Parse the components version and download URLs
+include(DefineVersions)
+
 # Include CMake modules
 include(FeatureSummary)
 include(CheckIncludeFiles)
