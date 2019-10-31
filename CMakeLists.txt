@@ -5,7 +5,7 @@
 
 cmake_minimum_required(VERSION 3.11)
 
-project(blazingdb-dependencies C CXX)
+project(blazingsql-dependencies C CXX)
 
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake/" ${CMAKE_MODULE_PATH})
 message(STATUS "CMAKE_MODULE_PATH:" "${CMAKE_MODULE_PATH}")
@@ -49,9 +49,19 @@ message(STATUS "BUILD_TARGET is ${BUILD_TARGET}")
 
 if (BUILD_TARGET)
     if (BUILD_TARGET STREQUAL "gcp-cpp")
+
         include(ConfigureGoogleCloudCPP)
+        install(DIRECTORY ${GOOGLE_CLOUD_CPP_ROOT} DESTINATION . USE_SOURCE_PERMISSIONS)
+        install(FILE ${CMAKE_SOURCE_DIR}/cmake/ConfigureGoogleCloudCPP.cmake DESTINATION lib/cmake)
+
     elseif (BUILD_TARGET STREQUAL "aws-cpp")
+
         include(ConfigureAWSSDK)
+        # NOTE use USE_SOURCE_PERMISSIONS to preserve executable file permisions (e.g. flatc, etc)
+        install(DIRECTORY ${AWS_SDK_CPP_ROOT} DESTINATION . USE_SOURCE_PERMISSIONS)
+        install(FILE ${CMAKE_SOURCE_DIR}/cmake/ConfigureAWSSDK.cmake DESTINATION lib/cmake)
+        install(FILE ${CMAKE_SOURCE_DIR}/cmake/AWSSDKCPP.CMakeLists.txt.cmake DESTINATION lib/cmake)
+
     else()
         message(FATAL_ERROR "Error: Invalid value for BUILD_TARGET (${BUILD_TARGET}) You need to pass -DBUILD_TARGET=gcp-cpp or -DBUILD_TARGET=aws-cpp")
     endif()
@@ -60,12 +70,6 @@ else()
 endif()
 
 # BEGIN MAIN #
-# NOTE use USE_SOURCE_PERMISSIONS to preserve executable file permisions (e.g. flatc, etc)
-install(DIRECTORY ${AWS_SDK_CPP_ROOT} DESTINATION build/aws-sdk-cpp USE_SOURCE_PERMISSIONS)
-install(DIRECTORY ${GOOGLE_CLOUD_CPP_ROOT} DESTINATION . USE_SOURCE_PERMISSIONS)
-
-# Install the cmake modules to be used by the users/projects
-install(DIRECTORY ${CMAKE_SOURCE_DIR}/cmake/ DESTINATION lib/cmake)
 
 # Print the project summary
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
