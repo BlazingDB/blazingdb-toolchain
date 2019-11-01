@@ -61,6 +61,8 @@ if (BUILD_TARGET)
         install(DIRECTORY ${AWS_SDK_CPP_ROOT} DESTINATION . USE_SOURCE_PERMISSIONS)
         install(FILES ${CMAKE_SOURCE_DIR}/cmake/ConfigureAWSSDK.cmake DESTINATION lib/cmake)
         install(FILES ${CMAKE_SOURCE_DIR}/cmake/AWSSDKCPP.CMakeLists.txt.cmake DESTINATION lib/cmake)
+        # NOTE We need to override the aws-cpp-sdk-core-targets.cmake to discart the conda build paths and use conda prefix instead
+        install(FILES ${CMAKE_SOURCE_DIR}/patches/aws-sdk-cpp-patch/aws-cpp-sdk-core-targets.cmake DESTINATION lib/cmake/aws-cpp-sdk-core/)
 
     else()
         message(FATAL_ERROR "Error: Invalid value for BUILD_TARGET (${BUILD_TARGET}) You need to pass -DBUILD_TARGET=gcp-cpp or -DBUILD_TARGET=aws-cpp")
