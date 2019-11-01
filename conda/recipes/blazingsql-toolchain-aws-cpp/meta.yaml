@@ -16,18 +16,6 @@ build:
 
 requirements:
     build:
-        - {{ compiler('c') }}
-        - {{ compiler('cxx') }}
-        - cmake
-        - gtest
-        - gmock
-        - boost-cpp ==1.70.0
-        - openssl
-        - zlib
-        - curl
-    host:
-        - {{ compiler('c') }}
-        - {{ compiler('cxx') }}
         - cmake
         - gtest
         - gmock
@@ -36,9 +24,17 @@ requirements:
         - zlib
         - curl
 
+    host:
+        - boost-cpp ==1.70.0
+        - openssl
+        - zlib
+        - curl
+
     run:
         - boost-cpp ==1.70.0
+        - openssl
         - zlib
+        - curl
 
 about:
     home: http://www.blazingsql.com/

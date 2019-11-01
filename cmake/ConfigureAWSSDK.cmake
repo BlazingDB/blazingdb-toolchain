@@ -63,6 +63,20 @@ macro(CONFIGURE_AWS_SDK_CPP_EXTERNAL_PROJECT)
         message(FATAL_ERROR "CMake step for aws-sdk-cpp failed: ${result}")
     endif()
 
+    # Patch main aws cmake
+    file(
+        COPY ${CMAKE_SOURCE_DIR}/patches/aws-sdk-cpp-patch/CMakeLists.txt
+        DESTINATION ${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/aws-sdk-cpp-src/
+    )
+
+    message(STATUS "==== Patch for AWS SDK CPP applied! ====")
+
+    execute_process(
+        COMMAND ${CMAKE_COMMAND} --build . -- -j8
+        RESULT_VARIABLE result
+        WORKING_DIRECTORY ${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/aws-sdk-cpp-download/
+    )
+
     execute_process(
         COMMAND ${CMAKE_COMMAND} --build . -- -j8
         RESULT_VARIABLE result
