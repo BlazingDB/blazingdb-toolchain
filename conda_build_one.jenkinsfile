@@ -8,8 +8,8 @@ pipeline {
   }
 
   parameters {
-    booleanParam(name: 'IS_NIGHTLY', defaultValue: false, description: 'If is true use blazingsql-nightly channel')
-    string(name: 'CONDA_TOKEN', defaultValue: 'conda-token', description: '')
+    string(name: 'CONDA_UPLOAD', defaultValue: 'blazingsql-nightly', description: 'The Anaconda repository could be: blazingsql, blazingsql-nightly, mario21ic, etc')
+    string(name: 'CONDA_TOKEN', defaultValue: 'conda-token-nightly', description: 'Token to upload package')
     string(name: 'SLACK_CHANNEL', defaultValue: 'jenkins-blazingsql', description: '')
   }
   
@@ -28,7 +28,7 @@ pipeline {
     stage("Compile & Publish") {
       steps {
         withCredentials([string(credentialsId: "${params.CONDA_TOKEN}", variable: 'TOKEN')]) {
-          sh "./conda-build-docker.sh $TOKEN ${params.IS_NIGHTLY}"
+          sh "./conda-build-docker.sh $TOKEN ${params.CONDA_UPLOAD}"
         }
       }
     }

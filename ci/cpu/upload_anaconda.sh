@@ -4,8 +4,7 @@ set -e
 
 export TAR_FILE=`conda build conda/recipes/blazingsql-toolchain --output`
 
-#LABEL_OPTION="--label main"
-LABEL_OPTION="--label test"
+LABEL_OPTION="--label main"
 echo "LABEL_OPTION=${LABEL_OPTION}"
 
 if [ -z "$MY_UPLOAD_KEY" ]; then
@@ -14,7 +13,10 @@ if [ -z "$MY_UPLOAD_KEY" ]; then
 fi
 
 test -e ${TAR_FILE}
-echo "Upload toolchain"
-echo ${TAR_FILE}
+echo "Upload file: "${TAR_FILE}
 
-anaconda -t ${MY_UPLOAD_KEY} upload -u blazingsql$NIGHTLY ${LABEL_OPTION} --force ${TAR_FILE}
+if [ -z "$CONDA_UPLOAD" ]; then
+    CONDA_UPLOAD="blazingsql"
+fi
+
+anaconda -t ${MY_UPLOAD_KEY} upload -u ${CONDA_UPLOAD} ${LABEL_OPTION} --force ${TAR_FILE}
