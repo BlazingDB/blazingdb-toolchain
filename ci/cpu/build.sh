@@ -43,8 +43,14 @@ conda install -y conda-build anaconda-client
 # BUILD - Conda package builds
 ################################################################################
 
-logger "Build conda pkg for communication..."
+logger "Build conda pkg for toolchain-aws..."
+source ci/cpu/toolchain-aws/conda-build.sh
+
+logger "Build conda pkg for toolchain-gcp..."
+source ci/cpu/toolchain-gcp/conda-build.sh
+
+logger "Build conda pkg for toolchain..."
 source ci/cpu/toolchain/conda-build.sh
 
-logger "Upload conda pkg for communication..."
+logger "Upload conda pkg for toolchain-aws..."
 source ci/cpu/upload_anaconda.sh
