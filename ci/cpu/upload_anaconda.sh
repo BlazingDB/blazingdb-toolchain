@@ -14,10 +14,6 @@ if [ -z "$MY_UPLOAD_KEY" ]; then
     return 0
 fi
 
-if [ -z "$CONDA_UPLOAD" ]; then
-    CONDA_UPLOAD="blazingsql"
-fi
-
 test -e ${AWS_FILE}
 echo "Upload file: "${AWS_FILE}
 anaconda -t ${MY_UPLOAD_KEY} upload -u ${CONDA_UPLOAD} ${LABEL_OPTION} --force ${AWS_FILE}
