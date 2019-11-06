@@ -30,10 +30,12 @@ else
         CONDA_CH=$CONDA_CH" -c "$item
     done
 fi
+export $CONDA_CH
 
 if [ -z "$CONDA_UPLOAD" ]; then
     CONDA_UPLOAD="blazingsql"
 fi
+export $CONDA_UPLOAD
 
 ################################################################################
 # SETUP - Check environment
