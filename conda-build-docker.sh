@@ -3,6 +3,7 @@
 # example: ./conda-build-docker.sh blazingsql-nightly,rapidsai-nightly blazingsql-nightly 123
 
 export WORKSPACE=$PWD
+mkdir -p $PWD/cache/
 
 docker run --rm \
     -u $(id -u):$(id -g) \
