@@ -20,12 +20,6 @@ cd $WORKSPACE
 export GIT_DESCRIBE_TAG=`git describe --abbrev=0 --tags`
 export GIT_DESCRIBE_NUMBER=`git rev-list ${GIT_DESCRIBE_TAG}..HEAD --count`
 
-# Nightly seccion
-echo "IS_NIGHTLY" $IS_NIGHTLY
-if [ $IS_NIGHTLY == "true" ]; then
-      NIGHTLY="-nightly"
-fi
-
 ################################################################################
 # SETUP - Check environment
 ################################################################################
@@ -49,8 +43,14 @@ conda install -y conda-build anaconda-client
 # BUILD - Conda package builds
 ################################################################################
 
-logger "Build conda pkg for communication..."
+logger "Build conda pkg for toolchain-aws..."
+source ci/cpu/toolchain-aws/conda-build.sh
+
+logger "Build conda pkg for toolchain-gcp..."
+source ci/cpu/toolchain-gcp/conda-build.sh
+
+logger "Build conda pkg for toolchain..."
 source ci/cpu/toolchain/conda-build.sh
 
-logger "Upload conda pkg for communication..."
+logger "Upload conda pkg for toolchain-aws..."
 source ci/cpu/upload_anaconda.sh

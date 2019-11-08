@@ -4,7 +4,7 @@
 {% set git_revision_count=environ.get('GIT_DESCRIBE_NUMBER', 0) %}
 
 package:
-    name: blazingsql-toolchain
+    name: blazingsql-toolchain-aws-cpp
     version: {{ version }}
 
 source:
@@ -16,11 +16,25 @@ build:
 
 requirements:
     build:
-        - blazingsql-toolchain-aws-cpp
-        - blazingsql-toolchain-gcp-cpp
+        - cmake
+        - gtest
+        - gmock
+        - boost-cpp ==1.70.0
+        - openssl
+        - zlib
+        - curl
+
+    host:
+        - boost-cpp ==1.70.0
+        - openssl
+        - zlib
+        - curl
+
     run:
-        - blazingsql-toolchain-aws-cpp
-        - blazingsql-toolchain-gcp-cpp
+        - boost-cpp ==1.70.0
+        - openssl
+        - zlib
+        - curl
 
 about:
     home: http://www.blazingsql.com/

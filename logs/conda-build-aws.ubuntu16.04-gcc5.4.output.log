@@ -1,0 +1,1350 @@
+(buildaws-dbg) percy@pctabz:~/Blazing/projects/code/blazingdb-toolchain$ conda build -c conda-forge -c defaults -c aucahuasi --python=$PYTHON --output-folder /home/percy/Desktop/___NOLL/heeee/aws conda/recipes/blazingsql-toolchain-aws-cpp/
+/home/percy/Applications/anaconda/conda/envs/buildaws-dbg/lib/python3.7/site-packages/conda_build/utils.py:1209: UserWarning: RECIPE_PATH received is a file. File: conda/recipes/blazingsql-toolchain-aws-cpp/meta.yaml
+It should be a path to a folder. 
+Forcing conda-build to use the recipe file.
+  UserWarning
+No numpy version specified in conda_build_config.yaml.  Falling back to default numpy value of 1.11
+WARNING:conda_build.metadata:No numpy version specified in conda_build_config.yaml.  Falling back to default numpy value of 1.11
+Copying /home/percy/Blazing/projects/code/blazingdb-toolchain to /home/percy/Applications/anaconda/conda/envs/buildaws-dbg/conda-bld/blazingsql-toolchain-aws-cpp_1572582595142/work/
+Adding in variants from internal_defaults
+INFO:conda_build.variants:Adding in variants from internal_defaults
+Attempting to finalize metadata for blazingsql-toolchain-aws-cpp
+INFO:conda_build.metadata:Attempting to finalize metadata for blazingsql-toolchain-aws-cpp
+Collecting package metadata (repodata.json): ...working... done
+Solving environment: ...working... done
+Collecting package metadata (repodata.json): ...working... done
+Solving environment: ...working... done
+Collecting package metadata (repodata.json): ...working... done
+Solving environment: ...working... done
+BUILD START: ['blazingsql-toolchain-aws-cpp-0.4.5-13.tar.bz2']
+Collecting package metadata (repodata.json): ...working... done
+Solving environment: ...working... done
+
+## Package Plan ##
+
+  environment location: /home/percy/Applications/anaconda/conda/envs/buildaws-dbg/conda-bld/blazingsql-toolchain-aws-cpp_1572582595142/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho
+
+
+The following NEW packages will be INSTALLED:
+
+    _libgcc_mutex:   0.1-main                              
+    boost-cpp:       1.70.0-h8e57a91_2          conda-forge
+    bzip2:           1.0.8-h516909a_1           conda-forge
+    ca-certificates: 2019.9.11-hecc5488_0       conda-forge
+    curl:            7.65.3-hf8cf82a_0          conda-forge
+    icu:             64.2-he1b5a44_1            conda-forge
+    krb5:            1.16.3-h05b26f9_1001       conda-forge
+    libcurl:         7.65.3-hda55be3_0          conda-forge
+    libedit:         3.1.20170329-hf8c457e_1001 conda-forge
+    libgcc-ng:       9.1.0-hdf63c60_0                      
+    libssh2:         1.8.2-h22169c7_2           conda-forge
+    libstdcxx-ng:    9.1.0-hdf63c60_0                      
+    ncurses:         6.1-hf484d3e_1002          conda-forge
+    openssl:         1.1.1c-h516909a_0          conda-forge
+    tk:              8.6.9-hed695b0_1003        conda-forge
+    xz:              5.2.4-h14c3975_1001        conda-forge
+    zlib:            1.2.11-h516909a_1006       conda-forge
+
+Preparing transaction: ...working... done
+Verifying transaction: ...working... done
+Executing transaction: ...working... done
+Collecting package metadata (repodata.json): ...working... done
+Solving environment: ...working... done
+Collecting package metadata (repodata.json): ...working... done
+Solving environment: ...working... done
+
+## Package Plan ##
+
+  environment location: /home/percy/Applications/anaconda/conda/envs/buildaws-dbg/conda-bld/blazingsql-toolchain-aws-cpp_1572582595142/_build_env
+
+
+The following NEW packages will be INSTALLED:
+
+    _libgcc_mutex:   0.1-main                              
+    boost-cpp:       1.70.0-h8e57a91_2          conda-forge
+    bzip2:           1.0.8-h516909a_1           conda-forge
+    ca-certificates: 2019.9.11-hecc5488_0       conda-forge
+    cmake:           3.15.5-hf94ab9c_0          conda-forge
+    curl:            7.65.3-hf8cf82a_0          conda-forge
+    expat:           2.2.5-he1b5a44_1004        conda-forge
+    gmock:           1.10.0-0                   conda-forge
+    gtest:           1.10.0-hc9558a2_0          conda-forge
+    icu:             64.2-he1b5a44_1            conda-forge
+    krb5:            1.16.3-h05b26f9_1001       conda-forge
+    libcurl:         7.65.3-hda55be3_0          conda-forge
+    libedit:         3.1.20170329-hf8c457e_1001 conda-forge
+    libgcc-ng:       9.1.0-hdf63c60_0                      
+    libssh2:         1.8.2-h22169c7_2           conda-forge
+    libstdcxx-ng:    9.1.0-hdf63c60_0                      
+    libuv:           1.33.1-h516909a_0          conda-forge
+    ncurses:         6.1-hf484d3e_1002          conda-forge
+    openssl:         1.1.1c-h516909a_0          conda-forge
+    rhash:           1.3.6-h14c3975_1001        conda-forge
+    tk:              8.6.9-hed695b0_1003        conda-forge
+    xz:              5.2.4-h14c3975_1001        conda-forge
+    zlib:            1.2.11-h516909a_1006       conda-forge
+
+Preparing transaction: ...working... done
+Verifying transaction: ...working... done
+Executing transaction: ...working... done
+source tree in: /home/percy/Applications/anaconda/conda/envs/buildaws-dbg/conda-bld/blazingsql-toolchain-aws-cpp_1572582595142/work
+export PREFIX=/home/percy/Applications/anaconda/conda/envs/buildaws-dbg/conda-bld/blazingsql-toolchain-aws-cpp_1572582595142/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho
+export BUILD_PREFIX=/home/percy/Applications/anaconda/conda/envs/buildaws-dbg/conda-bld/blazingsql-toolchain-aws-cpp_1572582595142/_build_env
+export SRC_DIR=/home/percy/Applications/anaconda/conda/envs/buildaws-dbg/conda-bld/blazingsql-toolchain-aws-cpp_1572582595142/work
+-- The C compiler identification is GNU 5.4.0
+-- The CXX compiler identification is GNU 5.4.0
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- CMAKE_MODULE_PATH:$SRC_DIR/cmake/
+-- Conda build detected, CMAKE_SYSTEM_PREFIX_PATH set to: $BUILD_PREFIX;$PREFIX;/usr/local;/usr;/;$BUILD_PREFIX;$PREFIX;/usr/X11R6;/usr/pkg;/opt
+-- ************************************************************************************************
+-- AWS_SDK_CPP information:
+-- Using the default repository for AWS_SDK_CPP_GIT_REPOSITORY: https://github.com/aws/aws-sdk-cpp.git
+-- Using the default tag for AWS_SDK_CPP_GIT_TAG: 864eb0bca8b48427f94850b7a8311ef0ae0f433b
+-- Using the default build type for AWS_SDK_CPP_BUILD_TYPE: Release
+-- AWS_SDK_CPP_GIT_REPOSITORY: https://github.com/aws/aws-sdk-cpp.git
+-- AWS_SDK_CPP_GIT_TAG: 864eb0bca8b48427f94850b7a8311ef0ae0f433b
+-- AWS_SDK_CPP_BUILD_TYPE: Release
+-- ************************************************************************************************
+-- BUILD_TARGET is aws-cpp
+-- AWS_SDK_CPP_INSTALL_DIR not defined, it will be built from sources
+-- Configuring done
+-- Generating done
+-- Build files have been written to: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-download
+-- ==== Patch for AWS SDK CPP applied! ====
+Scanning dependencies of target aws-sdk-cpp
+[ 12%] Creating directories for 'aws-sdk-cpp'
+[ 25%] Performing download step (git clone) for 'aws-sdk-cpp'
+Cloning into 'aws-sdk-cpp-src'...
+Checking out files: 100% (42830/42830), done.
+Note: checking out '864eb0bca8b48427f94850b7a8311ef0ae0f433b'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -b with the checkout command again. Example:
+
+  git checkout -b <new-branch-name>
+
+HEAD is now at 864eb0b... Merge branch 'master' into release-candidate
+[ 50%] No update step for 'aws-sdk-cpp'
+[ 50%] No patch step for 'aws-sdk-cpp'
+[ 62%] Performing configure step for 'aws-sdk-cpp'
+-- Found Git: /usr/bin/git (found version "2.7.4") 
+-- TARGET_ARCH not specified; inferring host OS to be platform compilation target
+-- Building AWS libraries as static objects
+-- Generating linux build config
+-- Building project version: 1.3.16
+-- The CXX compiler identification is GNU 5.4.0
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ZLIB: $BUILD_PREFIX/lib/libz.so (found version "1.2.11") 
+--   Zlib include directory: $BUILD_PREFIX/include
+--   Zlib library: $BUILD_PREFIX/lib/libz.so
+-- Encryption: Openssl
+-- Found OpenSSL: $BUILD_PREFIX/lib/libcrypto.so (found version "1.1.1c")  
+--   Openssl include directory: $BUILD_PREFIX/include
+--   Openssl library: $BUILD_PREFIX/lib/libssl.so;$BUILD_PREFIX/lib/libcrypto.so
+-- Http client: Curl
+-- Found CURL: $BUILD_PREFIX/lib/libcurl.so (found version "7.65.3")  
+--   Curl include directory: $BUILD_PREFIX/include
+--   Curl library: $BUILD_PREFIX/lib/libcurl.so
+-- Performing Test HAVE_ATOMICS_WITHOUT_LIBATOMIC
+-- Performing Test HAVE_ATOMICS_WITHOUT_LIBATOMIC - Success
+-- Considering core
+-- Considering s3
+-- Considering s3-encryption
+-- The C compiler identification is GNU 5.4.0
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Updating version info to 1.3.16
+-- Custom memory management disabled
+-- Configuring done
+-- Generating done
+-- Build files have been written to: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-build
+[ 75%] Performing build step for 'aws-sdk-cpp'
+Scanning dependencies of target aws-cpp-sdk-core
+[  2%] Building CXX object aws-cpp-sdk-core/CMakeFiles/aws-cpp-sdk-core.dir/source/http/HttpClient.cpp.o
+[  5%] Building CXX object aws-cpp-sdk-core/CMakeFiles/aws-cpp-sdk-core.dir/source/external/json-cpp/jsoncpp.cpp.o
+[  8%] Building CXX object aws-cpp-sdk-core/CMakeFiles/aws-cpp-sdk-core.dir/source/http/HttpClientFactory.cpp.o
+[ 10%] Building CXX object aws-cpp-sdk-core/CMakeFiles/aws-cpp-sdk-core.dir/source/http/HttpRequest.cpp.o
+[ 13%] Building CXX object aws-cpp-sdk-core/CMakeFiles/aws-cpp-sdk-core.dir/ub_core.cpp.o
+[ 18%] Building CXX object aws-cpp-sdk-core/CMakeFiles/aws-cpp-sdk-core.dir/source/http/Scheme.cpp.o
+[ 18%] Building CXX object aws-cpp-sdk-core/CMakeFiles/aws-cpp-sdk-core.dir/source/http/HttpTypes.cpp.o
+[ 21%] Building CXX object aws-cpp-sdk-core/CMakeFiles/aws-cpp-sdk-core.dir/source/http/URI.cpp.o
+[ 24%] Building CXX object aws-cpp-sdk-core/CMakeFiles/aws-cpp-sdk-core.dir/source/http/curl/CurlHandleContainer.cpp.o
+[ 27%] Building CXX object aws-cpp-sdk-core/CMakeFiles/aws-cpp-sdk-core.dir/source/http/curl/CurlHttpClient.cpp.o
+[ 29%] Building CXX object aws-cpp-sdk-core/CMakeFiles/aws-cpp-sdk-core.dir/source/utils/Array.cpp.o
+[ 32%] Building CXX object aws-cpp-sdk-core/CMakeFiles/aws-cpp-sdk-core.dir/source/utils/DNS.cpp.o
+[ 35%] Building CXX object aws-cpp-sdk-core/CMakeFiles/aws-cpp-sdk-core.dir/source/utils/DateTimeCommon.cpp.o
+[ 37%] Building CXX object aws-cpp-sdk-core/CMakeFiles/aws-cpp-sdk-core.dir/source/utils/Directory.cpp.o
+[ 40%] Building CXX object aws-cpp-sdk-core/CMakeFiles/aws-cpp-sdk-core.dir/source/utils/EnumParseOverflowContainer.cpp.o
+[ 43%] Building CXX object aws-cpp-sdk-core/CMakeFiles/aws-cpp-sdk-core.dir/source/utils/FileSystemUtils.cpp.o
+[ 45%] Building CXX object aws-cpp-sdk-core/CMakeFiles/aws-cpp-sdk-core.dir/source/utils/GetTheLights.cpp.o
+[ 48%] Building CXX object aws-cpp-sdk-core/CMakeFiles/aws-cpp-sdk-core.dir/source/utils/HashingUtils.cpp.o
+[ 51%] Building CXX object aws-cpp-sdk-core/CMakeFiles/aws-cpp-sdk-core.dir/source/utils/StringUtils.cpp.o
+[ 54%] Building CXX object aws-cpp-sdk-core/CMakeFiles/aws-cpp-sdk-core.dir/source/utils/TempFile.cpp.o
+[ 56%] Building CXX object aws-cpp-sdk-core/CMakeFiles/aws-cpp-sdk-core.dir/source/utils/UUID.cpp.o
+[ 59%] Building CXX object aws-cpp-sdk-core/CMakeFiles/aws-cpp-sdk-core.dir/source/utils/crypto/factory/Factories.cpp.o
+[ 62%] Linking CXX static library libaws-cpp-sdk-core.a
+[ 62%] Built target aws-cpp-sdk-core
+Scanning dependencies of target aws-cpp-sdk-kms
+[ 64%] Building CXX object aws-cpp-sdk-kms/CMakeFiles/aws-cpp-sdk-kms.dir/ub_KMS.cpp.o
+Scanning dependencies of target aws-cpp-sdk-s3
+[ 67%] Building CXX object aws-cpp-sdk-s3/CMakeFiles/aws-cpp-sdk-s3.dir/ub_S3.cpp.o
+[ 70%] Linking CXX static library libaws-cpp-sdk-kms.a
+[ 70%] Built target aws-cpp-sdk-kms
+[ 72%] Linking CXX static library libaws-cpp-sdk-s3.a
+[ 72%] Built target aws-cpp-sdk-s3
+Scanning dependencies of target aws-cpp-sdk-s3-encryption
+[ 75%] Building CXX object aws-cpp-sdk-s3-encryption/CMakeFiles/aws-cpp-sdk-s3-encryption.dir/source/s3-encryption/CryptoConfiguration.cpp.o
+[ 78%] Building CXX object aws-cpp-sdk-s3-encryption/CMakeFiles/aws-cpp-sdk-s3-encryption.dir/source/s3-encryption/S3EncryptionClient.cpp.o
+[ 81%] Building CXX object aws-cpp-sdk-s3-encryption/CMakeFiles/aws-cpp-sdk-s3-encryption.dir/source/s3-encryption/handlers/MetadataHandler.cpp.o
+[ 86%] Building CXX object aws-cpp-sdk-s3-encryption/CMakeFiles/aws-cpp-sdk-s3-encryption.dir/source/s3-encryption/handlers/DataHandler.cpp.o
+[ 86%] Building CXX object aws-cpp-sdk-s3-encryption/CMakeFiles/aws-cpp-sdk-s3-encryption.dir/source/s3-encryption/handlers/InstructionFileHandler.cpp.o
+[ 89%] Building CXX object aws-cpp-sdk-s3-encryption/CMakeFiles/aws-cpp-sdk-s3-encryption.dir/source/s3-encryption/materials/SimpleEncryptionMaterials.cpp.o
+[ 91%] Building CXX object aws-cpp-sdk-s3-encryption/CMakeFiles/aws-cpp-sdk-s3-encryption.dir/source/s3-encryption/modules/CryptoModule.cpp.o
+[ 94%] Building CXX object aws-cpp-sdk-s3-encryption/CMakeFiles/aws-cpp-sdk-s3-encryption.dir/source/s3-encryption/materials/KMSEncryptionMaterials.cpp.o
+[ 97%] Building CXX object aws-cpp-sdk-s3-encryption/CMakeFiles/aws-cpp-sdk-s3-encryption.dir/source/s3-encryption/modules/CryptoModuleFactory.cpp.o
+[100%] Linking CXX static library libaws-cpp-sdk-s3-encryption.a
+[100%] Built target aws-cpp-sdk-s3-encryption
+[ 87%] Performing install step for 'aws-sdk-cpp'
+[ 62%] Built target aws-cpp-sdk-core
+[ 67%] Built target aws-cpp-sdk-kms
+[ 72%] Built target aws-cpp-sdk-s3
+[100%] Built target aws-cpp-sdk-s3-encryption
+Install the project...
+-- Install configuration: "Release"
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/lib/cmake/AWSSDK/AWSSDKConfigVersion.cmake
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/lib/cmake/AWSSDK/platformDeps.cmake
+-- Up-to-date: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/lib/cmake/AWSSDK
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/lib/cmake/AWSSDK/external_dependencies.cmake
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/lib/cmake/AWSSDK/dependencies.cmake
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/lib/cmake/AWSSDK/make_uninstall.cmake
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/lib/cmake/AWSSDK/sdks.cmake
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/lib/cmake/AWSSDK/utilities.cmake
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/lib/cmake/AWSSDK/build_external.cmake
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/lib/cmake/AWSSDK/setup_cmake_find_module.cmake
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/lib/cmake/AWSSDK/AWSSDKConfig.cmake
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/lib/cmake/AWSSDK/sdksCommon.cmake
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/lib/cmake/AWSSDK/initialize_project_version.cmake
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/lib/cmake/AWSSDK/platform
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/lib/cmake/AWSSDK/platform/unix.cmake
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/lib/cmake/AWSSDK/platform/linux.cmake
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/lib/cmake/AWSSDK/platform/apple.cmake
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/lib/cmake/AWSSDK/platform/android.toolchain.cmake
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/lib/cmake/AWSSDK/platform/windows.cmake
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/lib/cmake/AWSSDK/platform/android.cmake
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/lib/cmake/AWSSDK/platform/custom.cmake
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/lib/cmake/AWSSDK/compiler_settings.cmake
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/lib/cmake/AWSSDK/resolve_platform.cmake
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/lib/libaws-cpp-sdk-core.a
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/AmazonSerializableWebServiceRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/AmazonStreamingWebServiceRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/AmazonWebServiceRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/AmazonWebServiceResult.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/Aws.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/Core_EXPORTS.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/Globals.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/NoResult.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/Region.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/SDKConfig.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/Version.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/VersionConfig.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/auth/AWSAuthSigner.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/auth/AWSCredentialsProvider.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/auth/AWSCredentialsProviderChain.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/client/AWSClient.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/client/AWSError.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/client/AWSErrorMarshaller.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/client/AsyncCallerContext.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/client/ClientConfiguration.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/client/CoreErrors.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/client/DefaultRetryStrategy.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/client/RetryStrategy.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/internal/AWSHttpResourceClient.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/http/HttpClient.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/http/HttpClientFactory.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/http/HttpRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/http/HttpResponse.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/http/HttpTypes.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/http/Scheme.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/http/URI.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/http/standard/StandardHttpRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/http/standard/StandardHttpResponse.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/config/AWSProfileConfigLoader.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/platform/Android.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/platform/Environment.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/platform/FileSystem.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/platform/OSVersionInfo.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/platform/Platform.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/platform/Security.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/platform/Time.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/utils/Array.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/utils/DNS.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/utils/DateTime.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/utils/EnumParseOverflowContainer.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/utils/FileSystemUtils.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/utils/GetTheLights.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/utils/HashingUtils.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/utils/Outcome.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/utils/ResourceManager.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/utils/StringUtils.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/utils/UUID.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/utils/UnreferencedParam.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/utils/base64/Base64.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/utils/crypto/Cipher.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/utils/crypto/ContentCryptoMaterial.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/utils/crypto/ContentCryptoScheme.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/utils/crypto/CryptoBuf.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/utils/crypto/CryptoStream.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/utils/crypto/EncryptionMaterials.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/utils/crypto/Factories.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/utils/crypto/HMAC.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/utils/crypto/Hash.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/utils/crypto/HashResult.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/utils/crypto/KeyWrapAlgorithm.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/utils/crypto/MD5.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/utils/crypto/SecureRandom.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/utils/crypto/Sha256.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/utils/crypto/Sha256HMAC.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/utils/json/JsonSerializer.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/utils/xml/XmlSerializer.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/utils/logging/AWSLogging.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/utils/logging/ConsoleLogSystem.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/utils/logging/DefaultLogSystem.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/utils/logging/FormattedLogSystem.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/utils/logging/LogLevel.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/utils/logging/LogMacros.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/utils/logging/LogSystemInterface.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/utils/logging/NullLogSystem.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/utils/memory/AWSMemory.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/utils/memory/MemorySystemInterface.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/utils/memory/stl/AWSAllocator.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/utils/memory/stl/AWSDeque.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/utils/memory/stl/AWSFunction.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/utils/memory/stl/AWSList.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/utils/memory/stl/AWSMap.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/utils/memory/stl/AWSMultiMap.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/utils/memory/stl/AWSQueue.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/utils/memory/stl/AWSSet.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/utils/memory/stl/AWSStack.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/utils/memory/stl/AWSStreamFwd.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/utils/memory/stl/AWSString.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/utils/memory/stl/AWSStringStream.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/utils/memory/stl/AWSVector.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/utils/memory/stl/SimpleStringStream.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/utils/ratelimiter/DefaultRateLimiter.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/utils/ratelimiter/RateLimiterInterface.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/utils/stream/PreallocatedStreamBuf.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/utils/stream/ResponseStream.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/utils/stream/SimpleStreamBuf.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/utils/threading/Executor.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/utils/threading/Semaphore.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/utils/threading/ThreadTask.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/external/json-cpp/json.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/external/tinyxml2/tinyxml2.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/http/curl/CurlHandleContainer.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/http/curl/CurlHttpClient.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/core/utils/crypto/openssl/CryptoImpl.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/lib/cmake/aws-cpp-sdk-core/aws-cpp-sdk-core-targets.cmake
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/lib/cmake/aws-cpp-sdk-core/aws-cpp-sdk-core-targets-release.cmake
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/lib/cmake/aws-cpp-sdk-core/aws-cpp-sdk-core-config.cmake
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/lib/cmake/aws-cpp-sdk-core/aws-cpp-sdk-core-config-version.cmake
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/lib/libaws-cpp-sdk-s3.a
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/S3Client.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/S3Endpoint.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/S3ErrorMarshaller.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/S3Errors.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/S3Request.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/S3_EXPORTS.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/AbortIncompleteMultipartUpload.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/AbortMultipartUploadRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/AbortMultipartUploadResult.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/AccelerateConfiguration.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/AccessControlPolicy.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/AccessControlTranslation.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/AnalyticsAndOperator.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/AnalyticsConfiguration.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/AnalyticsExportDestination.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/AnalyticsFilter.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/AnalyticsS3BucketDestination.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/AnalyticsS3ExportFileFormat.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/Bucket.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/BucketAccelerateStatus.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/BucketCannedACL.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/BucketLifecycleConfiguration.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/BucketLocationConstraint.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/BucketLoggingStatus.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/BucketLogsPermission.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/BucketVersioningStatus.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/CORSConfiguration.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/CORSRule.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/CSVInput.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/CSVOutput.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/CloudFunctionConfiguration.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/CommonPrefix.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/CompleteMultipartUploadRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/CompleteMultipartUploadResult.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/CompletedMultipartUpload.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/CompletedPart.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/Condition.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/CopyObjectRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/CopyObjectResult.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/CopyPartResult.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/CreateBucketConfiguration.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/CreateBucketRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/CreateBucketResult.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/CreateMultipartUploadRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/CreateMultipartUploadResult.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/Delete.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/DeleteBucketAnalyticsConfigurationRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/DeleteBucketCorsRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/DeleteBucketEncryptionRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/DeleteBucketInventoryConfigurationRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/DeleteBucketLifecycleRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/DeleteBucketMetricsConfigurationRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/DeleteBucketPolicyRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/DeleteBucketReplicationRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/DeleteBucketRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/DeleteBucketTaggingRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/DeleteBucketWebsiteRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/DeleteMarkerEntry.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/DeleteObjectRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/DeleteObjectResult.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/DeleteObjectTaggingRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/DeleteObjectTaggingResult.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/DeleteObjectsRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/DeleteObjectsResult.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/DeletedObject.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/Destination.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/EncodingType.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/Encryption.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/EncryptionConfiguration.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/Error.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/ErrorDocument.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/Event.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/ExpirationStatus.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/ExpressionType.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/FileHeaderInfo.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/FilterRule.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/FilterRuleName.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/GetBucketAccelerateConfigurationRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/GetBucketAccelerateConfigurationResult.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/GetBucketAclRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/GetBucketAclResult.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/GetBucketAnalyticsConfigurationRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/GetBucketAnalyticsConfigurationResult.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/GetBucketCorsRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/GetBucketCorsResult.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/GetBucketEncryptionRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/GetBucketEncryptionResult.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/GetBucketInventoryConfigurationRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/GetBucketInventoryConfigurationResult.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/GetBucketLifecycleConfigurationRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/GetBucketLifecycleConfigurationResult.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/GetBucketLocationRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/GetBucketLocationResult.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/GetBucketLoggingRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/GetBucketLoggingResult.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/GetBucketMetricsConfigurationRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/GetBucketMetricsConfigurationResult.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/GetBucketNotificationConfigurationRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/GetBucketNotificationConfigurationResult.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/GetBucketPolicyRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/GetBucketPolicyResult.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/GetBucketReplicationRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/GetBucketReplicationResult.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/GetBucketRequestPaymentRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/GetBucketRequestPaymentResult.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/GetBucketTaggingRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/GetBucketTaggingResult.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/GetBucketVersioningRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/GetBucketVersioningResult.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/GetBucketWebsiteRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/GetBucketWebsiteResult.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/GetObjectAclRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/GetObjectAclResult.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/GetObjectRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/GetObjectResult.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/GetObjectTaggingRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/GetObjectTaggingResult.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/GetObjectTorrentRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/GetObjectTorrentResult.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/GlacierJobParameters.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/Grant.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/Grantee.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/HeadBucketRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/HeadObjectRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/HeadObjectResult.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/IndexDocument.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/Initiator.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/InputSerialization.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/InventoryConfiguration.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/InventoryDestination.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/InventoryEncryption.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/InventoryFilter.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/InventoryFormat.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/InventoryFrequency.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/InventoryIncludedObjectVersions.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/InventoryOptionalField.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/InventoryS3BucketDestination.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/InventorySchedule.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/LambdaFunctionConfiguration.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/LifecycleConfiguration.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/LifecycleExpiration.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/LifecycleRule.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/LifecycleRuleAndOperator.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/LifecycleRuleFilter.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/ListBucketAnalyticsConfigurationsRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/ListBucketAnalyticsConfigurationsResult.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/ListBucketInventoryConfigurationsRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/ListBucketInventoryConfigurationsResult.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/ListBucketMetricsConfigurationsRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/ListBucketMetricsConfigurationsResult.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/ListBucketsResult.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/ListMultipartUploadsRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/ListMultipartUploadsResult.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/ListObjectVersionsRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/ListObjectVersionsResult.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/ListObjectsRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/ListObjectsResult.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/ListObjectsV2Request.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/ListObjectsV2Result.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/ListPartsRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/ListPartsResult.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/LoggingEnabled.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/MFADelete.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/MFADeleteStatus.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/MetadataDirective.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/MetadataEntry.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/MetricsAndOperator.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/MetricsConfiguration.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/MetricsFilter.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/MultipartUpload.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/NoncurrentVersionExpiration.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/NoncurrentVersionTransition.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/NotificationConfiguration.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/NotificationConfigurationDeprecated.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/NotificationConfigurationFilter.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/Object.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/ObjectCannedACL.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/ObjectIdentifier.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/ObjectStorageClass.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/ObjectVersion.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/ObjectVersionStorageClass.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/OutputLocation.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/OutputSerialization.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/Owner.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/OwnerOverride.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/Part.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/Payer.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/Permission.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/Protocol.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/PutBucketAccelerateConfigurationRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/PutBucketAclRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/PutBucketAnalyticsConfigurationRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/PutBucketCorsRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/PutBucketEncryptionRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/PutBucketInventoryConfigurationRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/PutBucketLifecycleConfigurationRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/PutBucketLoggingRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/PutBucketMetricsConfigurationRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/PutBucketNotificationConfigurationRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/PutBucketPolicyRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/PutBucketReplicationRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/PutBucketRequestPaymentRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/PutBucketTaggingRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/PutBucketVersioningRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/PutBucketWebsiteRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/PutObjectAclRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/PutObjectAclResult.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/PutObjectRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/PutObjectResult.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/PutObjectTaggingRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/PutObjectTaggingResult.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/QueueConfiguration.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/QueueConfigurationDeprecated.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/QuoteFields.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/Redirect.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/RedirectAllRequestsTo.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/ReplicationConfiguration.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/ReplicationRule.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/ReplicationRuleStatus.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/ReplicationStatus.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/RequestCharged.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/RequestPayer.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/RequestPaymentConfiguration.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/RestoreObjectRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/RestoreObjectResult.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/RestoreRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/RestoreRequestType.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/RoutingRule.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/Rule.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/S3KeyFilter.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/S3Location.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/SSEKMS.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/SSES3.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/SelectParameters.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/ServerSideEncryption.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/ServerSideEncryptionByDefault.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/ServerSideEncryptionConfiguration.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/ServerSideEncryptionRule.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/SourceSelectionCriteria.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/SseKmsEncryptedObjects.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/SseKmsEncryptedObjectsStatus.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/StorageClass.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/StorageClassAnalysis.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/StorageClassAnalysisDataExport.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/StorageClassAnalysisSchemaVersion.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/Tag.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/Tagging.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/TaggingDirective.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/TargetGrant.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/Tier.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/TopicConfiguration.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/TopicConfigurationDeprecated.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/Transition.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/TransitionStorageClass.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/Type.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/UploadPartCopyRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/UploadPartCopyResult.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/UploadPartRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/UploadPartResult.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/VersioningConfiguration.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3/model/WebsiteConfiguration.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/lib/cmake/aws-cpp-sdk-s3/aws-cpp-sdk-s3-targets.cmake
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/lib/cmake/aws-cpp-sdk-s3/aws-cpp-sdk-s3-targets-release.cmake
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/lib/cmake/aws-cpp-sdk-s3/aws-cpp-sdk-s3-config.cmake
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/lib/cmake/aws-cpp-sdk-s3/aws-cpp-sdk-s3-config-version.cmake
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/lib/libaws-cpp-sdk-s3-encryption.a
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3-encryption/CryptoConfiguration.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3-encryption/S3EncryptionClient.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3-encryption/s3Encryption_EXPORTS.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3-encryption/materials/KMSEncryptionMaterials.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3-encryption/materials/SimpleEncryptionMaterials.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3-encryption/handlers/DataHandler.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3-encryption/handlers/InstructionFileHandler.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3-encryption/handlers/MetadataHandler.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3-encryption/modules/CryptoModule.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/s3-encryption/modules/CryptoModuleFactory.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/lib/cmake/aws-cpp-sdk-s3-encryption/aws-cpp-sdk-s3-encryption-targets.cmake
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/lib/cmake/aws-cpp-sdk-s3-encryption/aws-cpp-sdk-s3-encryption-targets-release.cmake
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/lib/cmake/aws-cpp-sdk-s3-encryption/aws-cpp-sdk-s3-encryption-config.cmake
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/lib/cmake/aws-cpp-sdk-s3-encryption/aws-cpp-sdk-s3-encryption-config-version.cmake
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/lib/libaws-cpp-sdk-kms.a
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/KMSClient.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/KMSEndpoint.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/KMSErrorMarshaller.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/KMSErrors.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/KMSRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/KMS_EXPORTS.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/model/AlgorithmSpec.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/model/AliasListEntry.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/model/CancelKeyDeletionRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/model/CancelKeyDeletionResult.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/model/CreateAliasRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/model/CreateGrantRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/model/CreateGrantResult.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/model/CreateKeyRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/model/CreateKeyResult.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/model/DataKeySpec.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/model/DecryptRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/model/DecryptResult.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/model/DeleteAliasRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/model/DeleteImportedKeyMaterialRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/model/DescribeKeyRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/model/DescribeKeyResult.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/model/DisableKeyRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/model/DisableKeyRotationRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/model/EnableKeyRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/model/EnableKeyRotationRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/model/EncryptRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/model/EncryptResult.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/model/ExpirationModelType.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/model/GenerateDataKeyRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/model/GenerateDataKeyResult.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/model/GenerateDataKeyWithoutPlaintextRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/model/GenerateDataKeyWithoutPlaintextResult.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/model/GenerateRandomRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/model/GenerateRandomResult.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/model/GetKeyPolicyRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/model/GetKeyPolicyResult.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/model/GetKeyRotationStatusRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/model/GetKeyRotationStatusResult.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/model/GetParametersForImportRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/model/GetParametersForImportResult.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/model/GrantConstraints.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/model/GrantListEntry.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/model/GrantOperation.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/model/ImportKeyMaterialRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/model/ImportKeyMaterialResult.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/model/KeyListEntry.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/model/KeyManagerType.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/model/KeyMetadata.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/model/KeyState.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/model/KeyUsageType.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/model/ListAliasesRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/model/ListAliasesResult.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/model/ListGrantsRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/model/ListGrantsResult.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/model/ListKeyPoliciesRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/model/ListKeyPoliciesResult.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/model/ListKeysRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/model/ListKeysResult.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/model/ListResourceTagsRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/model/ListResourceTagsResult.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/model/ListRetirableGrantsRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/model/ListRetirableGrantsResult.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/model/OriginType.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/model/PutKeyPolicyRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/model/ReEncryptRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/model/ReEncryptResult.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/model/RetireGrantRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/model/RevokeGrantRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/model/ScheduleKeyDeletionRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/model/ScheduleKeyDeletionResult.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/model/Tag.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/model/TagResourceRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/model/UntagResourceRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/model/UpdateAliasRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/model/UpdateKeyDescriptionRequest.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/include/aws/kms/model/WrappingKeySpec.h
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/lib/cmake/aws-cpp-sdk-kms/aws-cpp-sdk-kms-targets.cmake
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/lib/cmake/aws-cpp-sdk-kms/aws-cpp-sdk-kms-targets-release.cmake
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/lib/cmake/aws-cpp-sdk-kms/aws-cpp-sdk-kms-config.cmake
+-- Installing: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/lib/cmake/aws-cpp-sdk-kms/aws-cpp-sdk-kms-config-version.cmake
+[100%] Completed 'aws-sdk-cpp'
+[100%] Built target aws-sdk-cpp
+[100%] Built target aws-sdk-cpp
+-- aws-sdk-cpp_DIR: $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/
+-- AWS SDK for C++ found in $SRC_DIR/build/CMakeFiles/thirdparty/aws-sdk-cpp-install/
+-- Using AWS SDK C++ module: AWS Core
+-- Using AWS SDK C++ module: AWS S3
+-- Using AWS SDK C++ module: AWS S3 Encryption
+-- The following REQUIRED packages have been found:
+
+ * aws-cpp-sdk-core, <https://aws.amazon.com/sdk-for-cpp/>
+   AWS SDK for C++ allows to integrate any C++ application with AWS services. Module: aws-cpp-sdk-core
+ * aws-cpp-sdk-s3, <https://aws.amazon.com/sdk-for-cpp/>
+   AWS SDK for C++ allows to integrate any C++ application with AWS services. Module: aws-cpp-sdk-s3
+ * aws-cpp-sdk-kms, <https://aws.amazon.com/sdk-for-cpp/>
+   AWS SDK for C++ allows to integrate any C++ application with AWS services. Module: aws-cpp-sdk-kms
+ * aws-cpp-sdk-s3-encryption, <https://aws.amazon.com/sdk-for-cpp/>
+   AWS SDK for C++ allows to integrate any C++ application with AWS services. Module: aws-cpp-sdk-s3-encryption
+
+-- Configuring done
+-- Generating done
+-- Build files have been written to: $SRC_DIR/build
+Install the project...
+-- Install configuration: "Release"
+-- Up-to-date: $PREFIX/.
+-- Up-to-date: $PREFIX/./include
+-- Installing: $PREFIX/./include/aws
+-- Installing: $PREFIX/./include/aws/core
+-- Installing: $PREFIX/./include/aws/core/internal
+-- Installing: $PREFIX/./include/aws/core/internal/AWSHttpResourceClient.h
+-- Installing: $PREFIX/./include/aws/core/AmazonSerializableWebServiceRequest.h
+-- Installing: $PREFIX/./include/aws/core/VersionConfig.h
+-- Installing: $PREFIX/./include/aws/core/SDKConfig.h
+-- Installing: $PREFIX/./include/aws/core/Globals.h
+-- Installing: $PREFIX/./include/aws/core/http
+-- Installing: $PREFIX/./include/aws/core/http/HttpClientFactory.h
+-- Installing: $PREFIX/./include/aws/core/http/HttpRequest.h
+-- Installing: $PREFIX/./include/aws/core/http/HttpClient.h
+-- Installing: $PREFIX/./include/aws/core/http/URI.h
+-- Installing: $PREFIX/./include/aws/core/http/HttpResponse.h
+-- Installing: $PREFIX/./include/aws/core/http/Scheme.h
+-- Installing: $PREFIX/./include/aws/core/http/HttpTypes.h
+-- Installing: $PREFIX/./include/aws/core/http/curl
+-- Installing: $PREFIX/./include/aws/core/http/curl/CurlHandleContainer.h
+-- Installing: $PREFIX/./include/aws/core/http/curl/CurlHttpClient.h
+-- Installing: $PREFIX/./include/aws/core/http/standard
+-- Installing: $PREFIX/./include/aws/core/http/standard/StandardHttpRequest.h
+-- Installing: $PREFIX/./include/aws/core/http/standard/StandardHttpResponse.h
+-- Installing: $PREFIX/./include/aws/core/AmazonWebServiceRequest.h
+-- Installing: $PREFIX/./include/aws/core/client
+-- Installing: $PREFIX/./include/aws/core/client/AsyncCallerContext.h
+-- Installing: $PREFIX/./include/aws/core/client/ClientConfiguration.h
+-- Installing: $PREFIX/./include/aws/core/client/RetryStrategy.h
+-- Installing: $PREFIX/./include/aws/core/client/AWSError.h
+-- Installing: $PREFIX/./include/aws/core/client/DefaultRetryStrategy.h
+-- Installing: $PREFIX/./include/aws/core/client/CoreErrors.h
+-- Installing: $PREFIX/./include/aws/core/client/AWSClient.h
+-- Installing: $PREFIX/./include/aws/core/client/AWSErrorMarshaller.h
+-- Installing: $PREFIX/./include/aws/core/AmazonWebServiceResult.h
+-- Installing: $PREFIX/./include/aws/core/Version.h
+-- Installing: $PREFIX/./include/aws/core/config
+-- Installing: $PREFIX/./include/aws/core/config/AWSProfileConfigLoader.h
+-- Installing: $PREFIX/./include/aws/core/Region.h
+-- Installing: $PREFIX/./include/aws/core/utils
+-- Installing: $PREFIX/./include/aws/core/utils/DateTime.h
+-- Installing: $PREFIX/./include/aws/core/utils/threading
+-- Installing: $PREFIX/./include/aws/core/utils/threading/ThreadTask.h
+-- Installing: $PREFIX/./include/aws/core/utils/threading/Semaphore.h
+-- Installing: $PREFIX/./include/aws/core/utils/threading/Executor.h
+-- Installing: $PREFIX/./include/aws/core/utils/HashingUtils.h
+-- Installing: $PREFIX/./include/aws/core/utils/logging
+-- Installing: $PREFIX/./include/aws/core/utils/logging/NullLogSystem.h
+-- Installing: $PREFIX/./include/aws/core/utils/logging/AWSLogging.h
+-- Installing: $PREFIX/./include/aws/core/utils/logging/LogLevel.h
+-- Installing: $PREFIX/./include/aws/core/utils/logging/FormattedLogSystem.h
+-- Installing: $PREFIX/./include/aws/core/utils/logging/LogSystemInterface.h
+-- Installing: $PREFIX/./include/aws/core/utils/logging/ConsoleLogSystem.h
+-- Installing: $PREFIX/./include/aws/core/utils/logging/LogMacros.h
+-- Installing: $PREFIX/./include/aws/core/utils/logging/DefaultLogSystem.h
+-- Installing: $PREFIX/./include/aws/core/utils/stream
+-- Installing: $PREFIX/./include/aws/core/utils/stream/SimpleStreamBuf.h
+-- Installing: $PREFIX/./include/aws/core/utils/stream/PreallocatedStreamBuf.h
+-- Installing: $PREFIX/./include/aws/core/utils/stream/ResponseStream.h
+-- Installing: $PREFIX/./include/aws/core/utils/xml
+-- Installing: $PREFIX/./include/aws/core/utils/xml/XmlSerializer.h
+-- Installing: $PREFIX/./include/aws/core/utils/memory
+-- Installing: $PREFIX/./include/aws/core/utils/memory/AWSMemory.h
+-- Installing: $PREFIX/./include/aws/core/utils/memory/stl
+-- Installing: $PREFIX/./include/aws/core/utils/memory/stl/AWSVector.h
+-- Installing: $PREFIX/./include/aws/core/utils/memory/stl/AWSDeque.h
+-- Installing: $PREFIX/./include/aws/core/utils/memory/stl/AWSList.h
+-- Installing: $PREFIX/./include/aws/core/utils/memory/stl/AWSAllocator.h
+-- Installing: $PREFIX/./include/aws/core/utils/memory/stl/AWSMap.h
+-- Installing: $PREFIX/./include/aws/core/utils/memory/stl/AWSStringStream.h
+-- Installing: $PREFIX/./include/aws/core/utils/memory/stl/AWSMultiMap.h
+-- Installing: $PREFIX/./include/aws/core/utils/memory/stl/AWSSet.h
+-- Installing: $PREFIX/./include/aws/core/utils/memory/stl/AWSStack.h
+-- Installing: $PREFIX/./include/aws/core/utils/memory/stl/AWSStreamFwd.h
+-- Installing: $PREFIX/./include/aws/core/utils/memory/stl/AWSString.h
+-- Installing: $PREFIX/./include/aws/core/utils/memory/stl/SimpleStringStream.h
+-- Installing: $PREFIX/./include/aws/core/utils/memory/stl/AWSFunction.h
+-- Installing: $PREFIX/./include/aws/core/utils/memory/stl/AWSQueue.h
+-- Installing: $PREFIX/./include/aws/core/utils/memory/MemorySystemInterface.h
+-- Installing: $PREFIX/./include/aws/core/utils/FileSystemUtils.h
+-- Installing: $PREFIX/./include/aws/core/utils/json
+-- Installing: $PREFIX/./include/aws/core/utils/json/JsonSerializer.h
+-- Installing: $PREFIX/./include/aws/core/utils/StringUtils.h
+-- Installing: $PREFIX/./include/aws/core/utils/ResourceManager.h
+-- Installing: $PREFIX/./include/aws/core/utils/crypto
+-- Installing: $PREFIX/./include/aws/core/utils/crypto/HMAC.h
+-- Installing: $PREFIX/./include/aws/core/utils/crypto/KeyWrapAlgorithm.h
+-- Installing: $PREFIX/./include/aws/core/utils/crypto/CryptoStream.h
+-- Installing: $PREFIX/./include/aws/core/utils/crypto/SecureRandom.h
+-- Installing: $PREFIX/./include/aws/core/utils/crypto/Cipher.h
+-- Installing: $PREFIX/./include/aws/core/utils/crypto/ContentCryptoScheme.h
+-- Installing: $PREFIX/./include/aws/core/utils/crypto/EncryptionMaterials.h
+-- Installing: $PREFIX/./include/aws/core/utils/crypto/Sha256.h
+-- Installing: $PREFIX/./include/aws/core/utils/crypto/HashResult.h
+-- Installing: $PREFIX/./include/aws/core/utils/crypto/Hash.h
+-- Installing: $PREFIX/./include/aws/core/utils/crypto/MD5.h
+-- Installing: $PREFIX/./include/aws/core/utils/crypto/CryptoBuf.h
+-- Installing: $PREFIX/./include/aws/core/utils/crypto/ContentCryptoMaterial.h
+-- Installing: $PREFIX/./include/aws/core/utils/crypto/openssl
+-- Installing: $PREFIX/./include/aws/core/utils/crypto/openssl/CryptoImpl.h
+-- Installing: $PREFIX/./include/aws/core/utils/crypto/Factories.h
+-- Installing: $PREFIX/./include/aws/core/utils/crypto/Sha256HMAC.h
+-- Installing: $PREFIX/./include/aws/core/utils/Array.h
+-- Installing: $PREFIX/./include/aws/core/utils/UnreferencedParam.h
+-- Installing: $PREFIX/./include/aws/core/utils/Outcome.h
+-- Installing: $PREFIX/./include/aws/core/utils/UUID.h
+-- Installing: $PREFIX/./include/aws/core/utils/EnumParseOverflowContainer.h
+-- Installing: $PREFIX/./include/aws/core/utils/base64
+-- Installing: $PREFIX/./include/aws/core/utils/base64/Base64.h
+-- Installing: $PREFIX/./include/aws/core/utils/GetTheLights.h
+-- Installing: $PREFIX/./include/aws/core/utils/DNS.h
+-- Installing: $PREFIX/./include/aws/core/utils/ratelimiter
+-- Installing: $PREFIX/./include/aws/core/utils/ratelimiter/RateLimiterInterface.h
+-- Installing: $PREFIX/./include/aws/core/utils/ratelimiter/DefaultRateLimiter.h
+-- Installing: $PREFIX/./include/aws/core/Core_EXPORTS.h
+-- Installing: $PREFIX/./include/aws/core/Aws.h
+-- Installing: $PREFIX/./include/aws/core/auth
+-- Installing: $PREFIX/./include/aws/core/auth/AWSAuthSigner.h
+-- Installing: $PREFIX/./include/aws/core/auth/AWSCredentialsProviderChain.h
+-- Installing: $PREFIX/./include/aws/core/auth/AWSCredentialsProvider.h
+-- Installing: $PREFIX/./include/aws/core/platform
+-- Installing: $PREFIX/./include/aws/core/platform/Android.h
+-- Installing: $PREFIX/./include/aws/core/platform/FileSystem.h
+-- Installing: $PREFIX/./include/aws/core/platform/Environment.h
+-- Installing: $PREFIX/./include/aws/core/platform/Platform.h
+-- Installing: $PREFIX/./include/aws/core/platform/Security.h
+-- Installing: $PREFIX/./include/aws/core/platform/Time.h
+-- Installing: $PREFIX/./include/aws/core/platform/OSVersionInfo.h
+-- Installing: $PREFIX/./include/aws/core/NoResult.h
+-- Installing: $PREFIX/./include/aws/core/AmazonStreamingWebServiceRequest.h
+-- Installing: $PREFIX/./include/aws/core/external
+-- Installing: $PREFIX/./include/aws/core/external/json-cpp
+-- Installing: $PREFIX/./include/aws/core/external/json-cpp/json.h
+-- Installing: $PREFIX/./include/aws/core/external/tinyxml2
+-- Installing: $PREFIX/./include/aws/core/external/tinyxml2/tinyxml2.h
+-- Installing: $PREFIX/./include/aws/s3-encryption
+-- Installing: $PREFIX/./include/aws/s3-encryption/CryptoConfiguration.h
+-- Installing: $PREFIX/./include/aws/s3-encryption/materials
+-- Installing: $PREFIX/./include/aws/s3-encryption/materials/KMSEncryptionMaterials.h
+-- Installing: $PREFIX/./include/aws/s3-encryption/materials/SimpleEncryptionMaterials.h
+-- Installing: $PREFIX/./include/aws/s3-encryption/handlers
+-- Installing: $PREFIX/./include/aws/s3-encryption/handlers/DataHandler.h
+-- Installing: $PREFIX/./include/aws/s3-encryption/handlers/MetadataHandler.h
+-- Installing: $PREFIX/./include/aws/s3-encryption/handlers/InstructionFileHandler.h
+-- Installing: $PREFIX/./include/aws/s3-encryption/s3Encryption_EXPORTS.h
+-- Installing: $PREFIX/./include/aws/s3-encryption/modules
+-- Installing: $PREFIX/./include/aws/s3-encryption/modules/CryptoModuleFactory.h
+-- Installing: $PREFIX/./include/aws/s3-encryption/modules/CryptoModule.h
+-- Installing: $PREFIX/./include/aws/s3-encryption/S3EncryptionClient.h
+-- Installing: $PREFIX/./include/aws/kms
+-- Installing: $PREFIX/./include/aws/kms/KMSErrorMarshaller.h
+-- Installing: $PREFIX/./include/aws/kms/KMSRequest.h
+-- Installing: $PREFIX/./include/aws/kms/KMSClient.h
+-- Installing: $PREFIX/./include/aws/kms/model
+-- Installing: $PREFIX/./include/aws/kms/model/CancelKeyDeletionResult.h
+-- Installing: $PREFIX/./include/aws/kms/model/ListRetirableGrantsResult.h
+-- Installing: $PREFIX/./include/aws/kms/model/DescribeKeyResult.h
+-- Installing: $PREFIX/./include/aws/kms/model/DecryptResult.h
+-- Installing: $PREFIX/./include/aws/kms/model/GetKeyPolicyResult.h
+-- Installing: $PREFIX/./include/aws/kms/model/KeyMetadata.h
+-- Installing: $PREFIX/./include/aws/kms/model/GrantOperation.h
+-- Installing: $PREFIX/./include/aws/kms/model/GenerateDataKeyRequest.h
+-- Installing: $PREFIX/./include/aws/kms/model/GetKeyRotationStatusRequest.h
+-- Installing: $PREFIX/./include/aws/kms/model/EncryptRequest.h
+-- Installing: $PREFIX/./include/aws/kms/model/ListGrantsResult.h
+-- Installing: $PREFIX/./include/aws/kms/model/KeyUsageType.h
+-- Installing: $PREFIX/./include/aws/kms/model/ListAliasesResult.h
+-- Installing: $PREFIX/./include/aws/kms/model/EncryptResult.h
+-- Installing: $PREFIX/./include/aws/kms/model/ListKeysResult.h
+-- Installing: $PREFIX/./include/aws/kms/model/ListGrantsRequest.h
+-- Installing: $PREFIX/./include/aws/kms/model/Tag.h
+-- Installing: $PREFIX/./include/aws/kms/model/CreateAliasRequest.h
+-- Installing: $PREFIX/./include/aws/kms/model/CreateKeyRequest.h
+-- Installing: $PREFIX/./include/aws/kms/model/GenerateRandomRequest.h
+-- Installing: $PREFIX/./include/aws/kms/model/OriginType.h
+-- Installing: $PREFIX/./include/aws/kms/model/EnableKeyRequest.h
+-- Installing: $PREFIX/./include/aws/kms/model/GenerateDataKeyResult.h
+-- Installing: $PREFIX/./include/aws/kms/model/GetParametersForImportResult.h
+-- Installing: $PREFIX/./include/aws/kms/model/DataKeySpec.h
+-- Installing: $PREFIX/./include/aws/kms/model/UntagResourceRequest.h
+-- Installing: $PREFIX/./include/aws/kms/model/ImportKeyMaterialResult.h
+-- Installing: $PREFIX/./include/aws/kms/model/ListRetirableGrantsRequest.h
+-- Installing: $PREFIX/./include/aws/kms/model/DescribeKeyRequest.h
+-- Installing: $PREFIX/./include/aws/kms/model/CreateKeyResult.h
+-- Installing: $PREFIX/./include/aws/kms/model/GenerateDataKeyWithoutPlaintextResult.h
+-- Installing: $PREFIX/./include/aws/kms/model/ListKeyPoliciesResult.h
+-- Installing: $PREFIX/./include/aws/kms/model/CreateGrantRequest.h
+-- Installing: $PREFIX/./include/aws/kms/model/ExpirationModelType.h
+-- Installing: $PREFIX/./include/aws/kms/model/RetireGrantRequest.h
+-- Installing: $PREFIX/./include/aws/kms/model/ReEncryptResult.h
+-- Installing: $PREFIX/./include/aws/kms/model/GrantConstraints.h
+-- Installing: $PREFIX/./include/aws/kms/model/WrappingKeySpec.h
+-- Installing: $PREFIX/./include/aws/kms/model/GetParametersForImportRequest.h
+-- Installing: $PREFIX/./include/aws/kms/model/ListKeyPoliciesRequest.h
+-- Installing: $PREFIX/./include/aws/kms/model/DeleteAliasRequest.h
+-- Installing: $PREFIX/./include/aws/kms/model/RevokeGrantRequest.h
+-- Installing: $PREFIX/./include/aws/kms/model/GenerateRandomResult.h
+-- Installing: $PREFIX/./include/aws/kms/model/ListAliasesRequest.h
+-- Installing: $PREFIX/./include/aws/kms/model/DecryptRequest.h
+-- Installing: $PREFIX/./include/aws/kms/model/GrantListEntry.h
+-- Installing: $PREFIX/./include/aws/kms/model/ListResourceTagsResult.h
+-- Installing: $PREFIX/./include/aws/kms/model/AlgorithmSpec.h
+-- Installing: $PREFIX/./include/aws/kms/model/KeyListEntry.h
+-- Installing: $PREFIX/./include/aws/kms/model/AliasListEntry.h
+-- Installing: $PREFIX/./include/aws/kms/model/CancelKeyDeletionRequest.h
+-- Installing: $PREFIX/./include/aws/kms/model/GetKeyRotationStatusResult.h
+-- Installing: $PREFIX/./include/aws/kms/model/DeleteImportedKeyMaterialRequest.h
+-- Installing: $PREFIX/./include/aws/kms/model/ListResourceTagsRequest.h
+-- Installing: $PREFIX/./include/aws/kms/model/ScheduleKeyDeletionRequest.h
+-- Installing: $PREFIX/./include/aws/kms/model/GetKeyPolicyRequest.h
+-- Installing: $PREFIX/./include/aws/kms/model/ReEncryptRequest.h
+-- Installing: $PREFIX/./include/aws/kms/model/ScheduleKeyDeletionResult.h
+-- Installing: $PREFIX/./include/aws/kms/model/CreateGrantResult.h
+-- Installing: $PREFIX/./include/aws/kms/model/GenerateDataKeyWithoutPlaintextRequest.h
+-- Installing: $PREFIX/./include/aws/kms/model/PutKeyPolicyRequest.h
+-- Installing: $PREFIX/./include/aws/kms/model/EnableKeyRotationRequest.h
+-- Installing: $PREFIX/./include/aws/kms/model/DisableKeyRotationRequest.h
+-- Installing: $PREFIX/./include/aws/kms/model/DisableKeyRequest.h
+-- Installing: $PREFIX/./include/aws/kms/model/TagResourceRequest.h
+-- Installing: $PREFIX/./include/aws/kms/model/KeyManagerType.h
+-- Installing: $PREFIX/./include/aws/kms/model/ImportKeyMaterialRequest.h
+-- Installing: $PREFIX/./include/aws/kms/model/UpdateAliasRequest.h
+-- Installing: $PREFIX/./include/aws/kms/model/ListKeysRequest.h
+-- Installing: $PREFIX/./include/aws/kms/model/UpdateKeyDescriptionRequest.h
+-- Installing: $PREFIX/./include/aws/kms/model/KeyState.h
+-- Installing: $PREFIX/./include/aws/kms/KMS_EXPORTS.h
+-- Installing: $PREFIX/./include/aws/kms/KMSErrors.h
+-- Installing: $PREFIX/./include/aws/kms/KMSEndpoint.h
+-- Installing: $PREFIX/./include/aws/s3
+-- Installing: $PREFIX/./include/aws/s3/S3Request.h
+-- Installing: $PREFIX/./include/aws/s3/S3ErrorMarshaller.h
+-- Installing: $PREFIX/./include/aws/s3/model
+-- Installing: $PREFIX/./include/aws/s3/model/GetBucketMetricsConfigurationResult.h
+-- Installing: $PREFIX/./include/aws/s3/model/DeleteBucketInventoryConfigurationRequest.h
+-- Installing: $PREFIX/./include/aws/s3/model/ObjectVersion.h
+-- Installing: $PREFIX/./include/aws/s3/model/WebsiteConfiguration.h
+-- Installing: $PREFIX/./include/aws/s3/model/GetObjectTorrentRequest.h
+-- Installing: $PREFIX/./include/aws/s3/model/NoncurrentVersionTransition.h
+-- Installing: $PREFIX/./include/aws/s3/model/CORSConfiguration.h
+-- Installing: $PREFIX/./include/aws/s3/model/CSVOutput.h
+-- Installing: $PREFIX/./include/aws/s3/model/CSVInput.h
+-- Installing: $PREFIX/./include/aws/s3/model/AnalyticsConfiguration.h
+-- Installing: $PREFIX/./include/aws/s3/model/ListMultipartUploadsResult.h
+-- Installing: $PREFIX/./include/aws/s3/model/InventorySchedule.h
+-- Installing: $PREFIX/./include/aws/s3/model/GetObjectAclRequest.h
+-- Installing: $PREFIX/./include/aws/s3/model/ListPartsResult.h
+-- Installing: $PREFIX/./include/aws/s3/model/ObjectStorageClass.h
+-- Installing: $PREFIX/./include/aws/s3/model/ListBucketsResult.h
+-- Installing: $PREFIX/./include/aws/s3/model/PutBucketMetricsConfigurationRequest.h
+-- Installing: $PREFIX/./include/aws/s3/model/AccessControlTranslation.h
+-- Installing: $PREFIX/./include/aws/s3/model/InventoryOptionalField.h
+-- Installing: $PREFIX/./include/aws/s3/model/DeleteObjectResult.h
+-- Installing: $PREFIX/./include/aws/s3/model/AnalyticsAndOperator.h
+-- Installing: $PREFIX/./include/aws/s3/model/GetBucketNotificationConfigurationRequest.h
+-- Installing: $PREFIX/./include/aws/s3/model/DeleteBucketTaggingRequest.h
+-- Installing: $PREFIX/./include/aws/s3/model/GetBucketAccelerateConfigurationRequest.h
+-- Installing: $PREFIX/./include/aws/s3/model/AnalyticsS3ExportFileFormat.h
+-- Installing: $PREFIX/./include/aws/s3/model/CreateBucketRequest.h
+-- Installing: $PREFIX/./include/aws/s3/model/DeleteBucketPolicyRequest.h
+-- Installing: $PREFIX/./include/aws/s3/model/BucketAccelerateStatus.h
+-- Installing: $PREFIX/./include/aws/s3/model/InventoryIncludedObjectVersions.h
+-- Installing: $PREFIX/./include/aws/s3/model/UploadPartRequest.h
+-- Installing: $PREFIX/./include/aws/s3/model/OutputSerialization.h
+-- Installing: $PREFIX/./include/aws/s3/model/Destination.h
+-- Installing: $PREFIX/./include/aws/s3/model/FilterRule.h
+-- Installing: $PREFIX/./include/aws/s3/model/Tagging.h
+-- Installing: $PREFIX/./include/aws/s3/model/Bucket.h
+-- Installing: $PREFIX/./include/aws/s3/model/GetBucketAnalyticsConfigurationRequest.h
+-- Installing: $PREFIX/./include/aws/s3/model/PutObjectAclResult.h
+-- Installing: $PREFIX/./include/aws/s3/model/GetBucketVersioningRequest.h
+-- Installing: $PREFIX/./include/aws/s3/model/SseKmsEncryptedObjects.h
+-- Installing: $PREFIX/./include/aws/s3/model/UploadPartResult.h
+-- Installing: $PREFIX/./include/aws/s3/model/CopyObjectResult.h
+-- Installing: $PREFIX/./include/aws/s3/model/Event.h
+-- Installing: $PREFIX/./include/aws/s3/model/AbortMultipartUploadResult.h
+-- Installing: $PREFIX/./include/aws/s3/model/TopicConfigurationDeprecated.h
+-- Installing: $PREFIX/./include/aws/s3/model/IndexDocument.h
+-- Installing: $PREFIX/./include/aws/s3/model/CORSRule.h
+-- Installing: $PREFIX/./include/aws/s3/model/PutBucketInventoryConfigurationRequest.h
+-- Installing: $PREFIX/./include/aws/s3/model/GetObjectRequest.h
+-- Installing: $PREFIX/./include/aws/s3/model/GetBucketAccelerateConfigurationResult.h
+-- Installing: $PREFIX/./include/aws/s3/model/PutBucketWebsiteRequest.h
+-- Installing: $PREFIX/./include/aws/s3/model/NotificationConfiguration.h
+-- Installing: $PREFIX/./include/aws/s3/model/LifecycleRuleAndOperator.h
+-- Installing: $PREFIX/./include/aws/s3/model/OwnerOverride.h
+-- Installing: $PREFIX/./include/aws/s3/model/SSEKMS.h
+-- Installing: $PREFIX/./include/aws/s3/model/PutObjectAclRequest.h
+-- Installing: $PREFIX/./include/aws/s3/model/GetBucketMetricsConfigurationRequest.h
+-- Installing: $PREFIX/./include/aws/s3/model/PutBucketAccelerateConfigurationRequest.h
+-- Installing: $PREFIX/./include/aws/s3/model/LambdaFunctionConfiguration.h
+-- Installing: $PREFIX/./include/aws/s3/model/EncryptionConfiguration.h
+-- Installing: $PREFIX/./include/aws/s3/model/CopyPartResult.h
+-- Installing: $PREFIX/./include/aws/s3/model/LifecycleConfiguration.h
+-- Installing: $PREFIX/./include/aws/s3/model/AnalyticsFilter.h
+-- Installing: $PREFIX/./include/aws/s3/model/StorageClassAnalysis.h
+-- Installing: $PREFIX/./include/aws/s3/model/SourceSelectionCriteria.h
+-- Installing: $PREFIX/./include/aws/s3/model/GetBucketLocationResult.h
+-- Installing: $PREFIX/./include/aws/s3/model/ServerSideEncryptionByDefault.h
+-- Installing: $PREFIX/./include/aws/s3/model/AccelerateConfiguration.h
+-- Installing: $PREFIX/./include/aws/s3/model/UploadPartCopyRequest.h
+-- Installing: $PREFIX/./include/aws/s3/model/Tag.h
+-- Installing: $PREFIX/./include/aws/s3/model/InventoryConfiguration.h
+-- Installing: $PREFIX/./include/aws/s3/model/CreateMultipartUploadRequest.h
+-- Installing: $PREFIX/./include/aws/s3/model/ListMultipartUploadsRequest.h
+-- Installing: $PREFIX/./include/aws/s3/model/DeleteBucketAnalyticsConfigurationRequest.h
+-- Installing: $PREFIX/./include/aws/s3/model/GetBucketTaggingRequest.h
+-- Installing: $PREFIX/./include/aws/s3/model/DeleteBucketReplicationRequest.h
+-- Installing: $PREFIX/./include/aws/s3/model/GetBucketLocationRequest.h
+-- Installing: $PREFIX/./include/aws/s3/model/ReplicationRule.h
+-- Installing: $PREFIX/./include/aws/s3/model/FilterRuleName.h
+-- Installing: $PREFIX/./include/aws/s3/model/NotificationConfigurationDeprecated.h
+-- Installing: $PREFIX/./include/aws/s3/model/RestoreObjectRequest.h
+-- Installing: $PREFIX/./include/aws/s3/model/GetBucketEncryptionRequest.h
+-- Installing: $PREFIX/./include/aws/s3/model/EncodingType.h
+-- Installing: $PREFIX/./include/aws/s3/model/PutBucketEncryptionRequest.h
+-- Installing: $PREFIX/./include/aws/s3/model/CompletedPart.h
+-- Installing: $PREFIX/./include/aws/s3/model/GetBucketPolicyResult.h
+-- Installing: $PREFIX/./include/aws/s3/model/TransitionStorageClass.h
+-- Installing: $PREFIX/./include/aws/s3/model/RoutingRule.h
+-- Installing: $PREFIX/./include/aws/s3/model/GetBucketAclResult.h
+-- Installing: $PREFIX/./include/aws/s3/model/ObjectVersionStorageClass.h
+-- Installing: $PREFIX/./include/aws/s3/model/ErrorDocument.h
+-- Installing: $PREFIX/./include/aws/s3/model/HeadObjectRequest.h
+-- Installing: $PREFIX/./include/aws/s3/model/LoggingEnabled.h
+-- Installing: $PREFIX/./include/aws/s3/model/GetBucketEncryptionResult.h
+-- Installing: $PREFIX/./include/aws/s3/model/Tier.h
+-- Installing: $PREFIX/./include/aws/s3/model/ListObjectsResult.h
+-- Installing: $PREFIX/./include/aws/s3/model/ListBucketMetricsConfigurationsResult.h
+-- Installing: $PREFIX/./include/aws/s3/model/NotificationConfigurationFilter.h
+-- Installing: $PREFIX/./include/aws/s3/model/Rule.h
+-- Installing: $PREFIX/./include/aws/s3/model/PutBucketNotificationConfigurationRequest.h
+-- Installing: $PREFIX/./include/aws/s3/model/GetBucketRequestPaymentRequest.h
+-- Installing: $PREFIX/./include/aws/s3/model/AccessControlPolicy.h
+-- Installing: $PREFIX/./include/aws/s3/model/GetBucketRequestPaymentResult.h
+-- Installing: $PREFIX/./include/aws/s3/model/GetBucketPolicyRequest.h
+-- Installing: $PREFIX/./include/aws/s3/model/GetObjectTaggingRequest.h
+-- Installing: $PREFIX/./include/aws/s3/model/MFADelete.h
+-- Installing: $PREFIX/./include/aws/s3/model/S3KeyFilter.h
+-- Installing: $PREFIX/./include/aws/s3/model/AnalyticsExportDestination.h
+-- Installing: $PREFIX/./include/aws/s3/model/Permission.h
+-- Installing: $PREFIX/./include/aws/s3/model/ListObjectVersionsResult.h
+-- Installing: $PREFIX/./include/aws/s3/model/DeletedObject.h
+-- Installing: $PREFIX/./include/aws/s3/model/LifecycleRuleFilter.h
+-- Installing: $PREFIX/./include/aws/s3/model/GetBucketCorsRequest.h
+-- Installing: $PREFIX/./include/aws/s3/model/QueueConfigurationDeprecated.h
+-- Installing: $PREFIX/./include/aws/s3/model/QueueConfiguration.h
+-- Installing: $PREFIX/./include/aws/s3/model/Grant.h
+-- Installing: $PREFIX/./include/aws/s3/model/RestoreRequest.h
+-- Installing: $PREFIX/./include/aws/s3/model/GetBucketCorsResult.h
+-- Installing: $PREFIX/./include/aws/s3/model/MFADeleteStatus.h
+-- Installing: $PREFIX/./include/aws/s3/model/ObjectCannedACL.h
+-- Installing: $PREFIX/./include/aws/s3/model/DeleteObjectsRequest.h
+-- Installing: $PREFIX/./include/aws/s3/model/OutputLocation.h
+-- Installing: $PREFIX/./include/aws/s3/model/PutBucketAclRequest.h
+-- Installing: $PREFIX/./include/aws/s3/model/GetObjectResult.h
+-- Installing: $PREFIX/./include/aws/s3/model/LifecycleExpiration.h
+-- Installing: $PREFIX/./include/aws/s3/model/RestoreRequestType.h
+-- Installing: $PREFIX/./include/aws/s3/model/VersioningConfiguration.h
+-- Installing: $PREFIX/./include/aws/s3/model/DeleteObjectTaggingRequest.h
+-- Installing: $PREFIX/./include/aws/s3/model/Error.h
+-- Installing: $PREFIX/./include/aws/s3/model/ListBucketInventoryConfigurationsResult.h
+-- Installing: $PREFIX/./include/aws/s3/model/GetBucketInventoryConfigurationResult.h
+-- Installing: $PREFIX/./include/aws/s3/model/GetBucketLoggingRequest.h
+-- Installing: $PREFIX/./include/aws/s3/model/SSES3.h
+-- Installing: $PREFIX/./include/aws/s3/model/SelectParameters.h
+-- Installing: $PREFIX/./include/aws/s3/model/GetBucketLifecycleConfigurationRequest.h
+-- Installing: $PREFIX/./include/aws/s3/model/AbortMultipartUploadRequest.h
+-- Installing: $PREFIX/./include/aws/s3/model/DeleteObjectsResult.h
+-- Installing: $PREFIX/./include/aws/s3/model/AbortIncompleteMultipartUpload.h
+-- Installing: $PREFIX/./include/aws/s3/model/PutBucketVersioningRequest.h
+-- Installing: $PREFIX/./include/aws/s3/model/CreateBucketConfiguration.h
+-- Installing: $PREFIX/./include/aws/s3/model/GetBucketAclRequest.h
+-- Installing: $PREFIX/./include/aws/s3/model/PutBucketRequestPaymentRequest.h
+-- Installing: $PREFIX/./include/aws/s3/model/FileHeaderInfo.h
+-- Installing: $PREFIX/./include/aws/s3/model/RequestPaymentConfiguration.h
+-- Installing: $PREFIX/./include/aws/s3/model/S3Location.h
+-- Installing: $PREFIX/./include/aws/s3/model/RedirectAllRequestsTo.h
+-- Installing: $PREFIX/./include/aws/s3/model/BucketCannedACL.h
+-- Installing: $PREFIX/./include/aws/s3/model/CompletedMultipartUpload.h
+-- Installing: $PREFIX/./include/aws/s3/model/Type.h
+-- Installing: $PREFIX/./include/aws/s3/model/PutObjectTaggingRequest.h
+-- Installing: $PREFIX/./include/aws/s3/model/ListBucketAnalyticsConfigurationsRequest.h
+-- Installing: $PREFIX/./include/aws/s3/model/Redirect.h
+-- Installing: $PREFIX/./include/aws/s3/model/TargetGrant.h
+-- Installing: $PREFIX/./include/aws/s3/model/Object.h
+-- Installing: $PREFIX/./include/aws/s3/model/MetricsAndOperator.h
+-- Installing: $PREFIX/./include/aws/s3/model/BucketLifecycleConfiguration.h
+-- Installing: $PREFIX/./include/aws/s3/model/PutObjectResult.h
+-- Installing: $PREFIX/./include/aws/s3/model/ListBucketInventoryConfigurationsRequest.h
+-- Installing: $PREFIX/./include/aws/s3/model/Delete.h
+-- Installing: $PREFIX/./include/aws/s3/model/GetBucketWebsiteResult.h
+-- Installing: $PREFIX/./include/aws/s3/model/InventoryEncryption.h
+-- Installing: $PREFIX/./include/aws/s3/model/BucketLocationConstraint.h
+-- Installing: $PREFIX/./include/aws/s3/model/InputSerialization.h
+-- Installing: $PREFIX/./include/aws/s3/model/GetBucketWebsiteRequest.h
+-- Installing: $PREFIX/./include/aws/s3/model/GetBucketAnalyticsConfigurationResult.h
+-- Installing: $PREFIX/./include/aws/s3/model/Payer.h
+-- Installing: $PREFIX/./include/aws/s3/model/Transition.h
+-- Installing: $PREFIX/./include/aws/s3/model/RequestPayer.h
+-- Installing: $PREFIX/./include/aws/s3/model/GetBucketReplicationRequest.h
+-- Installing: $PREFIX/./include/aws/s3/model/StorageClass.h
+-- Installing: $PREFIX/./include/aws/s3/model/InventoryFilter.h
+-- Installing: $PREFIX/./include/aws/s3/model/InventoryFormat.h
+-- Installing: $PREFIX/./include/aws/s3/model/BucketVersioningStatus.h
+-- Installing: $PREFIX/./include/aws/s3/model/PutBucketTaggingRequest.h
+-- Installing: $PREFIX/./include/aws/s3/model/DeleteObjectRequest.h
+-- Installing: $PREFIX/./include/aws/s3/model/DeleteObjectTaggingResult.h
+-- Installing: $PREFIX/./include/aws/s3/model/MetricsConfiguration.h
+-- Installing: $PREFIX/./include/aws/s3/model/GetBucketTaggingResult.h
+-- Installing: $PREFIX/./include/aws/s3/model/DeleteBucketMetricsConfigurationRequest.h
+-- Installing: $PREFIX/./include/aws/s3/model/InventoryS3BucketDestination.h
+-- Installing: $PREFIX/./include/aws/s3/model/CreateBucketResult.h
+-- Installing: $PREFIX/./include/aws/s3/model/Encryption.h
+-- Installing: $PREFIX/./include/aws/s3/model/Initiator.h
+-- Installing: $PREFIX/./include/aws/s3/model/AnalyticsS3BucketDestination.h
+-- Installing: $PREFIX/./include/aws/s3/model/ExpirationStatus.h
+-- Installing: $PREFIX/./include/aws/s3/model/RequestCharged.h
+-- Installing: $PREFIX/./include/aws/s3/model/GetObjectTaggingResult.h
+-- Installing: $PREFIX/./include/aws/s3/model/ListObjectsRequest.h
+-- Installing: $PREFIX/./include/aws/s3/model/MultipartUpload.h
+-- Installing: $PREFIX/./include/aws/s3/model/GetObjectTorrentResult.h
+-- Installing: $PREFIX/./include/aws/s3/model/GlacierJobParameters.h
+-- Installing: $PREFIX/./include/aws/s3/model/InventoryFrequency.h
+-- Installing: $PREFIX/./include/aws/s3/model/MetricsFilter.h
+-- Installing: $PREFIX/./include/aws/s3/model/RestoreObjectResult.h
+-- Installing: $PREFIX/./include/aws/s3/model/BucketLoggingStatus.h
+-- Installing: $PREFIX/./include/aws/s3/model/GetBucketNotificationConfigurationResult.h
+-- Installing: $PREFIX/./include/aws/s3/model/Grantee.h
+-- Installing: $PREFIX/./include/aws/s3/model/ListObjectsV2Request.h
+-- Installing: $PREFIX/./include/aws/s3/model/PutBucketReplicationRequest.h
+-- Installing: $PREFIX/./include/aws/s3/model/CopyObjectRequest.h
+-- Installing: $PREFIX/./include/aws/s3/model/PutBucketAnalyticsConfigurationRequest.h
+-- Installing: $PREFIX/./include/aws/s3/model/DeleteBucketRequest.h
+-- Installing: $PREFIX/./include/aws/s3/model/QuoteFields.h
+-- Installing: $PREFIX/./include/aws/s3/model/PutObjectTaggingResult.h
+-- Installing: $PREFIX/./include/aws/s3/model/NoncurrentVersionExpiration.h
+-- Installing: $PREFIX/./include/aws/s3/model/Condition.h
+-- Installing: $PREFIX/./include/aws/s3/model/InventoryDestination.h
+-- Installing: $PREFIX/./include/aws/s3/model/GetBucketVersioningResult.h
+-- Installing: $PREFIX/./include/aws/s3/model/CompleteMultipartUploadRequest.h
+-- Installing: $PREFIX/./include/aws/s3/model/DeleteBucketWebsiteRequest.h
+-- Installing: $PREFIX/./include/aws/s3/model/DeleteBucketEncryptionRequest.h
+-- Installing: $PREFIX/./include/aws/s3/model/Owner.h
+-- Installing: $PREFIX/./include/aws/s3/model/TopicConfiguration.h
+-- Installing: $PREFIX/./include/aws/s3/model/ExpressionType.h
+-- Installing: $PREFIX/./include/aws/s3/model/CommonPrefix.h
+-- Installing: $PREFIX/./include/aws/s3/model/ReplicationConfiguration.h
+-- Installing: $PREFIX/./include/aws/s3/model/ListBucketAnalyticsConfigurationsResult.h
+-- Installing: $PREFIX/./include/aws/s3/model/ListObjectsV2Result.h
+-- Installing: $PREFIX/./include/aws/s3/model/PutBucketLifecycleConfigurationRequest.h
+-- Installing: $PREFIX/./include/aws/s3/model/LifecycleRule.h
+-- Installing: $PREFIX/./include/aws/s3/model/SseKmsEncryptedObjectsStatus.h
+-- Installing: $PREFIX/./include/aws/s3/model/ReplicationStatus.h
+-- Installing: $PREFIX/./include/aws/s3/model/Protocol.h
+-- Installing: $PREFIX/./include/aws/s3/model/ReplicationRuleStatus.h
+-- Installing: $PREFIX/./include/aws/s3/model/CloudFunctionConfiguration.h
+-- Installing: $PREFIX/./include/aws/s3/model/PutBucketPolicyRequest.h
+-- Installing: $PREFIX/./include/aws/s3/model/PutBucketCorsRequest.h
+-- Installing: $PREFIX/./include/aws/s3/model/BucketLogsPermission.h
+-- Installing: $PREFIX/./include/aws/s3/model/CompleteMultipartUploadResult.h
+-- Installing: $PREFIX/./include/aws/s3/model/CreateMultipartUploadResult.h
+-- Installing: $PREFIX/./include/aws/s3/model/StorageClassAnalysisDataExport.h
+-- Installing: $PREFIX/./include/aws/s3/model/GetBucketLifecycleConfigurationResult.h
+-- Installing: $PREFIX/./include/aws/s3/model/MetadataEntry.h
+-- Installing: $PREFIX/./include/aws/s3/model/ServerSideEncryption.h
+-- Installing: $PREFIX/./include/aws/s3/model/GetBucketLoggingResult.h
+-- Installing: $PREFIX/./include/aws/s3/model/ObjectIdentifier.h
+-- Installing: $PREFIX/./include/aws/s3/model/HeadObjectResult.h
+-- Installing: $PREFIX/./include/aws/s3/model/GetBucketInventoryConfigurationRequest.h
+-- Installing: $PREFIX/./include/aws/s3/model/MetadataDirective.h
+-- Installing: $PREFIX/./include/aws/s3/model/StorageClassAnalysisSchemaVersion.h
+-- Installing: $PREFIX/./include/aws/s3/model/DeleteBucketCorsRequest.h
+-- Installing: $PREFIX/./include/aws/s3/model/ServerSideEncryptionRule.h
+-- Installing: $PREFIX/./include/aws/s3/model/Part.h
+-- Installing: $PREFIX/./include/aws/s3/model/DeleteBucketLifecycleRequest.h
+-- Installing: $PREFIX/./include/aws/s3/model/PutObjectRequest.h
+-- Installing: $PREFIX/./include/aws/s3/model/ListObjectVersionsRequest.h
+-- Installing: $PREFIX/./include/aws/s3/model/UploadPartCopyResult.h
+-- Installing: $PREFIX/./include/aws/s3/model/ListPartsRequest.h
+-- Installing: $PREFIX/./include/aws/s3/model/GetBucketReplicationResult.h
+-- Installing: $PREFIX/./include/aws/s3/model/TaggingDirective.h
+-- Installing: $PREFIX/./include/aws/s3/model/ServerSideEncryptionConfiguration.h
+-- Installing: $PREFIX/./include/aws/s3/model/ListBucketMetricsConfigurationsRequest.h
+-- Installing: $PREFIX/./include/aws/s3/model/GetObjectAclResult.h
+-- Installing: $PREFIX/./include/aws/s3/model/HeadBucketRequest.h
+-- Installing: $PREFIX/./include/aws/s3/model/DeleteMarkerEntry.h
+-- Installing: $PREFIX/./include/aws/s3/model/PutBucketLoggingRequest.h
+-- Installing: $PREFIX/./include/aws/s3/S3Endpoint.h
+-- Installing: $PREFIX/./include/aws/s3/S3_EXPORTS.h
+-- Installing: $PREFIX/./include/aws/s3/S3Errors.h
+-- Installing: $PREFIX/./include/aws/s3/S3Client.h
+-- Up-to-date: $PREFIX/./lib
+-- Installing: $PREFIX/./lib/libaws-cpp-sdk-s3.a
+-- Installing: $PREFIX/./lib/libaws-cpp-sdk-kms.a
+-- Installing: $PREFIX/./lib/libaws-cpp-sdk-s3-encryption.a
+-- Up-to-date: $PREFIX/./lib/cmake
+-- Installing: $PREFIX/./lib/cmake/aws-cpp-sdk-s3
+-- Installing: $PREFIX/./lib/cmake/aws-cpp-sdk-s3/aws-cpp-sdk-s3-targets-release.cmake
+-- Installing: $PREFIX/./lib/cmake/aws-cpp-sdk-s3/aws-cpp-sdk-s3-targets.cmake
+-- Installing: $PREFIX/./lib/cmake/aws-cpp-sdk-s3/aws-cpp-sdk-s3-config-version.cmake
+-- Installing: $PREFIX/./lib/cmake/aws-cpp-sdk-s3/aws-cpp-sdk-s3-config.cmake
+-- Installing: $PREFIX/./lib/cmake/aws-cpp-sdk-s3-encryption
+-- Installing: $PREFIX/./lib/cmake/aws-cpp-sdk-s3-encryption/aws-cpp-sdk-s3-encryption-targets-release.cmake
+-- Installing: $PREFIX/./lib/cmake/aws-cpp-sdk-s3-encryption/aws-cpp-sdk-s3-encryption-config.cmake
+-- Installing: $PREFIX/./lib/cmake/aws-cpp-sdk-s3-encryption/aws-cpp-sdk-s3-encryption-targets.cmake
+-- Installing: $PREFIX/./lib/cmake/aws-cpp-sdk-s3-encryption/aws-cpp-sdk-s3-encryption-config-version.cmake
+-- Installing: $PREFIX/./lib/cmake/AWSSDK
+-- Installing: $PREFIX/./lib/cmake/AWSSDK/external_dependencies.cmake
+-- Installing: $PREFIX/./lib/cmake/AWSSDK/dependencies.cmake
+-- Installing: $PREFIX/./lib/cmake/AWSSDK/make_uninstall.cmake
+-- Installing: $PREFIX/./lib/cmake/AWSSDK/sdks.cmake
+-- Installing: $PREFIX/./lib/cmake/AWSSDK/utilities.cmake
+-- Installing: $PREFIX/./lib/cmake/AWSSDK/AWSSDKConfigVersion.cmake
+-- Installing: $PREFIX/./lib/cmake/AWSSDK/platformDeps.cmake
+-- Installing: $PREFIX/./lib/cmake/AWSSDK/build_external.cmake
+-- Installing: $PREFIX/./lib/cmake/AWSSDK/setup_cmake_find_module.cmake
+-- Installing: $PREFIX/./lib/cmake/AWSSDK/AWSSDKConfig.cmake
+-- Installing: $PREFIX/./lib/cmake/AWSSDK/sdksCommon.cmake
+-- Installing: $PREFIX/./lib/cmake/AWSSDK/initialize_project_version.cmake
+-- Installing: $PREFIX/./lib/cmake/AWSSDK/platform
+-- Installing: $PREFIX/./lib/cmake/AWSSDK/platform/unix.cmake
+-- Installing: $PREFIX/./lib/cmake/AWSSDK/platform/linux.cmake
+-- Installing: $PREFIX/./lib/cmake/AWSSDK/platform/apple.cmake
+-- Installing: $PREFIX/./lib/cmake/AWSSDK/platform/android.toolchain.cmake
+-- Installing: $PREFIX/./lib/cmake/AWSSDK/platform/windows.cmake
+-- Installing: $PREFIX/./lib/cmake/AWSSDK/platform/android.cmake
+-- Installing: $PREFIX/./lib/cmake/AWSSDK/platform/custom.cmake
+-- Installing: $PREFIX/./lib/cmake/AWSSDK/compiler_settings.cmake
+-- Installing: $PREFIX/./lib/cmake/AWSSDK/resolve_platform.cmake
+-- Installing: $PREFIX/./lib/cmake/aws-cpp-sdk-kms
+-- Installing: $PREFIX/./lib/cmake/aws-cpp-sdk-kms/aws-cpp-sdk-kms-targets.cmake
+-- Installing: $PREFIX/./lib/cmake/aws-cpp-sdk-kms/aws-cpp-sdk-kms-config.cmake
+-- Installing: $PREFIX/./lib/cmake/aws-cpp-sdk-kms/aws-cpp-sdk-kms-config-version.cmake
+-- Installing: $PREFIX/./lib/cmake/aws-cpp-sdk-kms/aws-cpp-sdk-kms-targets-release.cmake
+-- Installing: $PREFIX/./lib/cmake/aws-cpp-sdk-core
+-- Installing: $PREFIX/./lib/cmake/aws-cpp-sdk-core/aws-cpp-sdk-core-targets.cmake
+-- Installing: $PREFIX/./lib/cmake/aws-cpp-sdk-core/aws-cpp-sdk-core-targets-release.cmake
+-- Installing: $PREFIX/./lib/cmake/aws-cpp-sdk-core/aws-cpp-sdk-core-config-version.cmake
+-- Installing: $PREFIX/./lib/cmake/aws-cpp-sdk-core/aws-cpp-sdk-core-config.cmake
+-- Installing: $PREFIX/./lib/libaws-cpp-sdk-core.a
+-- Installing: $PREFIX/lib/cmake/ConfigureAWSSDK.cmake
+-- Installing: $PREFIX/lib/cmake/AWSSDKCPP.CMakeLists.txt.cmake
+
+Resource usage statistics from building blazingsql-toolchain-aws-cpp:
+   Process count: 34
+   CPU time: Sys=0:00:11.8, User=0:01:43.6
+   Memory: 1.6G
+   Disk usage: 551.4K
+   Time elapsed: 0:03:46.0
+
+Packaging blazingsql-toolchain-aws-cpp
+INFO:conda_build.build:Packaging blazingsql-toolchain-aws-cpp
+INFO conda_build.build:build(1566): Packaging blazingsql-toolchain-aws-cpp
+Packaging blazingsql-toolchain-aws-cpp-0.4.5-13
+INFO:conda_build.build:Packaging blazingsql-toolchain-aws-cpp-0.4.5-13
+INFO conda_build.build:bundle_conda(886): Packaging blazingsql-toolchain-aws-cpp-0.4.5-13
+number of files: 499
+Fixing permissions
+Packaged license file/s.
+Importing conda-verify failed.  Please be sure to test your packages.  conda install conda-verify to make this message go away.
+WARNING:conda_build.build:Importing conda-verify failed.  Please be sure to test your packages.  conda install conda-verify to make this message go away.
+WARNING conda_build.build:bundle_conda(1037): Importing conda-verify failed.  Please be sure to test your packages.  conda install conda-verify to make this message go away.
+TEST START: /home/percy/Desktop/___NOLL/heeee/aws/linux-64/blazingsql-toolchain-aws-cpp-0.4.5-13.tar.bz2
+Adding in variants from /tmp/tmpcdn3b7hh/info/recipe/conda_build_config.yaml
+INFO:conda_build.variants:Adding in variants from /tmp/tmpcdn3b7hh/info/recipe/conda_build_config.yaml
+INFO conda_build.variants:_combine_spec_dictionaries(188): Adding in variants from /tmp/tmpcdn3b7hh/info/recipe/conda_build_config.yaml
+Nothing to test for: /home/percy/Desktop/___NOLL/heeee/aws/linux-64/blazingsql-toolchain-aws-cpp-0.4.5-13.tar.bz2
+Renaming work directory,  /home/percy/Applications/anaconda/conda/envs/buildaws-dbg/conda-bld/blazingsql-toolchain-aws-cpp_1572582595142/work  to  /home/percy/Applications/anaconda/conda/envs/buildaws-dbg/conda-bld/blazingsql-toolchain-aws-cpp_1572582595142/work_moved_blazingsql-toolchain-aws-cpp-0.4.5-13_linux-64_main_build_loop
+# Automatic uploading is disabled
+# If you want to upload package(s) to anaconda.org later, type:
+
+anaconda upload /home/percy/Desktop/___NOLL/heeee/aws/linux-64/blazingsql-toolchain-aws-cpp-0.4.5-13.tar.bz2
+
+# To have conda build upload to anaconda.org automatically, use
+# $ conda config --set anaconda_upload yes
+
+anaconda_upload is not set.  Not uploading wheels: []
+####################################################################################
+Resource usage summary:
+
+Total time: 0:06:07.0
+CPU usage: sys=0:00:11.8, user=0:01:43.6
+Maximum memory usage observed: 1.6G
+Total disk usage observed (not including envs): 551.4K
+
+
+####################################################################################
+Source and build intermediates have been left in /home/percy/Applications/anaconda/conda/envs/buildaws-dbg/conda-bld.
+There are currently 35 accumulated.
+To remove them, you can run the ```conda build purge``` command
