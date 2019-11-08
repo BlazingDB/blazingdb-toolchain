@@ -1,4 +1,4 @@
 #!/bin/bash
 
-echo "conda build -c ${CONDA_BUILD} -c conda-forge -c defaults conda/recipes/blazingsql-toolchain/"
-conda build -c ${CONDA_BUILD} -c conda-forge -c defaults conda/recipes/blazingsql-toolchain/
+echo "CMD: conda build ${CONDA_CH} -c conda-forge -c defaults conda/recipes/blazingsql-toolchain/"
+conda build ${CONDA_CH} -c conda-forge -c defaults conda/recipes/blazingsql-toolchain/
