@@ -12,8 +12,6 @@ mkdir -p $gcs_deps_dir
 
 #NOTE https://github.com/googleapis/google-cloud-cpp/blob/master/INSTALL.md#ubuntu-1604---xenial-xerus
 
-export CFLAGS="-DCURL_STATICLIB"
-export CXXFLAGS="-DCURL_STATICLIB"
 export PKG_CONFIG_PATH=$current_conda_prefix/lib/pkgconfig/
 export PATH=$PATH:$gcs_install_dir/bin/:$current_conda_prefix/bin/
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$gcs_install_dir/lib/:$current_conda_prefix/lib/
@@ -39,7 +37,7 @@ cd crc32c-1.0.6
 
 cmake \
       -DCMAKE_BUILD_TYPE=Release \
-      -DBUILD_SHARED_LIBS=NO \
+      -DBUILD_SHARED_LIBS=YES \
       -DCRC32C_BUILD_TESTS=OFF \
       -DCRC32C_BUILD_BENCHMARKS=OFF \
       -DCRC32C_USE_GLOG=OFF \
@@ -82,7 +80,7 @@ cd cpp-cmakefiles-0.1.5
 
 cmake \
     -DCMAKE_BUILD_TYPE=Release \
-    -DBUILD_SHARED_LIBS=NO \
+    -DBUILD_SHARED_LIBS=YES \
     -DCMAKE_INSTALL_PREFIX=$gcs_install_dir \
     -H. -Bcmake-out
 if [ $? != 0 ]; then
@@ -124,6 +122,7 @@ export CPATH=$CPATH:$gcs_install_dir/include/:$current_conda_prefix/include/
 
 cmake -DGOOGLE_CLOUD_CPP_ENABLE_BIGTABLE=OFF \
       -DBUILD_TESTING=OFF \
+      -DBUILD_SHARED_LIBS=YES \
       -DCMAKE_MODULE_PATH=$gcs_install_dir/lib/cmake/ \
       -DCMAKE_INSTALL_PREFIX=$gcs_install_dir \
       -H. -Bcmake-out

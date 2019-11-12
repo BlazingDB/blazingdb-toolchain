@@ -30,7 +30,7 @@ macro(CONFIGURE_AWS_SDK_CPP_EXTERNAL_PROJECT)
     # NOTE percy c.gonzales if you want to pass other RAL CMAKE_CXX_FLAGS into this dependency add it by harcoding
     set(AWS_SDK_CPP_CMAKE_ARGS " -DBUILD_OPENSSL=OFF"
                                " -DBUILD_CURL=OFF"
-                               " -DBUILD_SHARED_LIBS=OFF"
+                               " -DBUILD_SHARED_LIBS=ON"
                                " -DENABLE_TESTING=OFF"
                                " -DENABLE_UNITY_BUILD=ON"
                                " -DCUSTOM_MEMORY_MANAGEMENT=0"
