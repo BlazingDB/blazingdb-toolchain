@@ -15,9 +15,6 @@ build:
     string: {{ git_revision_count }}
 
 requirements:
-    build:
-        - blazingsql-toolchain-aws-cpp
-        - blazingsql-toolchain-gcp-cpp
     run:
         - blazingsql-toolchain-aws-cpp
         - blazingsql-toolchain-gcp-cpp
