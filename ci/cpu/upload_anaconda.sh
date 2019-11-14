@@ -2,9 +2,9 @@
 
 set -e
 
-export AWS_FILE=`conda build conda/recipes/blazingsql-toolchain-aws-cpp/ --output`
-export GCP_FILE=`conda build conda/recipes/blazingsql-toolchain-gcp-cpp/ --output`
-export TAR_FILE=`conda build conda/recipes/blazingsql-toolchain/ --output`
+export AWS_FILE=`conda build conda/recipes/bsql-toolchain-aws-cpp/ --output`
+export GCP_FILE=`conda build conda/recipes/bsql-toolchain-gcp-cpp/ --output`
+export TAR_FILE=`conda build conda/recipes/bsql-toolchain/ --output`
 
 LABEL_OPTION="--label main"
 echo "LABEL_OPTION=${LABEL_OPTION}"

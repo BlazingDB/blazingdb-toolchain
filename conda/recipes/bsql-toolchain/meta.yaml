@@ -4,7 +4,7 @@
 {% set git_revision_count=environ.get('GIT_DESCRIBE_NUMBER', 0) %}
 
 package:
-    name: blazingsql-toolchain-gcp-cpp
+    name: bsql-toolchain
     version: {{ version }}
 
 source:
@@ -15,27 +15,9 @@ build:
     string: {{ git_revision_count }}
 
 requirements:
-    build:
-        - {{ compiler('c') }}
-        - {{ compiler('cxx') }}
-        - cmake
-        - gtest
-        - gmock
-        - boost-cpp ==1.70.0
-        - openssl
-        - zlib
-        - curl
-        - libprotobuf ==3.8.0
-        - grpc-cpp
-        - c-ares
     run:
-        - boost-cpp ==1.70.0
-        - openssl
-        - zlib
-        - curl
-        - libprotobuf ==3.8.0
-        - grpc-cpp
-        - c-ares
+        - bsql-toolchain-aws-cpp
+        - bsql-toolchain-gcp-cpp
 
 about:
     home: http://www.blazingsql.com/
