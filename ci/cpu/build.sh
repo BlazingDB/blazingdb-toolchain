@@ -21,9 +21,7 @@ export GIT_DESCRIBE_TAG=`git describe --abbrev=0 --tags`
 export GIT_DESCRIBE_NUMBER=`git rev-list ${GIT_DESCRIBE_TAG}..HEAD --count`
 
 CONDA_CH=""
-if [ -z "$CONDA_BUILD" ]; then
-    CONDA_CH="-c blazingsql"
-else
+if [ ! -z "$CONDA_BUILD" ]; then
     IFS=', ' read -r -a array <<< "$CONDA_BUILD"
     for item in "${array[@]}"
     do
@@ -40,6 +38,10 @@ export CONDA_UPLOAD
 ################################################################################
 # SETUP - Check environment
 ################################################################################
+
+logger "Creating bsql-builder"
+conda create -n bsql-builder python=3.7.4 -y
+source activate bsql-builder
 
 logger "Get env..."
 env
@@ -61,13 +63,13 @@ conda install -y conda-build anaconda-client
 ################################################################################
 
 logger "Build conda pkg for toolchain-aws..."
-source ci/cpu/toolchain-aws/conda-build.sh
+source ci/cpu/bsql-toolchain-aws/conda-build.sh
 
 logger "Build conda pkg for toolchain-gcp..."
-source ci/cpu/toolchain-gcp/conda-build.sh
+source ci/cpu/bsql-toolchain-gcp/conda-build.sh
 
 logger "Build conda pkg for toolchain..."
-source ci/cpu/toolchain/conda-build.sh
+source ci/cpu/bsql-toolchain/conda-build.sh
 
 logger "Upload conda pkg for toolchain-aws..."
 source ci/cpu/upload_anaconda.sh

@@ -4,7 +4,7 @@
 {% set git_revision_count=environ.get('GIT_DESCRIBE_NUMBER', 0) %}
 
 package:
-    name: blazingsql-toolchain-aws-cpp
+    name: bsql-toolchain-aws-cpp
     version: {{ version }}
 
 source:
