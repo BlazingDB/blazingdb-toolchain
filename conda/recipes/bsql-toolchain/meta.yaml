@@ -17,6 +17,7 @@ requirements:
     run:
         - bsql-toolchain-aws-cpp
         - bsql-toolchain-gcp-cpp
+        - bsql-rapids-thirdparty
 
 about:
     home: http://www.blazingsql.com/
