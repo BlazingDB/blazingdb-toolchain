@@ -3,7 +3,7 @@
 {% set git_revision_count=environ.get('GIT_DESCRIBE_NUMBER', 0) %}
 
 package:
-    name: bsql-toolchain-gcp-cpp
+    name: bsql-rapids-thirdparty
     version: {{ version }}
 
 source:
@@ -12,29 +12,6 @@ source:
 build:
     number: {{ git_revision_count }}
     string: {{ git_revision_count }}
-
-requirements:
-    build:
-        - {{ compiler('c') }}
-        - {{ compiler('cxx') }}
-        - cmake
-        - gtest
-        - gmock
-        - boost-cpp ==1.70.0
-        - openssl
-        - zlib
-        - curl
-        - libprotobuf ==3.8.0
-        - grpc-cpp
-        - c-ares
-    run:
-        - boost-cpp ==1.70.0
-        - openssl
-        - zlib
-        - curl
-        - libprotobuf ==3.8.0
-        - grpc-cpp
-        - c-ares
 
 about:
     home: http://www.blazingsql.com/
