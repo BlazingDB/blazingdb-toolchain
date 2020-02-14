@@ -78,6 +78,24 @@ macro(CONFIGURE_AWS_SDK_CPP_EXTERNAL_PROJECT)
         WORKING_DIRECTORY ${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/aws-sdk-cpp-download/
     )
 
+    file(
+        COPY ${CMAKE_CURRENT_BINARY_DIR}/CMakeFiles/thirdparty/aws-sdk-cpp-install/lib/aws-c-common/cmake/shared/
+        DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/CMakeFiles/thirdparty/aws-sdk-cpp-install/lib/aws-c-common/cmake/static/
+        FILES_MATCHING PATTERN "*.cmake"
+    )
+
+    file(
+        COPY ${CMAKE_CURRENT_BINARY_DIR}/CMakeFiles/thirdparty/aws-sdk-cpp-install/lib/aws-checksums/cmake/shared/
+        DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/CMakeFiles/thirdparty/aws-sdk-cpp-install/lib/aws-checksums/cmake/static/
+        FILES_MATCHING PATTERN "*.cmake"
+    )
+
+    file(
+        COPY ${CMAKE_CURRENT_BINARY_DIR}/CMakeFiles/thirdparty/aws-sdk-cpp-install/lib/aws-c-event-stream/cmake/shared/
+        DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/CMakeFiles/thirdparty/aws-sdk-cpp-install/lib/aws-c-event-stream/cmake/static/
+        FILES_MATCHING PATTERN "*.cmake"
+    )
+
     execute_process(
         COMMAND ${CMAKE_COMMAND} --build . -- -j8
         RESULT_VARIABLE result
