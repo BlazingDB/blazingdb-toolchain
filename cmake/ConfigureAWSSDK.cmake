@@ -27,6 +27,7 @@ macro(NORMALIZE_AWS_MODULES_FOR_EXTERNALPROJECT_ADD)
 endmacro()
 
 macro(CONFIGURE_AWS_SDK_CPP_EXTERNAL_PROJECT)
+    message("configuring external project")
     # NOTE percy c.gonzales if you want to pass other RAL CMAKE_CXX_FLAGS into this dependency add it by harcoding
     set(AWS_SDK_CPP_CMAKE_ARGS " -DBUILD_OPENSSL=OFF"
                                " -DBUILD_CURL=OFF"
@@ -131,6 +132,7 @@ set(aws-sdk-cpp_DIR ${AWS_SDK_CPP_ROOT})
 message(STATUS "aws-sdk-cpp_DIR: " ${aws-sdk-cpp_DIR})
 
 # NOTE DO NOT CHANGE DE ORDER!
+find_package(aws-c-common REQUIRED)
 find_package(aws-cpp-sdk-core REQUIRED)
 find_package(aws-cpp-sdk-s3 REQUIRED)
 find_package(aws-cpp-sdk-kms REQUIRED)
