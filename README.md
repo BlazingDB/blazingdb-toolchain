@@ -5,8 +5,9 @@ build BlazingSQL using Anaconda environments.
 
 # Requirements
 
-## Compiler
+## Compiler & Conda
 
+- g++
 - conda
 
 ## CMake
