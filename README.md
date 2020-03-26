@@ -33,4 +33,4 @@ apt-get -y install wget libtool automake autoconf pkg-config
 CURRENT_CONDA_PREFIX=$CONDA_PREFIX conda build --label "main" -c conda-forge --python=3.7 --output-folder /some/directory/
 ```
 
-For more details, see the conda-build process.
+For more details see the conda-build process.
