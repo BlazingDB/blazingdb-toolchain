@@ -70,3 +70,8 @@ z_build
 .kobalt
 .DS_Store
 CMakeLists.txt.user
+
+#conda
+.condarc
+conda_cache/
+conda_pkgs/
