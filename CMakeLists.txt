@@ -67,10 +67,8 @@ if (BUILD_TARGET)
     elseif (BUILD_TARGET STREQUAL "spdlog")
 
         include(Configurespdlog)
-
         install(DIRECTORY ${SPDLOG_ROOT} DESTINATION . USE_SOURCE_PERMISSIONS)
         install(FILES ${CMAKE_SOURCE_DIR}/cmake/Configurespdlog.cmake DESTINATION lib/cmake)
-        install(FILES ${CMAKE_SOURCE_DIR}/cmake/spdlog.CMakeLists.txt.cmake DESTINATION lib/cmake)
 
     else()
         message(FATAL_ERROR "Error: Invalid value for BUILD_TARGET (${BUILD_TARGET}) You need to pass -DBUILD_TARGET=gcp-cpp or -DBUILD_TARGET=aws-cpp")
