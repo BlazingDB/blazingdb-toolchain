@@ -16,6 +16,7 @@ ExternalProject_Add(aws-sdk-cpp
     BINARY_DIR      "${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/aws-sdk-cpp-build"
     INSTALL_DIR     "${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/aws-sdk-cpp-install"
     UPDATE_COMMAND  ""
+    GIT_SHALLOW     1
     CMAKE_ARGS      -DCMAKE_BUILD_TYPE=${AWS_SDK_CPP_BUILD_TYPE}
                     -DBUILD_ONLY=${AWS_MODULES_STR}
                     -DCMAKE_INSTALL_PREFIX:PATH=${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/thirdparty/aws-sdk-cpp-install
