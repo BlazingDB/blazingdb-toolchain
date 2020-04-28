@@ -3,7 +3,7 @@
 {% set git_revision_count=environ.get('GIT_DESCRIBE_NUMBER', 0) %}
 
 package:
-    name: bsql-toolchain
+    name: bsql-spdlog
     version: {{ version }}
 
 source:
@@ -14,11 +14,8 @@ build:
     string: {{ git_revision_count }}
 
 requirements:
-    run:
-        - bsql-toolchain-aws-cpp {{ minor_version }}.*
-        - bsql-toolchain-gcp-cpp {{ minor_version }}.*
-        - bsql-rapids-thirdparty {{ minor_version }}.*
-        - bsql-spdlog {{ minor_version }}.*
+    build:
+        - cmake
 
 about:
     home: http://www.blazingsql.com/
