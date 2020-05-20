@@ -18,7 +18,6 @@ requirements:
         - bsql-toolchain-aws-cpp {{ minor_version }}.*
         - bsql-toolchain-gcp-cpp {{ minor_version }}.*
         - bsql-rapids-thirdparty {{ minor_version }}.*
-        - bsql-spdlog {{ minor_version }}.*
 
 about:
     home: http://www.blazingsql.com/

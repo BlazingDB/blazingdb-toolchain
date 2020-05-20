@@ -136,12 +136,4 @@ define_default_git_package(
     "Release"
 )
 
-# NOTE cf6f1dd01e660d5865d68bf5fa78f6376b89470a is release https://github.com/gabime/spdlog/releases/tag/v1.5.0
-define_default_git_package(
-    "SPDLOG"
-    "https://github.com/gabime/spdlog.git"
-    "cf6f1dd01e660d5865d68bf5fa78f6376b89470a"
-    "Release"
-)
-
 # END MAIN #
