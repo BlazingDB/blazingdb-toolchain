@@ -19,6 +19,6 @@ docker run --rm \
     -v $CONDA_PKGS:/opt/conda/pkgs/ \
     -v $CONDA_CACHE:/.cache/ \
     -v ${WORKSPACE}:${WORKSPACE} -w ${WORKSPACE} \
-    gpuci/miniconda-cuda:10.0-devel-ubuntu16.04 \
+    gpuci/rapidsai-base:cuda10.2-ubuntu16.04-gcc5-py3.7 \
     ./ci/cpu/build.sh
 
