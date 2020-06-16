@@ -65,9 +65,6 @@ conda install -y conda-build anaconda-client
 logger "Build conda pkg for toolchain-aws..."
 source ci/cpu/bsql-toolchain-aws/conda-build.sh
 
-logger "Build conda pkg for toolchain-gcp..."
-source ci/cpu/bsql-toolchain-gcp/conda-build.sh
-
 logger "Build conda pkg for bsql-rapids-thirdparty..."
 source ci/cpu/bsql-rapids-thirdparty/conda-build.sh
 

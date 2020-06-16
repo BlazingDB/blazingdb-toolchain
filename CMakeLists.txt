@@ -48,13 +48,7 @@ include(CTest)
 message(STATUS "BUILD_TARGET is ${BUILD_TARGET}")
 
 if (BUILD_TARGET)
-    if (BUILD_TARGET STREQUAL "gcp-cpp")
-
-        include(ConfigureGoogleCloudCPP)
-        install(DIRECTORY ${GOOGLE_CLOUD_CPP_ROOT} DESTINATION . USE_SOURCE_PERMISSIONS)
-        install(FILES ${CMAKE_SOURCE_DIR}/cmake/ConfigureGoogleCloudCPP.cmake DESTINATION lib/cmake)
-
-    elseif (BUILD_TARGET STREQUAL "aws-cpp")
+    if (BUILD_TARGET STREQUAL "aws-cpp")
 
         include(ConfigureAWSSDK)
         # NOTE use USE_SOURCE_PERMISSIONS to preserve executable file permisions (e.g. flatc, etc)
@@ -65,10 +59,10 @@ if (BUILD_TARGET)
         install(FILES ${CMAKE_SOURCE_DIR}/patches/aws-sdk-cpp-patch/aws-cpp-sdk-core-targets.cmake DESTINATION lib/cmake/aws-cpp-sdk-core/)
 
     else()
-        message(FATAL_ERROR "Error: Invalid value for BUILD_TARGET (${BUILD_TARGET}) You need to pass -DBUILD_TARGET=gcp-cpp or -DBUILD_TARGET=aws-cpp")
+        message(FATAL_ERROR "Error: Invalid value for BUILD_TARGET (${BUILD_TARGET}) You need to pass -DBUILD_TARGET=aws-cpp")
     endif()
 else()
-    message(FATAL_ERROR "Error: You need to pass -DBUILD_TARGET=gcp-cpp or -DBUILD_TARGET=aws-cpp")
+    message(FATAL_ERROR "Error: You need to pass -DBUILD_TARGET=aws-cpp")
 endif()
 
 # BEGIN MAIN #
