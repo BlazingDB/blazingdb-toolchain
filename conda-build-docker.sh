@@ -12,7 +12,7 @@ if [ ! -f "$CONDA_RC" ]; then
 fi
 mkdir -p $CONDA_PKGS $CONDA_CACHE
 
-docker run --rm \
+docker run -ti --rm \
     -u $(id -u):$(id -g) \
     -e CONDA_BUILD=$1 -e CONDA_UPLOAD=$2 -e MY_UPLOAD_KEY=$3 \
     -v $CONDA_RC:/.condarc \

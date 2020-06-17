@@ -15,8 +15,6 @@ build:
 
 requirements:
     run:
-        - bsql-toolchain-aws-cpp {{ minor_version }}.*
-        - bsql-toolchain-gcp-cpp {{ minor_version }}.*
         - bsql-rapids-thirdparty {{ minor_version }}.*
 
 about:
