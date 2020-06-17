@@ -12,7 +12,7 @@ if [ ! -f "$CONDA_RC" ]; then
 fi
 mkdir -p $CONDA_PKGS $CONDA_CACHE
 
-docker run --rm \
+docker run -ti --rm \
     -u $(id -u):$(id -g) \
     -e CONDA_BUILD=$1 -e CONDA_UPLOAD=$2 -e MY_UPLOAD_KEY=$3 \
     -v $CONDA_RC:/.condarc \
@@ -20,5 +20,6 @@ docker run --rm \
     -v $CONDA_CACHE:/.cache/ \
     -v ${WORKSPACE}:${WORKSPACE} -w ${WORKSPACE} \
     gpuci/rapidsai-base:cuda10.2-ubuntu16.04-gcc5-py3.7 \
-    ./ci/cpu/build.sh
+    bash
+    #./ci/cpu/build.sh
 
