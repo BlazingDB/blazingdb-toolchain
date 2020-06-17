@@ -20,6 +20,5 @@ docker run -ti --rm \
     -v $CONDA_CACHE:/.cache/ \
     -v ${WORKSPACE}:${WORKSPACE} -w ${WORKSPACE} \
     gpuci/rapidsai-base:cuda10.2-ubuntu16.04-gcc5-py3.7 \
-    bash
-    #./ci/cpu/build.sh
+    ./ci/cpu/build.sh
 
