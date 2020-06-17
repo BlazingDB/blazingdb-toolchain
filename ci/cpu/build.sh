@@ -62,9 +62,6 @@ conda install -y conda-build anaconda-client
 # BUILD - Conda package builds
 ################################################################################
 
-logger "Build conda pkg for toolchain-gcp..."
-source ci/cpu/bsql-toolchain-gcp/conda-build.sh
-
 logger "Build conda pkg for bsql-rapids-thirdparty..."
 source ci/cpu/bsql-rapids-thirdparty/conda-build.sh
 
